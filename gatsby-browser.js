@@ -1,2 +1,2 @@
-// custom typefaces
-import "./src/styles/tachyons.min.css"
+// functional CSS
+import "./src/styles/tachyons.css"

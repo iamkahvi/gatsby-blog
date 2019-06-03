@@ -1,48 +1,44 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { rhythm, scale } from "../utils/typography"
-
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { location, title, children, description } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
     if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
+        <div>
+          <p>
+            <Link to={'/home'} style={{ boxShadow: "none" }} className="helvetica faded-orange ph2">Home</Link> / 
+            <Link to={'/book-list'} style={{ boxShadow: "none" }} className="helvetica faded-orange ph2">Book List</Link> / 
+            <Link to={'/about'} style={{ boxShadow: "none" }} className="helvetica faded-orange ph2">About</Link>
+          </p>
+          <h1
+            className="mt3 mb0"
           >
-            {title}
-          </Link>
-        </h1>
+            <Link
+              style={{
+                boxShadow:`none`,
+              }}
+              className="f1 helvetica underline faded-orange"
+              to={`/`}
+            > {title} </Link>
+          </h1>
+          <p
+            className="f6 helvetica pt0 mt2 faded-blue"
+          > {description} </p>
+        </div>
       )
     } else {
       header = (
         <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
+          className="f3 helvetica faded-orange"
         >
           <Link
             style={{
               boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
             }}
             to={`/`}
           >
@@ -52,21 +48,9 @@ class Layout extends React.Component {
       )
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
-        <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+      <div className="w-70 center">
+        <header className="fl pa2 pt3">{header}</header>
+        <main className="fl pa2">{children}</main>
       </div>
     )
   }
