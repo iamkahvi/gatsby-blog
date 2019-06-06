@@ -18,6 +18,9 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
     const description = data.site.siteMetadata.description
 
+    console.log(typeof(posts))
+    console.log(posts)
+
     // This works!
     console.log(posts[0].next.frontmatter.date)
     console.log(posts[0].node.frontmatter.date)
@@ -25,35 +28,36 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle} description={description}>
       <SEO title="All posts" />
-
-      {/* This doesn't work?? */}
-
-      {/* {posts.map(({ next }) => {
-        return (
-          <h3>{next.frontmatter.date}</h3>
-        )
-      })} */}
       
-      {posts.map(({ node }) => {
+      {posts.map(obj => {
+        const { node, next } = obj
         const title = node.frontmatter.title || node.fields.slug
+        const nextPost = next ? next : node
+        const currYear = node.frontmatter.date.split(" ").pop()
+        const nextYear = nextPost.frontmatter.date.split(" ").pop()
+        const year = currYear !== nextYear ? currYear : " "
+
         return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} className="alink helvetica faded-orange" to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small className="f6 helvetica faded-blue">{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-                className="f6 helvetica faded-blue"
-              />
+          <div>
+                <h1>{year}</h1>
+              <div key={node.fields.slug}>
+                <h3
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                  }}
+                  >
+                  <Link style={{ boxShadow: `none` }} className="alink helvetica faded-orange" to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h3>
+                <small className="f6 helvetica faded-blue">{node.frontmatter.date}</small>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                  className="f6 helvetica faded-blue"
+                  />
+              </div>
             </div>
         )
       })}
