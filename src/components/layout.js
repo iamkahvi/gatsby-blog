@@ -11,9 +11,9 @@ class Layout extends React.Component {
       header = (
         <div className="pt3">
           <p>
-            <Link to={'/home'} style={{ boxShadow: "none" }} className="alink helvetica faded-orange ph2">Home</Link> / 
-            <Link to={'/book-list'} style={{ boxShadow: "none" }} className="alink helvetica faded-orange ph2">Book List</Link> / 
-            <Link to={'/about'} style={{ boxShadow: "none" }} className="alink helvetica faded-orange ph2">About</Link>
+            <Link to={'/home'} style={{ boxShadow: "none" }} className="alink helvetica faded-orange mh2">Home</Link> / 
+            <Link to={'/book-list'} style={{ boxShadow: "none" }} className="alink helvetica faded-orange mh2">Book List</Link> / 
+            <Link to={'/about'} style={{ boxShadow: "none" }} className="alink helvetica faded-orange mh2">About</Link>
           </p>
           <h1
             className="mt3 mb0"
