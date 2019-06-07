@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby"
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
 class BlogIndex extends React.Component {
 
@@ -13,43 +12,35 @@ class BlogIndex extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
     const description = data.site.siteMetadata.description
-    var num = 0
 
     return (
       <Layout location={this.props.location} title={siteTitle} description={description}>
       <SEO title={siteTitle} />
       
       {posts.map(edge => {
-        const { node, next } = edge
+        const { node, previous } = edge
         const title = node.frontmatter.title || node.fields.slug
-        const nextPost = next ? next : node
+        const previousPost = previous ? previous : node
         const currYear = node.frontmatter.date.split(" ").pop()
-        const nextYear = nextPost.frontmatter.date.split(" ").pop()
-        const year = currYear !== nextYear ? currYear : " "
-        num += 1
+        const previousYear = previousPost.frontmatter.date.split(" ").pop()
+        const yearHeader = currYear !== previousYear ? true : false
 
         return (
-          <div>
-                <h1>{num}</h1>
-              <div key={node.fields.slug}>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                  >
-                  <Link style={{ boxShadow: `none` }} className="alink helvetica faded-orange" to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small className="f6 helvetica faded-blue">{node.frontmatter.date}</small>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                  className="f6 helvetica faded-blue"
-                  />
-              </div>
-            </div>
+          <div key={node.fields.slug}>
+            {yearHeader && <h1 className="helvetica fw1 f4 tc faded-blue bb mb4">{currYear}</h1>}
+            <h3 className="mt0 mb2">
+              <Link style={{ boxShadow: `none` }} className="alink helvetica faded-orange" to={node.fields.slug}>
+                {title}
+              </Link>
+            </h3>
+            <small className="f6 helvetica faded-blue tr">{node.frontmatter.date}</small>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: node.frontmatter.description || node.excerpt,
+              }}
+              className="f6 helvetica faded-blue"
+              />
+          </div>
         )
       })}
       </Layout>
@@ -69,7 +60,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
-        next {
+        previous {
           frontmatter {
             date(formatString: "MMM DD, YYYY")
           }
