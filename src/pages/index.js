@@ -8,38 +8,29 @@ import { rhythm } from "../utils/typography"
 
 class BlogIndex extends React.Component {
 
-  // toggleYear() {
-    //   if (this.pro)
-    // }
   render() {
     const { data } = this.props
-    console.log(typeof(data))
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
     const description = data.site.siteMetadata.description
-
-    console.log(typeof(posts))
-    console.log(posts)
-
-    // This works!
-    console.log(posts[0].next.frontmatter.date)
-    console.log(posts[0].node.frontmatter.date)
+    var num = 0
 
     return (
       <Layout location={this.props.location} title={siteTitle} description={description}>
-      <SEO title="All posts" />
+      <SEO title={siteTitle} />
       
-      {posts.map(obj => {
-        const { node, next } = obj
+      {posts.map(edge => {
+        const { node, next } = edge
         const title = node.frontmatter.title || node.fields.slug
         const nextPost = next ? next : node
         const currYear = node.frontmatter.date.split(" ").pop()
         const nextYear = nextPost.frontmatter.date.split(" ").pop()
         const year = currYear !== nextYear ? currYear : " "
+        num += 1
 
         return (
           <div>
-                <h1>{year}</h1>
+                <h1>{num}</h1>
               <div key={node.fields.slug}>
                 <h3
                   style={{

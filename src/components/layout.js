@@ -3,10 +3,10 @@ import { Link } from "gatsby"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children, description } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
+    const { location, title, children, description } = this.props;
+    const rootPath = `${__PATH_PREFIX__}/`;
     let header
-
+    
     if (location.pathname === rootPath) {
       header = (
         <div className="pt3">
