@@ -27,18 +27,18 @@ class BlogIndex extends React.Component {
 
         return (
           <div key={node.fields.slug}>
-            {yearHeader && <h1 className="helvetica fw1 f4 tc faded-blue bb mb4">{currYear}</h1>}
-            <h3 className="mt0 mb2">
-              <Link style={{ boxShadow: `none` }} className="alink helvetica faded-orange" to={node.fields.slug}>
+            {yearHeader && <h1 className="roboto f4 fw4 tc faded-blue mb4">{currYear}</h1>}
+            <h3 className="mt0 mb2 pt3 bt b--light-gray">
+              <Link style={{ boxShadow: `none` }} className="alink roboto b faded-orange" to={node.fields.slug}>
                 {title}
               </Link>
             </h3>
-            <small className="f6 helvetica faded-blue tr">{node.frontmatter.date}</small>
+            <small className="f5 roboto faded-blue fr">{node.frontmatter.date.split(',')[0]}</small>
             <p
               dangerouslySetInnerHTML={{
                 __html: node.frontmatter.description || node.excerpt,
               }}
-              className="f6 helvetica faded-blue"
+              className="f6 roboto faded-blue"
               />
           </div>
         )
@@ -71,7 +71,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMMM D, YYYY")
             title
             description
           }
