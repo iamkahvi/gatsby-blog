@@ -5,16 +5,21 @@ class Layout extends React.Component {
   render() {
     const { location, title, children, description } = this.props;
     const rootPath = `${__PATH_PREFIX__}/`;
+
+    const nav = (
+      <p>
+        <Link to={'/'} style={{ boxShadow: "none" }} className="alink roboto faded-orange mr2">Home</Link> /
+        <Link to={'/book-list'} style={{ boxShadow: "none" }} className="alink roboto faded-orange mh2">Book List</Link> /
+        <Link to={'/about'} style={{ boxShadow: "none" }} className="alink roboto faded-orange ml2">About</Link>
+      </p>
+    )
+
     let header
     
     if (location.pathname === rootPath) {
       header = (
-        <div className="pt3">
-          <p>
-            <Link to={'/'} style={{ boxShadow: "none" }} className="alink helvetica faded-orange mh2">Home</Link> / 
-            <Link to={'/book-list'} style={{ boxShadow: "none" }} className="alink helvetica faded-orange mh2">Book List</Link> / 
-            <Link to={'/about'} style={{ boxShadow: "none" }} className="alink helvetica faded-orange mh2">About</Link>
-          </p>
+        <div>
+          {nav}
           <h1
             className="mt3 mb0"
           >
@@ -33,18 +38,14 @@ class Layout extends React.Component {
       )
     } else {
       header = (
-        <div className="pt3">
-          <p>
-            <Link to={'/'} style={{ boxShadow: "none" }} className="alink helvetica faded-orange mh2">Home</Link> /
-            <Link to={'/book-list'} style={{ boxShadow: "none" }} className="alink helvetica faded-orange mh2">Book List</Link> /
-            <Link to={'/about'} style={{ boxShadow: "none" }} className="alink helvetica faded-orange mh2">About</Link>
-          </p>
-          </div>
+        <div>
+          {nav}
+        </div>
       )
     }
     return (
       <div className="w-90 mw7 center">
-        <header className="pa2 pt3">{header}</header>
+        <header className="pa2 pt5">{header}</header>
         <main className="pa2">{children}</main>
       </div>
     )

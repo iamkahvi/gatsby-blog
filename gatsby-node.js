@@ -9,6 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
     `
       {
         allMarkdownRemark(
+          filter: { frontmatter: { layout: {eq: "post"} } }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -52,15 +53,12 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
-exports.onCreateNode = ({ node }) => {
-  console.log(node.internal.type)
-}
-
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
+    console.log(value)
     createNodeField({
       name: `slug`,
       node,

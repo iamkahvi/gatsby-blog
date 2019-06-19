@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from 'styled-components'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,6 +12,13 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
+    const Body = styled.div`
+      font-family: 'Roboto';
+      margin-bottom: 3rem;
+      line-height: 1.5;
+      color: #297373;
+    `
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
       <SEO
@@ -18,11 +26,13 @@ class BlogPostTemplate extends React.Component {
         description={post.frontmatter.description || post.excerpt}
       />
 
-        <h1 className="f1 helvetica">{post.frontmatter.title}</h1>
-        <p className="f5 helvetica pt0">
+        <h1 className="f1 roboto">{post.frontmatter.title}</h1>
+        <p className="f5 roboto pt0">
           {post.frontmatter.date}
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Body 
+          dangerouslySetInnerHTML={{ __html: post.html }} 
+        />
         <hr
           style={{
             marginBottom: rhythm(1),
