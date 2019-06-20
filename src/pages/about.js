@@ -12,6 +12,7 @@ class BlogAbout extends React.Component {
         return (
             <Layout location={this.props.location} title={siteTitle}>
                 <SEO title="about" />
+                <p>Someone call the fucking cops, </p>
             </Layout>
         )
     }
