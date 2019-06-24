@@ -1,3 +1,17 @@
+.alink .booklist {
+	margin-bottom: 30px;
+
+  &::after {
+	  background-color: #DAD2BC;
+	}
+
+	&:hover {
+		&::after {
+			height: 65%;
+		}
+	}
+}
+
 .alink {
     color: #FF8552;
     background-color: transparent;
