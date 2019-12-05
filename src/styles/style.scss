@@ -1,0 +1,74 @@
+$c-base__03: #0D2B35;
+$c-base__02: #297373; //body color
+$c-base__01: #5C6E74;
+$c-base__00: #697B82;
+$c-base__0: #869395;
+$c-base__1: #96A0A0;
+$c-base__2: #EDE7D6;
+$c-base__3: #FCF5E4;
+
+$c-accent__blue: #FF8552; //important stuff
+$c-accent__darkblue: #297373;
+$c-accent__green: #DAD2BC;
+
+// Breakpoints
+$bp__sm: 45rem; // 450px
+
+// Misc
+$m-border: 1px solid $c-base__2;
+
+
+.textBody {
+  font-family: 'Roboto';
+  margin-bottom: 3rem;
+  color: #297373;
+}
+
+.textBody p {
+  font-family: 'Roboto';
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.textBody h1, h2, h3 {
+  font-family: 'Roboto';
+  color: red;
+}
+
+.textBody h2, h3, h4, h5, h6 {
+  font-family: 'Roboto';
+  color: #297373;
+  font-weight: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100%;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+h1 {
+  font-weight: 400;
+  color: $c-accent__blue;
+}
+
+h3 {
+  font-weight: lighter;
+}
+
+h3 a, h3 small {
+  font-weight: 400;
+}
+
+h2,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    color: $c-base__02;
+}

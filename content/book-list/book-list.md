@@ -1,13 +1,59 @@
 ---
 title: My Book List
 layout: book-list 
-permalink: /book-list
+permalink: /book-list/
 ---
 
 <em>First</em>: Reading a book requires so much of my attention that I never finish books that do not interest me. Therefore, I would recommend all the books listed below. <br><br>
 This list will be updated continuously.
 
 ## <u> this year </u>
+
+- <b>Fleishman Is in Trouble</b> - <em>25/11/2019</em>  
+A story about a couple. Their divorce, their children, the origins of their conflict. Told from the perspective of the husband’s close friends. The narrative explores both sides of the conflict. The husband, Toby, is more responsible for the kids while the wife, Rachel, is determined to work more. Made me think about the idea that there’s not always a culprit for bad shit that happens. Sometimes you can’t blame anyone.  
+Despite that bleak realization, it's still a funny book and I enjoyed it.
+<br><br>
+
+- <b>Alex's Adventures in Numberland</b> - <em>04/10/2019</em>  
+One of the most interesting non-fiction books I've read in a while. I will say it's put me sleep more than once, but only while I'm reading before bed. A book that certainly made me more interested in numbers. The symmetry and poetry math is astonishing. It's funny how a book about numbers has made me more interested in math than ~7 years of math classes. Really cool stuff.   
+[Highlights here](/_pages/highlights/Numberland.html)
+<br><br>
+
+- <b>The Wind-Up Bird Chronicle</b> - <em>30/08/2019</em>  
+The first Japanese author I've read. Really interesting style. Focuses on relationships and sex and lust. It's all very mysterious but well put together. 
+<br><br>
+
+- <b>Children of Time</b> - <em>07/07/2019</em>  
+Coming back to science fiction after a while. This book is about what happens to humanity thousands of years in the future. About the development of a society. It gets interesting early on, and the characters evolve wildly by the end. A bit unsettling at times, but a happy ending.
+<br><br>
+
+- <b>The Overstory</b> - <em>06/05/2019</em>  
+This book begins as separate stories that revolve around several motifs. In this case, trees, nature, resistance, activism. I love how the book starts, the characters are immediately so interesting to me. It’s an emotional book. I need to read it again. A lot about inner dialogue, relationships and the names of trees. 
+<br><br>
+
+- <b>Interpreter of Maladies</b> - <em>16/04/2019</em>  
+A collection of short stories centered around recent immigrants from India to the US. I can empathize with this one more than usual. My mom’s side followed this immigrant experience pretty closely. It’s good at describing the sacrifices made and motivations, etc. 
+[S1E2](https://www.washingtonpost.com/news/arts-and-entertainment/wp/2015/11/12/aziz-ansaris-new-show-perfectly-captures-what-its-like-being-the-child-of-immigrants/?utm_term=.642150921c67){:target="blank"} 
+of Master of None is in the same vein. Well written and personally relevant.
+<br><br>
+
+- <b>Less</b> - <em>24/03/19</em>  
+This was the first explicitly comedic book I've read in a while. I thought it was sharper than it was funny, but often those two go hand in hand. Witty and quick but emotional. I can honestly say I have a different perspective on relationships after reading it. Maybe I'll read it again when I turn 45.
+[Highlights here](/_pages/highlights/Less.html)
+<br><br>
+
+- <b>Ghost Town</b> - <em>21/02/19</em>  
+I haven’t read science-fiction in a while so this was refreshing. The tone of this book is similar to the first season of True Detective; nihilistic, brutal crimes, midwestern America. The cool part was the time travel. It was well thought out and actually added to the story instead of distracting from it. Overall it’s gritty but smart and the ending is fantastic. 
+<br><br>
+
+- <b>Animal Farm</b> - <em>19/02/19</em>  
+A classic Orwell story that I should’ve read earlier. Apparently he meant to expose the “Soviet myth” with this one. It’s not long, only took a day to read. Illustrates a bunch of political realities really well. Made me more aware of the fragility we are living through.
+[Highlights here](/_pages/highlights/Animal-Farm.html)
+<br><br>
+
+- <b>Educated</b> - <em>13/02/19</em>  
+This story is astonishing. The realities the author (Tara Westover) lived through and managed to escape are unlike anything I’ve ever seen or read about. She was raised in a separate reality dictated by her father. Beyond that, the patterns of abuse within the family made parts of this book difficult to read. Yet Tara managed to escape and get an education. The book made me realize how terrifying it is that education is becoming a political  device. A broader perspective should be everyone’s right.
+<br><br>
 
 - <b>Asymmetry</b> - <em>05/02/19</em>  
 The structure of this book is a bit of a puzzle. The first, second and third all act tie together in a subtle way. I like the book because of the content, not the puzzle. Intricate and enjoyed.
@@ -19,7 +65,7 @@ I didn't realize this book was part of a trilogy until I finished it which I gue
 
 - <b>Priestdaddy</b>   
 I read this one last year but never wrote about it. This book is hilarious. Focuses on the struggles of masculinity, church, religion, family. Manages to find humour in every one of those topics. I really liked it.
-[Highlights here](/_pages/highlights/Priestdaddy)
+[Highlights here](/_pages/highlights/Priestdaddy.html)
 <br><br>
 
 - <b>Shoe Dog</b>- <em>07/01/19</em>   
@@ -44,12 +90,12 @@ I love the Greek Gods. Their combination of vanity and absolute power always mak
 
 - <b>Naked Economics</b>    
 I haven't finished this book yet. Mostly because it has a tendency to put me to sleep which is convenient since I read it right before bed. Despite that, I enjoy every second I'm awake! Hopefully it will be done by Christmas. (Update: Just finished it)   
-[Highlights here](/_pages/highlights/Naked-Economics)
+[Highlights here](/_pages/highlights/Naked-Economics.html)
 <br><br>
 
 - <b>Orchid and the Wasp</b>    
 This book reminds me of The Goldfinch. Despite the unusual situations Gael (the protagonist) finds herself in, I *believe* in the logic of why she got there. In fact, I feel like that's where I would be in her shoes despite her facetious, ruthless, manipulative personality. Yet at her core, Gael is motivated by her caring for her family. I guess the ends justify the means. 
-[Highlights here](/_pages/highlights/Orchid-and-the-Wasp)
+[Highlights here](/_pages/highlights/Orchid-and-the-Wasp.html)
 <br><br>
 
 - <b>The Looming Tower</b>    
@@ -65,7 +111,7 @@ Fun book to read. It goes by fast mostly due to the narrator’s hilarious tone.
 <br><br>
 
 - <b>The Idiot</b>  
-This book is dense. It took me a while to finish. I haven't encountered this type of writing style before. It's abrupt and unique. I identify with the main character and her setting deeply. [Highlights here](/_pages/highlights/The-Idiot).
+This book is dense. It took me a while to finish. I haven't encountered this type of writing style before. It's abrupt and unique. I identify with the main character and her setting deeply. [Highlights here](/_pages/highlights/The-Idiot.html).
 <br><br>
 
 - <b>La Belle Sauvage</b>  
@@ -189,7 +235,7 @@ Brutal, cunning and savage. Leo Dicaprio and bears. If you liked the movie, you�
 <br><br>
 
 - <b>The Secret History</b>  
-By the same author who wrote *the Goldfinch* (my favourite book). “The story is an inverted detective story, not a whodunit but a *whydunit*”. <— from Wikipedia
+By the same author who wrote *the Goldfinch* (my favourite book). “The story is an inverted detective story, not a whodunit but a *whydunit*”. <— from Wikipedia
 <br><br>
 
 

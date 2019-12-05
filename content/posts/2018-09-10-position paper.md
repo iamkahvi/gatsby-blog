@@ -9,7 +9,7 @@ I’ve been going through old papers of mine recently and this one struck me as 
 
 Kahvi Patel<br>
 Research Paper<br>
-April 17<sup>th</sup>, 2017 
+April 17<sup>th</sup>, 2017
 {: .academic}
 
  In the early 20<sup>th</sup> century, the separation between scientific and non-scientific theories was vague. The most practical way to distinguish a theory as scientific was to determine whether it was known a posteriori; relied on an empirical method. This meant that astrology, given its vast amounts of observed information, qualified as a scientific theory. In 1919, Karl Popper sought to contrive an alternative separation. Falsifiability was the philosophical term he coined. With this theory, Popper set the groundwork for the modern scientific method and, simultaneously, addressed the problem of induction that had troubled Hume and many other philosophers before him. Popper&rsquo;s theory of Demarcation not only has its roots in philosophy, but in human nature. As has been the case throughout history, human nature is more prone towards what Popper distinguished as &ldquo;pseudo-scientific&rdquo; theories rather than &ldquo;scientific&rdquo; ones. Our inherent desires are what make Popper&rsquo;s theory of Falsification especially relevant; Demarcation is a tool to fight against our own misleading instincts. In order to repress this widespread malpractice, we must employ tactics of doubt exemplified by philosophers like Descartes and Socrates in order to enforce a more logical, and therefore more productive, general consciousness. As Popper originally described in his theory, <em>we must seek falsification</em>, or doubt, <em>rather than confirmation</em> in order to prove our own theories.
@@ -45,8 +45,7 @@ This situation demonstrates the ambiguity of Freud&rsquo;s (and Adler&rsquo;s) t
 Works Cited
 {: .academic}
 - Popper, Karl. <em>Conjectures and Refutations</em>. Basic Books, 1962. <br>
-- Nicholas Taleb, Nassim. <em>The Black Swan: The Impact of the Highly
-- Improbable.</em> Random House, 2007.<br>
+- Nicholas Taleb, Nassim. <em>The Black Swan: The Impact of the Highly Improbable</em>, 2007<br>
 - Ferguson, Niall. &ldquo;Political risk and the international bond market between the 1848 revolution and the outbreak of the First World War.&rdquo; <em>Economic History Review</em>, Vol 29, no. 1, February 2006.<br>
 - Plato. <em>Apology</em>. translated by G.M.A. Grube, Hackett Publishing Company, 2000.<br>
 - Descartes, Renee. <em>Meditations on First Philosophy</em>. translated by Jonathan&nbsp;F.&nbsp;Bennett, Cambridge University Press, 1996.<br>

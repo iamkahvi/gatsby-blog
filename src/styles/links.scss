@@ -1,24 +1,31 @@
-.alink .booklist {
-	margin-bottom: 30px;
+$c-base__03: #0D2B35;
+$c-base__02: #297373; //body color
+$c-base__01: #5C6E74;
+$c-base__00: #697B82;
+$c-base__0: #869395;
+$c-base__1: #96A0A0;
+$c-base__2: #EDE7D6;
+$c-base__3: #FCF5E4;
 
-  &::after {
-	  background-color: #DAD2BC;
-	}
+$c-accent__blue: #FF8552; //important stuff
+$c-accent__darkblue: #297373;
+$c-accent__green: #DAD2BC;
 
-	&:hover {
-		&::after {
-			height: 65%;
-		}
-	}
-}
+// Breakpoints
+$bp__sm: 45rem; // 450px
 
-.alink {
-    color: #FF8552;
+// Misc
+$m-border: 1px solid $c-base__2;
+
+a {
+    box-shadow: none;
+    color: $c-accent__blue;
     background-color: transparent;
     text-decoration: none;
 
     position: relative;
     display: inline-block;
+    padding: 5px 1px;
     transition: color ease 0.3s;
 
     /* Hover animation effect for all buttons */
@@ -30,7 +37,7 @@
       height: 0;
       left: 0;
       bottom: 0;
-      background-color: #FF8552;
+      background-color: $c-accent__blue;
       transition: all ease 0.1s;
     }
 
@@ -44,21 +51,21 @@
 }
 
 /* Override hover animation with no-hov class */
-.alink .no-hov {
+a.no-hov {
 	&:after {
 		content: none
 	}
 
 	&:hover {
-		color: #FF8552
+		color: $c-accent__darkblue
 	}
 }
 
-.alink .nav {
+a.nav {
   padding: 10px 35px;
   overflow:hidden;
 }
-.alink .nav:before {
+a.nav:before {
     font-family: FontAwesome;
     content:"\f07a";
     position: absolute;
