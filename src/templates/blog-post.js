@@ -18,7 +18,7 @@ class BlogPostTemplate extends React.Component {
           <h1 className="f3 faded-blue ma0 pb0 fw4 roboto">
             {post.frontmatter.title}
           </h1>
-          <p className="f4 fw2 roboto pa0 ma0 faded-blue">
+          <p className="f5 fw4 roboto pa0 ma0 faded-blue">
             {post.frontmatter.date}
           </p>
         </header>

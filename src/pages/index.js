@@ -42,7 +42,7 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small className="f5 roboto faded-blue fr">
+              <small className="f5 roboto faded-blue fr mb3">
                 {node.frontmatter.date.split(",")[0]}
               </small>
               <p

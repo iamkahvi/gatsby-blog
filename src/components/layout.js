@@ -26,10 +26,8 @@ function Layout(props) {
 
   const bigTitle = (
     <div>
-      <h1 className="mt4 mb0">
-        <Link to="/" className={titleStyle}>
+      <h1 className="mt4 mb0 b helvetica underline f1">
           {title}
-        </Link>
       </h1>
       <p className={descriptionStyle}>
         {description}
@@ -57,7 +55,7 @@ function Layout(props) {
   return (
     <div className="w-90 mw7 center">
       <header className="pa2 mt4">{header}</header>
-      <main className="pa2">{children}</main>
+      <main className="mt4 pa2">{children}</main>
     </div>
   );
 }
