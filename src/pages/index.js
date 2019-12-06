@@ -29,11 +29,11 @@ class BlogIndex extends React.Component {
           const yearHeader = currYear !== previousYear ? true : false
 
           return (
-            <div key={node.fields.slug}>
+            <div className="pv3 bt b--light-gray" key={node.fields.slug}>
               {yearHeader && (
                 <h1 className="roboto f4 fw4 tc faded-blue mb4">{currYear}</h1>
               )}
-              <h3 className="mt0 mb2 pt3 bt b--light-gray">
+              <h3 className="mt0 mb2 ">
                 <Link
                   style={{ boxShadow: `none` }}
                   className="alink roboto b faded-orange"
