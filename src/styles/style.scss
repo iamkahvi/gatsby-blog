@@ -17,6 +17,19 @@ $bp__sm: 45rem; // 450px
 // Misc
 $m-border: 1px solid $c-base__2;
 
+.textBody hr {
+  margin-bottom: 25px;
+}
+
+.textBody ul, li {
+  margin-left: 1.2rem;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.textBody ul, ol {
+  margin-bottom: 20px;
+}
 
 .textBody {
   font-family: 'Roboto';
@@ -66,12 +79,14 @@ h3 a, h3 small {
   font-weight: 400;
 }
 
+h1,
 h2,
 h4,
 h5,
 h6 {
+  font-family: 'Roboto';
+
     font-weight: 400;
-    color: $c-base__02;
 }
 
 input {
@@ -99,7 +114,7 @@ input {
 
 input:focus {
   &#home {
-    font-size: 5em;
+    font-size: 3em;
   }
   &#book-list {
     font-size: 2em;
