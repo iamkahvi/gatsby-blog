@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "kahvis-blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Kahvi Patel",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -24,7 +23,6 @@
     "gatsby-remark-smartypants": "^2.0.9",
     "gatsby-source-filesystem": "^2.0.43",
     "gatsby-transformer-remark": "^2.3.12",
-    "gatsby-transformer-sharp": "^2.1.21",
     "node-sass": "^4.12.0",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",

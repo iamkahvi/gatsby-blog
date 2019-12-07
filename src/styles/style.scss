@@ -73,3 +73,39 @@ h6 {
     font-weight: 400;
     color: $c-base__02;
 }
+
+input {
+  -webkit-transition: font-size 0.05s;
+  /* For Safari 3.1 to 6.0 */
+  transition: font-size 0.05s;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  border: none;
+  font-size: 2em;
+  border-bottom: 1px solid $c-base__02;
+  color: $c-accent__blue;
+  &#home {
+    background: rgba(76, 175, 80, 0);
+    font-size: 2em;
+  }
+  &#book-list {
+    background: rgba(76, 175, 80, 0);
+    font-size: 1em;
+  }
+  margin-bottom: 15px;
+  width: 100%;
+  outline: none;
+}
+
+input:focus {
+  &#home {
+    font-size: 5em;
+  }
+  &#book-list {
+    font-size: 2em;
+  }
+}
+
+input::placeholder {
+  color: lightgrey;
+}
