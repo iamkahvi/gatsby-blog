@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import marked from "marked"
+import kramed from "kramed"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -15,7 +16,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <header className="flex justify-between items-center pb3 mb4 bb b--faded-blue">
+        <header className="flex justify-between items-center pb3 mb4 bb b--faded-faded-blue">
           <h1 className="f3 faded-blue ma0 pb0 fw4 roboto">
             {post.frontmatter.title}
           </h1>

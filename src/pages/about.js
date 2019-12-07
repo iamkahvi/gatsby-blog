@@ -1,29 +1,38 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
-import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import marked from "marked"
+import kramed from "kramed"
 
 function BlogAbout(props) {
-  const { data, location } = props;
-  const siteTitle = data.site.siteMetadata.title;
+  const { data, location } = props
+  const { rawMarkdownBody, html } = data.markdownRemark
+  const { title } = data.markdownRemark.frontmatter
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={title}>
       <SEO title="about" />
-      <p>Someone call the fucking cops, </p>
+      <h1 className="mt0">{title}</h1>
+      <div
+        className="textBody about"
+        dangerouslySetInnerHTML={{ __html: kramed(rawMarkdownBody) }}
+      />
     </Layout>
-  );
+  )
 }
 
-export default BlogAbout;
+export default BlogAbout
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
+    markdownRemark(frontmatter: { permalink: { eq: "/about/" } }) {
+      html
+      rawMarkdownBody
+      frontmatter {
         title
       }
     }
   }
-`;
+`

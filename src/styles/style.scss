@@ -17,6 +17,11 @@ $bp__sm: 45rem; // 450px
 // Misc
 $m-border: 1px solid $c-base__2;
 
+    ::selection {
+      background-color: rgb(255, 134, 82);
+    }
+
+
 .textBody hr {
   margin-bottom: 25px;
 }
@@ -124,3 +129,21 @@ input:focus {
 input::placeholder {
   color: lightgrey;
 }
+
+.about img {
+	width: 23vh;
+	float: right;
+	margin-right: 0px;
+	margin-left: 10px;
+}
+
+@media screen and (max-width: 565px) {
+  .about img {
+	display: block;
+	float:none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+  }
+}
+

@@ -335,6 +335,7 @@ img { max-width: 100%; }
    --color-name = each color variable name is also a border color name
 
 */
+.b--faded-faded-blue { border-color: rgba(41, 115, 115, 0.25)}
 .b--faded-blue { border-color: #297373; }
 .b--black { border-color: #000; }
 .b--near-black { border-color: #111; }
