@@ -14,6 +14,9 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle} description={description}>
+      <Link to="/book-list/" className="mb4 booklist">
+        <img src="./assets/booklist.png" />
+      </Link>
       <input
         onChange={e => setSearch(e.target.value)}
         placeholder="search..."

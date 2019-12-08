@@ -17,6 +17,21 @@ $bp__sm: 45rem; // 450px
 // Misc
 $m-border: 1px solid $c-base__2;
 
+a.booklist {
+	margin-bottom: 30px;
+
+    &::after {
+    background-color: $c-accent__green;
+    margin-bottom: 12px;
+	}
+
+	&:hover {
+		&::after {
+      height: 65%;
+
+		}
+	}
+}
 a {
     box-shadow: none;
     color: $c-accent__blue;
