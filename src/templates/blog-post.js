@@ -2,8 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import marked from "marked"
-import kramed from "kramed"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -26,7 +24,7 @@ class BlogPostTemplate extends React.Component {
         </header>
         <div
           className="textBody"
-          dangerouslySetInnerHTML={{ __html: marked(post.rawMarkdownBody) }}
+          dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </Layout>
     )
@@ -50,7 +48,7 @@ export const pageQuery = graphql`
       rawMarkdownBody
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMM DD, YYYY")
         description
       }
     }

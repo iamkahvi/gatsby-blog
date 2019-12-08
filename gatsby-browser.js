@@ -2,4 +2,4 @@
 import "./src/styles/tachyons.css"
 import "./src/styles/links.scss"
 import "./src/styles/style.scss"
-import "./src/styles/prism-tomorrow.css"
+import "./src/styles/prism.css"
