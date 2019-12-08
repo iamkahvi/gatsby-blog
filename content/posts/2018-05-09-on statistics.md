@@ -48,7 +48,7 @@ Every time a coin is flipped heads, the chance of the second flip being heads st
 
 Every time a car is parked, the chance of the driver getting a parking ticket increases. This is a dependent relation.
 
-Often, we do not realize what event are independent and dependent.
+Often, we do not realize what events are independent and dependent.
 
 The classic example is a “hot-hand” in basketball. After a player makes a certain amount of shots in a row, it seems more likely that he will make the next shot. We assume that this is a dependent relation.
 

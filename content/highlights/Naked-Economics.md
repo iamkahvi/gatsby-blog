@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: highlight
 title: Naked Economics Highlights
+slug: Naked Economics
 date: 2018-12-15
 ---
 
@@ -414,7 +415,7 @@ Charles Wheelan, Naked Economics: Undressing the Dismal Science, loc. 3365-3367
 <hr>
 
 
- > Indeed, if we all believe the economy is likely to get worse, then it will get worse. 
+ > Indeed, if we all believe the economy is likely to get worse, then it will get worse.
 
 Charles Wheelan, Naked Economics: Undressing the Dismal Science, loc. 3410-3412
 <hr>

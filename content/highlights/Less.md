@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: highlight
 title: Less, A Novel Highlights
+slug: Less
 date: 2019-03-19
 ---
 
@@ -46,7 +47,7 @@ Andrew Sean Greer, Less: A Novel, loc. 1856-1857
 <hr>
 
 
-> because they’ve survived the booze, the hashish, the migraines. Not that at all. It’s that they’ve survived everything in life, humiliations and disappointments and heartaches and missed opportunities, bad dads and bad jobs and bad sex and bad drugs, all the trips and mistakes and face-plants of life, to have made it to fifty and to have made it here: to this frosted-cake landscape, these mountains of gold, the little table they can now see sitting on the dune, set with olives and pita and glasses and wine chilling on ice, with the sun waiting more patiently than any camel for their arrival. So, yes. As with almost every sunset, but with this one in particular: shut the fuck up. The silence lasts as long as it takes a camel to summit a dune. Lewis notes aloud that today is his twentieth anniversary, but of course his phone won’t work out here, so he’ll have to call Clark when they get to Fez. Mohammed turns back and says, “Oh, but there is Wi-Fi in the desert.” “There is?” Lewis asks. “Oh, of course, everywhere,” Mohammed says, nodding. “Oh good.” Mohammed holds up one finger. “The problem is the password.” 
+> because they’ve survived the booze, the hashish, the migraines. Not that at all. It’s that they’ve survived everything in life, humiliations and disappointments and heartaches and missed opportunities, bad dads and bad jobs and bad sex and bad drugs, all the trips and mistakes and face-plants of life, to have made it to fifty and to have made it here: to this frosted-cake landscape, these mountains of gold, the little table they can now see sitting on the dune, set with olives and pita and glasses and wine chilling on ice, with the sun waiting more patiently than any camel for their arrival. So, yes. As with almost every sunset, but with this one in particular: shut the fuck up. The silence lasts as long as it takes a camel to summit a dune. Lewis notes aloud that today is his twentieth anniversary, but of course his phone won’t work out here, so he’ll have to call Clark when they get to Fez. Mohammed turns back and says, “Oh, but there is Wi-Fi in the desert.” “There is?” Lewis asks. “Oh, of course, everywhere,” Mohammed says, nodding. “Oh good.” Mohammed holds up one finger. “The problem is the password.”
 
 Andrew Sean Greer, Less: A Novel, loc. 2473-2485
 <hr>

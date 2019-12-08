@@ -10,12 +10,20 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/posts`,
         name: `posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/highlights`,
+        name: `highlights`,
       },
     },
     {
@@ -37,6 +45,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-prismjs`,
           },

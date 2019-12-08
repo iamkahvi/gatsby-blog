@@ -1,8 +1,9 @@
 ---
-layout: post 
-title: Animal Farm, A Fairy Story Highlights 
-date: 2019-04-13 
---- 
+layout: highlight
+title: Animal Farm, A Fairy Story Highlights
+slug: Animal Farm
+date: 2019-04-13
+---
 by  George Orwell
 
 

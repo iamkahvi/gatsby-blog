@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from "react"
 import { Link } from "gatsby"
-import hljs from "highlight.js"
 
 function Layout(props) {
   const { location, title, children, description } = props

@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: highlight
 title: Orchid and the Wasp Highlights
+slug: Orchid
 date: 2018-07-25
 ---
 by Caoilinn Hughes
@@ -11,7 +12,7 @@ Caoilinn Hughes, Orchid & the Wasp, loc. 1105-1106
 
 <hr>
 
-> 'What will you do if you fail?’  
+> 'What will you do if you fail?’
 ‘Realistically, I’d break something. Not, like, a jaw! A laptop. Crockery. The hourglass my father got me as a metaphor-heavy gift. And then move on. Take especially good care of my clients. Restrategize. I don’t make plans for failing with my personal goals. Pursue success and deal with failure if and as you hit upon it.’
 
 Caoilinn Hughes, Orchid & the Wasp, loc. 1504-1507
@@ -56,15 +57,15 @@ Caoilinn Hughes, Orchid & the Wasp, loc. 4617-4622
 
 <hr>
 
-> But it’s been over two years, now, since I left the NSO. And these two years have taught me a lot about what I want at this stage of my life and what’s important.’  
- ‘Let me guess–’  
+> But it’s been over two years, now, since I left the NSO. And these two years have taught me a lot about what I want at this stage of my life and what’s important.’
+ ‘Let me guess–’
   ‘No,’ Sive says sternly, casting her grey eyes upon Gael. ‘I won’t have you guess at my deepest desires, thank you very much.’ Gael feels small for a fraction of a second. She feels the half foot her mother has on her. ‘Sorry.’
 
 Caoilinn Hughes, Orchid & the Wasp, loc. 4954-4958
 
 <hr>
 
-> ‘Why wouldn’t he tell me all this? Doesn’t he think I’d want to know? Or that I have a right to know, even?'  
+> ‘Why wouldn’t he tell me all this? Doesn’t he think I’d want to know? Or that I have a right to know, even?'
 Sive’s voice is low, now, and circumspect. ‘He won’t talk about death to people who haven’t experienced it. They can’t relate and he doesn’t want to make them try. That’s a generosity. It’s the most difficult thing; the existence of life’s opposite, hovering over us always as a possibility. Just a flippant iteration of events.
 
 Caoilinn Hughes, Orchid & the Wasp, loc. 5013-5016

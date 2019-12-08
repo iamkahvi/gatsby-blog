@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: highlight
 title: Priestdaddy Highlights
+slug: Priestdaddy
 date: 2018-06-09
 ---
 

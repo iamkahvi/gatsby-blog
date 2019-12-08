@@ -37,6 +37,7 @@ const BlogIndex = ({ data, location }) => {
           const currYear = node.frontmatter.date.split(" ").pop()
           const previousYear = previousPost.frontmatter.date.split(" ").pop()
           const yearHeader = i == 0 || currYear !== previousYear ? true : false
+          const slug = node.frontmatter.title.replace(/\s+/g, "-").toLowerCase()
 
           return (
             <>
@@ -45,13 +46,13 @@ const BlogIndex = ({ data, location }) => {
               )}
               <div
                 className="pv3 bt b--light-gray flex items-center justify-between"
-                key={node.fields.slug}
+                key={`/${slug}`}
               >
-                <h3 className="mv0">
+                <h3 className="mv0 w-two-thirds">
                   <Link
                     style={{ boxShadow: `none` }}
                     className="alink roboto b faded-orange"
-                    to={node.fields.slug}
+                    to={`/${slug}`}
                   >
                     {title}
                   </Link>
@@ -62,8 +63,11 @@ const BlogIndex = ({ data, location }) => {
                     className="f6 fw4 roboto faded-blue"
                   />
                 </h3>
-                <small className="f5 roboto faded-blue fr">
-                  {node.frontmatter.date.split(",")[0]}
+                <small className="post-date f5 roboto faded-blue fr tr w-third">
+                  {node.frontmatter.displayDate}
+                </small>
+                <small className="post-date-small f5 roboto faded-blue fr tr w-third">
+                  {node.frontmatter.displayDateSmall}
                 </small>
               </div>
             </>
@@ -99,7 +103,9 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM D, YYYY")
+            date(formatString: "MMM D, YYYY")
+            displayDate: date(formatString: "MMMM Do")
+            displayDateSmall: date(formatString: "MMM D")
             title
             description
           }

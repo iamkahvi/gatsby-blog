@@ -1,8 +1,9 @@
 ---
-layout: post 
-title: Alex's Adventure in Numberland Highlights 
-date: 2019-10-04 
---- 
+layout: highlight
+title: Alex's Adventure in Numberland Highlights
+slug: Numberland
+date: 2019-10-04
+---
 by Alex Bellos
 
 
