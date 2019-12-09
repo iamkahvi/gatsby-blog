@@ -10,6 +10,7 @@ module.exports = {
     },
   },
   plugins: [
+	`gatsby-plugin-csp`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sass`,
     {
