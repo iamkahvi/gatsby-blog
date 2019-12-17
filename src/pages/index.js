@@ -40,7 +40,10 @@ const BlogIndex = ({ data, location }) => {
           const currYear = node.frontmatter.date.split(" ").pop()
           const previousYear = previousPost.frontmatter.date.split(" ").pop()
           const yearHeader = i == 0 || currYear !== previousYear ? true : false
-          const slug = node.frontmatter.title.replace(/\s+/g, "-").toLowerCase()
+          const slug = node.frontmatter.title
+            .replace(/[!'’.()*]/g, "")
+            .replace(/\s+/g, "-")
+            .toLowerCase()
 
           return (
             <>

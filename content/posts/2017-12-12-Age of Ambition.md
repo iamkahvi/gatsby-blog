@@ -20,11 +20,15 @@ Also, the idea that they’re a communist country? Doesn’t the West hate Commi
 <br><br>
 This book was easy to read for a couple reasons. First, it is an interesting introduction to a country I know nothing about. It follows personal journeys of people instead of talking about numbers and economics and boring.
 <br><br>
-Second, it is somewhat reassuring. Here’s a fact that has consistently stuck in my mind: There are more MBAs graduating every year in China than there are undergrads graduating in the US. That’s ridiculous. Especially when there is this pessimistic outlook on the job market. China is a terrifying competitor, compounded by the fact that the US President is practically handing them the role of international leadership. 
+Second, it is somewhat reassuring. Here’s a fact that has consistently stuck in my mind: There are more MBAs graduating every year in China than there are undergrads graduating in the US.
+
+> <em>2019 Kahvi here. That point^ is not true. My uncle told me that once and I never bothered to look it up. I recently tried to find evidence for it. Sorry. Carry on.</em>
+
+ That’s ridiculous. Especially when there is this pessimistic outlook on the job market. China is a terrifying competitor, compounded by the fact that the US President is practically handing them the role of international leadership.
 <br><br>
 That is the interesting part of this book. You are presented with their insane economic success but also China’s flaws and the negative aspect of their ridiculous growth. Notably how there entire society is more “controlled”. It often seems like a Black Mirror episode. **China spends more money on domestic security than national defence**. Bus routes get rerouted so citizens won’t pass the courthouse when contested cases are in session. Creepy stuff. My optimism comes from the fact that the West has freedom and China doesn’t. That inevitably changes the culture and behaviour of people and that is clearly illustrated in the book.
 
-It boils down to the fact that I am not jealous of anyone in China. The feeling of powerlessness against the ruling party is something I am terrified of and hope to never experience. The Politburo seems to have a much lower threshold than America for throwing a hood over someones head and locking them up forever. 
+It boils down to the fact that I am not jealous of anyone in China. The feeling of powerlessness against the ruling party is something I am terrified of and hope to never experience. The Politburo seems to have a much lower threshold than America for throwing a hood over someones head and locking them up forever.
 
 It just seems like the trade off wasn’t worth it. Sure your country is arguably the largest economic superpower in the world but where is your ~culture~? It just seems bland. Relevant quote from the book:
 

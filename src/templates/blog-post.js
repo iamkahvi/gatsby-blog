@@ -15,11 +15,14 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <header className="flex justify-between items-center pb3 mb4 bb b--faded-faded-blue">
-          <h1 className="f3 faded-blue ma0 pb0 fw4 roboto">
+          <h1 className="f3 faded-blue ma0 pb0 fw4 roboto w-70">
             {post.frontmatter.title}
           </h1>
-          <p className="f5 fw4 roboto pa0 ma0 faded-blue">
-            {post.frontmatter.date}
+          <p className="post-date-small f5 fw4 roboto pa0 ma0 faded-blue w-30 tr">
+            {post.frontmatter.displayDateSmall}
+          </p>
+          <p className="post-date f5 fw4 roboto pa0 ma0 faded-blue w-30 tr">
+            {post.frontmatter.displayDate}
           </p>
         </header>
         <div
@@ -48,7 +51,8 @@ export const pageQuery = graphql`
       rawMarkdownBody
       frontmatter {
         title
-        date(formatString: "MMM DD, YYYY")
+        displayDate: date(formatString: "MMMM Do, 2019")
+        displayDateSmall: date(formatString: "MMM D")
         description
       }
     }

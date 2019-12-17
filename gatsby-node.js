@@ -57,8 +57,11 @@ exports.createPages = ({ graphql, actions }) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
       const slug = post.node.frontmatter.title
+        .replace(/[!'’.()*]/g, "")
         .replace(/\s+/g, "-")
         .toLowerCase()
+
+      console.log("SLUG: ", slug)
 
       createPage({
         path: slug,
