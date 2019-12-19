@@ -1,0 +1,21 @@
+Regex to Make Highlights
+
+Author Names: Charles Wheelan
+
+:%s/^Charles.*$/\r\0\r<hr>
+
+:%s/^[^C^<hr>].*$/> \0
+
+:%s/^C[^h].*$/> \0
+
+________________
+
+- \(\w*\w\)\+
+￼
+
+Make all book titles bold
+%s/^- \(\(\s*\w\|\S\)\+\)/- <b>\1<\/b>  
+
+Replace the br’s with two spaces
+%s/<\/b>\s*<br>/<\/b>  /g
+
