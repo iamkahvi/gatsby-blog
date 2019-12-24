@@ -10,7 +10,7 @@ This list will be updated continuously.
 ## <u> this year </u>
 
 - <b>21 Lessons for the 21st Century</b> - <em>18/12/2019</em><br>
-I've been slowly reading this one for a while. It's a book whose concepts really encourage critical thought. In virtually every chapter. Even so, I really enjoy the way Yuval Noah Harari approaches and considers problems. And despite the large concepts, it's gratifying to come to some sort of greater understanding at the end of each chapter. A great book to talk about with friends. Especially if they're studying political science. So many interesting ideas on how to attack policy changes, human behaviour, big stuff. I hope you'll browse the [highlights](/highlights/21-lessons).
+I've been slowly reading this one for a while. It's a book whose concepts encourage critical thought. In virtually every chapter. Even so, I really enjoy the way Yuval Noah Harari approaches and considers problems. And despite the large concepts, it's gratifying to come to some sort of greater understanding at the end of each chapter. A great book to talk about with friends. Especially if they're studying political science. So many interesting ideas on how to attack policy changes, human behaviour, big stuff. I hope you'll browse the [highlights](/highlights/21-lessons).
 <br><br>
 
 - <b>Fleishman Is in Trouble</b> - <em>25/11/2019</em><br>
