@@ -7,8 +7,7 @@ import SEO from "../components/seo"
 
 function BookList(props) {
   const { data, location } = props
-  const { html } = data.markdownRemark
-  const { title } = data.markdownRemark.frontmatter
+  const { html, title } = data.allGhostPage.nodes[0]
 
   const Body = styled.div`
     font-family: "Roboto";
@@ -34,9 +33,9 @@ export default BookList
 
 export const pageQuery = graphql`
   query {
-    markdownRemark(frontmatter: { layout: { eq: "book-list" } }) {
-      html
-      frontmatter {
+    allGhostPage(filter: { title: { eq: "Book List" } }) {
+      nodes {
+        html
         title
       }
     }
