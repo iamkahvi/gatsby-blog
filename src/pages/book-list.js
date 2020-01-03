@@ -33,7 +33,7 @@ export default BookList
 
 export const pageQuery = graphql`
   query {
-    allGhostPage(filter: { title: { eq: "Book List" } }) {
+    allGhostPage(filter: { title: { eq: "My Book List" } }) {
       nodes {
         html
         title
