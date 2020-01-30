@@ -43,16 +43,6 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-        blogPostsGhost: allGhostPost(
-          sort: { fields: published_at, order: DESC }
-        ) {
-          edges {
-            node {
-              title
-              slug
-            }
-          }
-        }
       }
     `
   ).then(result => {
