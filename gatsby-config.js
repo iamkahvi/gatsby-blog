@@ -12,13 +12,19 @@ module.exports = {
   plugins: [
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sass`,
-	{
-	  resolve: `gatsby-source-ghost`,
-	  options: {
-		apiUrl: `https://admin.kahvipatel.com`,
-		contentApiKey:`77acc8ba83d22a06939707075b`
-	  }
-	},
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-90569204-1",
+      },
+    },
+    {
+      resolve: `gatsby-source-ghost`,
+      options: {
+        apiUrl: `https://admin.kahvipatel.com`,
+        contentApiKey: `77acc8ba83d22a06939707075b`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
