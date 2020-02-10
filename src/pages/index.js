@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
+import { navigate } from "@reach/router"
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -12,13 +13,20 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
   const description = data.site.siteMetadata.description
 
+  const handleSearch = e => {
+    if (e.target.value === "music") {
+      navigate("/music")
+    }
+    setSearch(e.target.value)
+  }
+
   return (
     <Layout location={location} title={siteTitle} description={description}>
       <Link to="/book-list/" className="mb4 booklist">
         <img src="./assets/booklist.png" />
       </Link>
       <input
-        onChange={e => setSearch(e.target.value)}
+        onChange={handleSearch}
         placeholder="search..."
         value={search}
         default=""
