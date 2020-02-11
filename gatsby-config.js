@@ -53,6 +53,13 @@ module.exports = {
         name: `about`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/songs`,
+        name: `songs`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-transformer-remark`,
