@@ -20,11 +20,6 @@ export default function MusicPage({ location, data }) {
           <br></br>
         </div>
       ))}
-      <h3 className="mb3 mt4">side b - 02/2020</h3>
-      <audio controls>
-        <source src="/songs/asap_yes.mp3" type="audio/mpeg"></source>
-        Your browser does not support the audio element.
-      </audio>
     </Layout>
   )
 }
