@@ -1,13 +1,29 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
+
+import styles from "../styles/style.scss"
+import { Colors } from "../styles/colors"
 
 function Layout(props) {
   const { location, title, children, description } = props
 
+  const [backgroundColor, setBackgroundColor] = useState("white")
+
+  useEffect(() => {
+    const backgroundColor = Colors[Math.floor(Math.random() * Colors.length)]
+    console.log(backgroundColor)
+    setBackgroundColor(backgroundColor)
+  })
+
   const navStyle = "alink roboto faded-orange"
   const titleStyle = "f1 helvetica b underline faded-orange"
   const descriptionStyle = "f6 roboto pt1 mt2 faded-blue"
+
+  const BackgroundContainer = styled.div`
+    background: ${backgroundColor};
+  `
 
   const nav = (
     <p>
@@ -46,10 +62,12 @@ function Layout(props) {
   }
 
   return (
-    <div className="w-90 mw7 center">
-      <header className="pa2 mt4">{header}</header>
-      <main className="mt4 pa2">{children}</main>
-    </div>
+    <BackgroundContainer>
+      <div className="w-90 mw7 center">
+        <header className="pt4">{header}</header>
+        <main className="mt4 pa2">{children}</main>
+      </div>
+    </BackgroundContainer>
   )
 }
 

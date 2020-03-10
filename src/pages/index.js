@@ -1,9 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import styles from "../styles/style.scss"
 
 const BlogIndex = ({ data, location }) => {
   const [search, setSearch] = useState("")
@@ -46,14 +47,11 @@ const BlogIndex = ({ data, location }) => {
             .toLowerCase()
 
           return (
-            <>
+            <div key={`/${slug}`}>
               {yearHeader && (
                 <h1 className="roboto f4 fw4 tc faded-blue mb4">{currYear}</h1>
               )}
-              <div
-                className="pv3 bt b--light-gray flex items-center justify-between"
-                key={`/${slug}`}
-              >
+              <div className="pv3 bt b--light-gray flex items-center justify-between">
                 <h3 className="mv0 w-two-thirds">
                   <Link
                     style={{ boxShadow: `none` }}
@@ -76,7 +74,7 @@ const BlogIndex = ({ data, location }) => {
                   {node.frontmatter.displayDateSmall}
                 </small>
               </div>
-            </>
+            </div>
           )
         })}
     </Layout>
