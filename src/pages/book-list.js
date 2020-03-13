@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from "react"
+import InputEmail from "../components/emailInput"
 import { graphql } from "gatsby"
-import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -9,14 +9,9 @@ function BookList(props) {
   const { data, location } = props
   const { html, title } = data.allGhostPage.nodes[0]
 
-  const Body = styled.div`
-    font-family: "Roboto";
-    margin-bottom: 3rem;
-    line-height: 1.5;
-    color: #297373;
-  `
+  const addEmail = async (value, setLoading) => {
+    setLoading(true)
 
-  const addEmail = async () => {
     const res = await fetch("http://localhost:3000/email", {
       method: "POST",
       headers: {
@@ -24,10 +19,20 @@ function BookList(props) {
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
-        email: "iamkahvi@gmail.com",
+        email: value,
       }),
     })
-    const data = await res.json()
+    const data = await res.text()
+
+    setLoading(false)
+
+    if (res.status === 200) {
+      alert(data)
+    } else {
+      alert("subscription failed")
+    }
+
+    console.log(res.status)
     console.log(data)
   }
 
@@ -38,9 +43,12 @@ function BookList(props) {
       description="Somewhere for my books"
     >
       <SEO title="book list" />
-      <button onClick={addEmail}>addEmail</button>
       <h1 className="mt0">{title}</h1>
-      <Body className="textBody" dangerouslySetInnerHTML={{ __html: html }} />
+      <div className="ba-ns pa3-ns mb3 mw6">
+        <h3 className="mb2">subscribe to booklist updates here:</h3>
+        <InputEmail handleInput={addEmail} />
+      </div>
+      <div className="textBody" dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
 }

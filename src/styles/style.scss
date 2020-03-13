@@ -13,6 +13,11 @@ $c-accent__blue: #FF8552; //important stuff
 $c-accent__darkblue: #297373;
 $c-accent__green: #DAD2BC;
 
+:export {
+  orangeColor: $c-accent__blue;
+  blueColor: $c-accent__darkblue;
+}
+
 // Breakpoints
 $bp__sm: 45rem; // 450px
 
@@ -186,6 +191,11 @@ h6 {
   font-weight: 400;
 }
 
+.bold-input {
+  font-weight: bold;
+  font-size: 2em;
+}
+
 input {
   /* For Safari 3.1 to 6.0 */
   transition: font-size 0.05s;
@@ -194,6 +204,19 @@ input {
   border-radius: 0;
   color: $c-base__02;
   border-color: $c-accent__blue;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid $c-base__02;
+  color: $c-accent__blue;
+  line-height: normal;
+  &#home {
+    background: rgba(76, 175, 80, 0);
+    font-size: 2em;
+  }
+  &#book-list {
+    background: rgba(76, 175, 80, 0);
+    font-size: 1em;
+  }
   width: 100%;
   outline: none;
   background: white;
@@ -210,6 +233,29 @@ input.sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 15px;
+}
+
+button {
+  font-family: Helvetica, sans-serif;
+  color: $c-base__02;
+  padding: 5px;
+  background: none;
+  border: 1px solid $c-base__02;
+  outline: none;
+  &:active {
+    border: 1px solid transparent;
+    background: $c-accent__blue;
+    color: white
+  }
+}
+
+input:focus {
+  &#home {
+    font-size: 3em;
+  }
+  &#book-list {
+    font-size: 2em;
+  }
 }
 
 input::placeholder {
