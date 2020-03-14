@@ -27,13 +27,10 @@ function BookList(props) {
     setLoading(false)
 
     if (res.status === 200) {
-      alert(data)
-    } else {
-      alert("subscription failed")
+      // Assuming two people don't subscribing on the same device
+      localStorage.setItem("isSubscribed", "true")
     }
-
-    console.log(res.status)
-    console.log(data)
+    alert(data)
   }
 
   return (
@@ -44,10 +41,12 @@ function BookList(props) {
     >
       <SEO title="book list" />
       <h1 className="mt0">{title}</h1>
+      {/* {!localStorage.getItem("isSubscribed") && ( */}
       <div className="ba-ns pa3-ns mb3 mw6">
         <h3 className="mb2">subscribe to booklist updates here:</h3>
         <InputEmail handleInput={addEmail} />
       </div>
+      {/* )} */}
       <div className="textBody" dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )

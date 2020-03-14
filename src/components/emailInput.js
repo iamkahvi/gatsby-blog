@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import variables from "../styles/style.scss"
 
 export default function EmailInput(props) {
   const [value, updateValue] = useState("")
@@ -7,14 +6,12 @@ export default function EmailInput(props) {
 
   const handleSubmit = async e => {
     e.preventDefault()
+    document.querySelector("#email-input").blur()
     if (value === "") {
       alert("You can't submit a blank email")
       return
     }
-    console.log(value)
-
     props.handleInput(value, setLoading)
-
     updateValue("")
   }
 
@@ -32,6 +29,7 @@ export default function EmailInput(props) {
             value={value}
             onChange={handleChange}
             className="mr2"
+            id="email-input"
           ></input>
           {isLoading ? (
             <h3 className="mv0 w4 h2">loading...</h3>
