@@ -22,7 +22,7 @@ function BookList(props) {
         email: value,
       }),
     })
-    const data = await res.text()
+    const data = await res.json()
 
     setLoading(false)
 
@@ -30,7 +30,8 @@ function BookList(props) {
       // Assuming two people don't subscribing on the same device
       localStorage.setItem("isSubscribed", "true")
     }
-    alert(data)
+    alert(data.title)
+    console.log(data)
   }
 
   return (
