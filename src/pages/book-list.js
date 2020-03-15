@@ -12,7 +12,8 @@ function BookList(props) {
   const addEmail = async (value, setLoading) => {
     setLoading(true)
 
-    const res = await fetch("http://localhost:3000/email", {
+    const emailAPIURL = "http://localhost:3000/email"
+    const emailAPIBody = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,8 +22,10 @@ function BookList(props) {
       body: JSON.stringify({
         email: value,
       }),
-    })
-    // const data = await res.json()
+    }
+
+    const res = await fetch(emailAPIURL, emailAPIBody)
+    const data = await res.json()
 
     setLoading(false)
 
@@ -30,8 +33,8 @@ function BookList(props) {
       // Assuming two people don't subscribing on the same device
       localStorage.setItem("isSubscribed", "true")
     }
-    // alert(data.title)
-    // console.log(data)
+    alert(data.title)
+    console.log(data)
   }
 
   return (
