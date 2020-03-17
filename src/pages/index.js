@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby"
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import styled from "styled-components"
 
 const BlogIndex = ({ data, location }) => {
   const [search, setSearch] = useState("")
@@ -13,29 +12,12 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
   const description = data.site.siteMetadata.description
 
-  const CovidLink = styled(Link)`
-    margin: 0;
-    padding: 0.25em 0.25em 0.5em 0.25em;
-    color: pink;
-    font-style: bold;
-    font-size: 5em;
-    font-family: "Helvetica", sans-serif;
-    background-color: none !important;
-    border: 7px solid pink;
-    line-height: 1em;
-    &:hover {
-      color: pink;
-      text-decoration: underline;
-    }
-    &:hover::after {
-      height: 0;
-    }
-  `
-
   return (
     <Layout location={location} title={siteTitle} description={description}>
       <div className="mb4 flex justify-center">
-        <CovidLink to="/covid/">covid-19 blog</CovidLink>
+        <Link to="/covid/" className="covid-link">
+          covid-19 blog
+        </Link>
       </div>
       <Link to="/book-list/" className="mb4 booklist">
         <img src="./assets/booklist.png" />
