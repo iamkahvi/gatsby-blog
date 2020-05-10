@@ -91,13 +91,11 @@ a.nav:before {
 
 .covid-link {
   margin: 0;
-    padding: 0.25em 0.25em 0.5em 0.25em;
     color: pink;
     font-style: bold;
-    font-size: 5em;
+    font-size: 2em;
     font-family: "Helvetica", sans-serif;
     background-color: none !important;
-    border: 7px solid pink;
     line-height: 1em;
     &:hover {
       color: pink;

@@ -19,22 +19,24 @@ $bp__sm: 45rem; // 450px
 // Misc
 $m-border: 1px solid $c-base__2;
 
-    ::selection {
-      background-color: rgb(255, 134, 82);
-    }
+::selection {
+  background-color: rgb(255, 134, 82);
+}
 
 
 .textBody hr {
   margin-bottom: 25px;
 }
 
-.textBody ul, li {
+.textBody ul,
+li {
   margin-left: 1.2rem;
   line-height: 1.5;
   font-size: 18px;
 }
 
-.textBody ul, ol {
+.textBody ul,
+ol {
   margin-bottom: 20px;
 }
 
@@ -49,7 +51,7 @@ $m-border: 1px solid $c-base__2;
   font-size: 1em;
   line-height: 1.75em;
   color: black;
-  background-color:transparent;
+  background-color: transparent;
 }
 
 
@@ -61,26 +63,32 @@ $m-border: 1px solid $c-base__2;
   margin-bottom: 20px;
 }
 
-.textBody h1, h2, h3 {
+.textBody h1,
+h2,
+h3 {
   font-family: 'Roboto';
   margin-bottom: 20px;
 }
 
-.textBody h2, h3, h4, h5, h6 {
+.textBody h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Roboto';
   color: #297373;
   font-weight: 400;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    min-height: 100%;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
+  min-height: 100%;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 h1 {
@@ -92,7 +100,8 @@ h3 {
   font-weight: lighter;
 }
 
-h3 a, h3 small {
+h3 a,
+h3 small {
   font-weight: 400;
 }
 
@@ -106,7 +115,6 @@ h6 {
 }
 
 input {
-  -webkit-transition: font-size 0.05s;
   /* For Safari 3.1 to 6.0 */
   transition: font-size 0.05s;
   font-family: Helvetica, sans-serif;
@@ -116,14 +124,17 @@ input {
   font-size: 2em;
   border-bottom: 1px solid $c-base__02;
   color: $c-accent__blue;
+
   &#home {
     background: rgba(76, 175, 80, 0);
     font-size: 2em;
   }
+
   &#book-list {
     background: rgba(76, 175, 80, 0);
     font-size: 1em;
   }
+
   margin-bottom: 15px;
   width: 100%;
   outline: none;
@@ -131,8 +142,9 @@ input {
 
 input:focus {
   &#home {
-    font-size: 3em;
+    font-size: 2em;
   }
+
   &#book-list {
     font-size: 2em;
   }
@@ -144,31 +156,33 @@ input::placeholder {
 
 
 .about img {
-	width: 23vh;
-	float: right;
-	margin-right: 0px;
-	margin-left: 10px;
+  width: 23vh;
+  float: right;
+  margin-right: 0px;
+  margin-left: 10px;
 }
 
-    blockquote {
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 1.8rem; // 18px
-        border-left: 5px solid #ccc;
-    }
+blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1.8rem; // 18px
+  border-left: 5px solid #ccc;
+}
 
 
 @media screen and (max-width: 565px) {
-.about img {
-	display: block;
-	float:none;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 20px;
+  .about img {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
   }
+
   .post-date {
     display: none;
   }
+
   .post-date-small {
     display: block;
   }
@@ -178,6 +192,7 @@ input::placeholder {
   .post-date {
     display: block;
   }
+
   .post-date-small {
     display: none;
   }
@@ -186,4 +201,167 @@ input::placeholder {
 
 hr {
   border: 1px solid rgba(41, 115, 115, 0.25);
+}
+
+// Mother's Day
+
+$color-0: #bc0e92;
+$color-1: #b12da0;
+$color-2: #a73dad;
+$color-3: #9c4ab8;
+$color-4: #9154c1;
+$color-5: #855cca;
+$color-6: #7964d3;
+$color-7: #6c6bdb;
+$color-8: #5d71e2;
+
+.animation-color-pulse {
+  animation-name: color;
+  animation-direction: normal;
+  animation-duration: 12500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+
+.full {
+  z-index:10;
+    animation: fadein 3s;
+    -moz-animation: fadein 3s;
+    /* Firefox */
+    -webkit-animation: fadein 3s;
+    /* Safari and Chrome */
+    -o-animation: fadein 3s;
+    /* Opera */
+  img {
+    width: 23vw;
+  }
+}
+
+.layered-shadow {
+  font-family: "futura next",
+    futura,
+    sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+
+  text-shadow:
+    3px -3px 0 #1bc7db,
+    -3px -0px 0 #E086D3,
+    0 3px 0 transparent
+}
+
+.shadow {
+  font-family: "avenir next",
+    avenir,
+    sans-serif;
+  font-size: 102px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-shadow:
+    -1px -1px 0 #E086D3,
+    1px -1px 0 #E086D3,
+    -1px 1px 0 #E086D3,
+    1px 1px 0 #E086D3,
+    4px 4px 0 #FFF3F0,
+    5px 5px 0 #FFF3F0,
+    6px 6px 0 #FFF3F0,
+    7px 7px 0 #FFF3F0,
+    8px 8px 0 #FFF3F0,
+    9px 9px 0 #FFF3F0;
+  color: #FFF3F0;
+  background: #E086D3;
+}
+.paragraph {
+  font-weight: 400;
+  font-size: 23px;
+  font-stretch: semi-condensed;
+  font-style: oblique;
+  font-family: "futura next",
+  futura,
+  sans-serif;
+  text-align: left;
+  writing-mode: initial;
+  text-shadow: #1bc7db 0px 3px 2px;
+  color: black;
+  background-color: white;
+  width: 100%;
+  max-width: 34em;
+  letter-spacing: 0em;
+  text-decoration-color: $color-4;
+  text-decoration-line: none;
+  text-decoration-style: double;
+  line-height: 1.25;
+}
+
+@keyframes color {
+  0% {
+    background-color: $color-3
+  }
+
+  63% {
+    background-color: $color-8
+  }
+
+  100% {
+    background-color: $color-3
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadein {
+
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

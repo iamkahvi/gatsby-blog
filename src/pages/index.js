@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, navigate } from "gatsby"
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -12,18 +12,26 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
   const description = data.site.siteMetadata.description
 
+  const handleSearch = e => {
+    setSearch(e.target.value)
+    if (e.target.value.toLowerCase() === "mama") {
+      console.log("hello")
+      navigate("/mothersday", { state: { isAuth: true } })
+    }
+  }
+
   return (
     <Layout location={location} title={siteTitle} description={description}>
-      <div className="mb4 flex justify-center">
+      <div className="mb4 flex justify-start">
         <Link to="/covid/" className="covid-link">
-          covid-19 blog
+          covid-19 blog is here
         </Link>
       </div>
-      <Link to="/book-list/" className="mb4 booklist">
-        <img src="./assets/booklist.png" />
+      <Link to="/book-list/" className="booklist">
+        <img src="./assets/booklist.png" alt="booklist image" />
       </Link>
       <input
-        onChange={e => setSearch(e.target.value)}
+        onChange={handleSearch}
         placeholder="search..."
         value={search}
         default=""
