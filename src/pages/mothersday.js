@@ -31,7 +31,7 @@ export default function MDPage(props) {
                 &#128155;
               </div>
               <img
-                src="./assets/mama.jpg"
+                src="./assets/mama.JPG"
                 alt="mama image"
                 className="ml5 mt4"
               />
