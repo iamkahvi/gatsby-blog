@@ -2,8 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { BlogProps } from "../types/types"
 
-class BlogPostTemplate extends React.Component {
+class BlogPostTemplate extends React.Component<BlogProps> {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title

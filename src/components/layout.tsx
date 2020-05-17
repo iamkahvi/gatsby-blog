@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from "react"
 import { Link } from "gatsby"
+import { LayoutProps } from "../types/types"
 
-function Layout(props) {
+function Layout(props: LayoutProps) {
   const { location, title, children, description } = props
 
   const navStyle = "alink roboto faded-orange"
-  const titleStyle = "f1 helvetica b underline faded-orange"
   const descriptionStyle = "f6 roboto pt1 mt2 faded-blue"
 
   const nav = (

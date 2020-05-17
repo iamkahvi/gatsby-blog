@@ -3,8 +3,9 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { BookListProps } from "../types/types"
 
-export default function Covid(props) {
+export default function Covid(props: BookListProps) {
   const { data, location } = props
   const { html, title } = data.allGhostPage.nodes[0]
 

@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import { Link, graphql, navigate } from "gatsby"
 
-// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { IndexProps } from "../types/types"
 
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data, location }: IndexProps) => {
   const [search, setSearch] = useState("")
 
   const siteTitle = data.site.siteMetadata.title
@@ -15,7 +15,6 @@ const BlogIndex = ({ data, location }) => {
   const handleSearch = e => {
     setSearch(e.target.value)
     if (e.target.value.toLowerCase() === "mama") {
-      console.log("hello")
       navigate("/mothersday", { state: { isAuth: true } })
     }
   }
@@ -34,7 +33,7 @@ const BlogIndex = ({ data, location }) => {
         onChange={handleSearch}
         placeholder="search..."
         value={search}
-        default=""
+        data-default=""
         id="home"
       />
       <SEO title={siteTitle} />
