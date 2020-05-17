@@ -35,6 +35,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
         value={search}
         data-default=""
         id="home"
+        className="roboto"
       />
       <SEO title={siteTitle} />
 
