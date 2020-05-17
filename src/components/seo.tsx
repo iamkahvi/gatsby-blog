@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { SEOProps } from "../types/types"
 
@@ -62,7 +62,12 @@ function SEO({ description, lang, meta, title }: SEOProps) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
+      />
+    </Helmet>
   )
 }
 
