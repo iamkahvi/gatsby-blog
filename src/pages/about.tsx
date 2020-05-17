@@ -4,10 +4,11 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import kramed from "kramed"
+import { AboutProps } from "../types/types"
 
-function BlogAbout(props) {
+function BlogAbout(props: AboutProps) {
   const { data, location } = props
-  const { rawMarkdownBody, html } = data.markdownRemark
+  const { rawMarkdownBody } = data.markdownRemark
   const { title } = data.markdownRemark.frontmatter
 
   return (
