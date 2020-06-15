@@ -10,6 +10,6 @@ sed -E "s/(^$author.*$)/\\1\<hr>/g" $inputFile > $outputFile
 sed -E -i '' "s/(^[^$authorFull^<hr>].*$)/> \1"$'\r'"/g" $outputFile
 #sed -E -i '' "s/(^$authorFull[^h].*$)/> \1/g" $outputFile
 sed -E -i '' "s/^>[^\w]*$//g" $outputFile
-sed -i '' "1s/.*/---"$'\r'"layout: post "$'\r'"title: $title Highlights "$'\r'"date: $DATE "$'\r'"--- "$'\r'"by $authorFull"$'\r'"/g" $outputFile
+sed -i '' "1s/.*/---"$'\r'"layout: highlight "$'\r'"title: $title Highlights "$'\r'"slug: "$'\r'"date: $DATE "$'\r'"--- "$'\r'"by $authorFull"$'\r'"/g" $outputFile
 
 open -a Writer\ Pro $outputFile
