@@ -1,8 +1,12 @@
 import React from "react"
 import { navigate } from "gatsby"
 
-export default function BookListOld() {
-  navigate("/book-shelf/")
+export default class BookListOld extends React.Component {
+  componentDidMount() {
+    navigate("/book-shelf/")
+  }
 
-  return <></>
+  render() {
+    return <></>
+  }
 }

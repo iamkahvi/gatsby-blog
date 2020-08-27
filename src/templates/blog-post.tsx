@@ -5,13 +5,17 @@ import SEO from "../components/seo"
 import { BlogProps } from "../types/types"
 
 class BlogPostTemplate extends React.Component<BlogProps> {
-  render() {
+  componentDidMount() {
     const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
 
     if (post.frontmatter.title === "covid-19 blog") {
       navigate("/covid/")
     }
+  }
+
+  render() {
+    const post = this.props.data.markdownRemark
+    const siteTitle = this.props.data.site.siteMetadata.title
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
