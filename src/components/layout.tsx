@@ -15,8 +15,8 @@ function Layout(props: LayoutProps) {
         Home
       </Link>
       /
-      <Link to="/book-list" className={navStyle.concat(" mh2")}>
-        Book List
+      <Link to="/book-shelf" className={navStyle.concat(" mh2")}>
+        Book Shelf
       </Link>
       /
       <Link to="/about" className={navStyle.concat(" ml2")}>

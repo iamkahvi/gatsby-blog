@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { BlogProps } from "../types/types"
@@ -8,6 +8,10 @@ class BlogPostTemplate extends React.Component<BlogProps> {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
+
+    if (post.frontmatter.title === "covid-19 blog") {
+      navigate("/covid/")
+    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>

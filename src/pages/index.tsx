@@ -21,13 +21,11 @@ const BlogIndex = ({ data, location }: IndexProps) => {
 
   return (
     <Layout location={location} title={siteTitle} description={description}>
-      <div className="mb4 flex justify-start">
-        <Link to="/covid/" className="covid-link">
-          covid-19 blog is here
-        </Link>
-      </div>
-      <Link to="/book-list/" className="booklist">
-        <img src="./assets/booklist.png" alt="booklist image" />
+      <Link
+        to="/book-shelf/"
+        className="booklist mv3 baskerville f-subheadline tc faded-blue tm"
+      >
+        My Book Shelf
       </Link>
       <input
         onChange={handleSearch}
@@ -35,7 +33,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
         value={search}
         data-default=""
         id="home"
-        className="roboto"
+        className="roboto mb3"
       />
       <SEO title={siteTitle} />
 
