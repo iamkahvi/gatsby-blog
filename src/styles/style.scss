@@ -48,7 +48,6 @@ $m-border: 1px solid $c-base__2;
 li {
   margin-left: 1.2rem;
   line-height: 1.5;
-  font-size: 18px;
 }
 
 .textBody ul,
@@ -60,6 +59,20 @@ ol {
   font-family: 'Roboto';
   margin-bottom: 3rem;
   color: #297373;
+  font-size: 1.125rem;
+}
+
+.booklist {
+  font-size: 5em;
+}
+
+@media only screen and (max-width: 768px) {
+  .textBody {
+    font-size: 1rem;
+  }
+  .booklist {
+    font-size: 4em;
+  }
 }
 
 .textBody .academic p {
@@ -70,12 +83,9 @@ ol {
   background-color: transparent;
 }
 
-
-
 .textBody p {
   font-family: 'Roboto';
   line-height: 1.5;
-  font-size: 18px;
   margin-bottom: 20px;
 }
 

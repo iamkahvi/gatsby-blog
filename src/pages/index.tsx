@@ -23,7 +23,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
     <Layout location={location} title={siteTitle} description={description}>
       <Link
         to="/book-shelf/"
-        className="booklist mb3 baskerville f-subheadline tc faded-blue tm"
+        className="booklist mb3 baskerville tc faded-blue tm"
       >
         My Book Shelf
       </Link>
