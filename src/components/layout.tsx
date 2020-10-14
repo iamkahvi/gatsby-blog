@@ -6,7 +6,7 @@ import { LayoutProps } from "../types/types"
 function Layout(props: LayoutProps) {
   const { location, title, children, description } = props
 
-  const navStyle = "alink roboto faded-orange"
+  const navStyle = "roboto faded-orange"
   const descriptionStyle = "f6 roboto pt1 mt2 faded-blue"
 
   const nav = (

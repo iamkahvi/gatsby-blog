@@ -67,7 +67,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
                 <h3 className="mv0 w-two-thirds">
                   <Link
                     style={{ boxShadow: `none` }}
-                    className="alink roboto b faded-orange"
+                    className="mb2 roboto faded-orange"
                     to={`/${slug}`}
                   >
                     {title}
