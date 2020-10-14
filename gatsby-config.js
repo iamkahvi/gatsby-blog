@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `kahvi's blog`,
@@ -22,7 +24,7 @@ module.exports = {
       resolve: `gatsby-source-ghost`,
       options: {
         apiUrl: `https://admin.kahvipatel.com`,
-        contentApiKey: `77acc8ba83d22a06939707075b`,
+        contentApiKey: process.env.GHOST_CONTENT_KEY,
       },
     },
     {
