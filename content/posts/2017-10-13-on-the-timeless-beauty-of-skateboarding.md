@@ -3,6 +3,7 @@ layout: post
 title: on the timelessness of skateboarding
 description: i can’t ollie yet but I’m trying
 date: 2017-10-13
+published: false
 ---
 
 *this post is incomplete*

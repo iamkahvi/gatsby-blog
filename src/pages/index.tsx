@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link, graphql, navigate } from "gatsby"
 
 import Layout from "../components/layout"
@@ -21,10 +21,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
 
   return (
     <Layout location={location} title={siteTitle} description={description}>
-      <Link
-        to="/book-shelf/"
-        className="booklist mb3 baskerville tc faded-blue tm"
-      >
+      <Link to="/book-shelf/" className="booklist baskerville tc faded-blue tm">
         My Book Shelf
       </Link>
       <input
@@ -47,10 +44,12 @@ const BlogIndex = ({ data, location }: IndexProps) => {
         .map((edge, i) => {
           const { node, previous } = edge
           const title = node.frontmatter.title || node.fields.slug
+
           const previousPost = previous ? previous : node
           const currYear = node.frontmatter.date.split(" ").pop()
           const previousYear = previousPost.frontmatter.date.split(" ").pop()
           const yearHeader = i == 0 || currYear !== previousYear ? true : false
+
           const slug = node.frontmatter.title
             .replace(/[!'’.()*]/g, "")
             .replace(/\s+/g, "-")
@@ -105,7 +104,9 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { layout: { eq: "post" } } }
+      filter: {
+        frontmatter: { layout: { eq: "post" }, published: { ne: false } }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {

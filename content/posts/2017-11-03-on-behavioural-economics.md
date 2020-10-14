@@ -3,7 +3,6 @@ layout: post
 title: on behavioural economics
 description: a very very very incomplete definition
 date: 2017-11-03
-comments: true
 ---
 
 ***this post is incomplete***
@@ -24,7 +23,7 @@ Human don’t make good decisions.
 3. Personal Finance
 	- Save more money
 
-Example: 
+Example:
 - The Nudge Unit in the UK government.
 
 Leading People:

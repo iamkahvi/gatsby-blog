@@ -3,6 +3,7 @@ layout: post
 title: R for Loving Spoonful
 description: How visualizations lead to insight
 date: 2018-09-09
+published: false
 ---
 
 > <em>2019 Kahvi here. These apps no longer work and I don't know why. I will replace with screenshots.</em>
