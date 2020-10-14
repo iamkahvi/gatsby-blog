@@ -11,16 +11,16 @@ date: 2017-07-20
 After spending 18 years of my life idolizing rich investment bankers on Wall Street, I have come to a brutal realization:
 
 
-- **Most investing is gambling.**
+- **A lot of investing is gambling??**
 
     - I realized this after reading Nassim Taleb's book, Fooled by Randomness. To summarize, Taleb proves that behaviours like hindsight bias and pattern-seeking are widely prevalent in today's society, especially in the investment banking sector. Often, bankers are victim to completely random occurrences in the market, yet attribute them to "skill" and "foresight". I wrote a bit about this:
 
-        -  A striking example of this behaviour is the justification for the start of World War 1. As was drilled into me in high school, the assassination of Franz Ferdinand and the escalating tension and militarization in various countries predicted this international conflict. The ensuing World War seems to have been inevitable - after the events have transpired. This is an example of hindsight bias. As Niall Ferguson, a professor of history at Harvard, makes clear in his paper <em>The international bond market between the 1848 revolution and the outbreak of the First World War</em>, war bond prices were steady. The world had not noticed these so-called significant events. <b>If these hints towards the upcoming conflict were as clear as we now make them out to be, why did the price of war bonds not rise?</b> Was there a sudden, universal lack of desire to make profit? or were the events we speak of today not obvious at all. Clearly, the latter is more in line with human nature. **We feel the need to justify events after the fact in order to reassure ourselves that we will see it coming next time.**
+        -  An example of this behaviour is the justification for the start of World War 1. As was drilled into me in high school, the assassination of Franz Ferdinand and the escalating tension and militarization in various countries predicted this international conflict. The ensuing World War seems to have been inevitable - after the events have transpired. This is an example of hindsight bias. As Niall Ferguson, a professor of history at Harvard, makes clear in his paper <em>The international bond market between the 1848 revolution and the outbreak of the First World War</em>, war bond prices were steady. The world had not noticed these so-called significant events. <b>If these hints towards the upcoming conflict were as clear as we now make them out to be, why did the price of war bonds not rise?</b> Was there a sudden, universal lack of desire to make profit? or were the events we speak of today not obvious at all. Clearly, the latter is more in line with human nature. **We feel the need to justify events after the fact in order to reassure ourselves that we will see it coming next time.**
 
 
 
     - matthew counts as more evidence for this point
-    ![Small example image](../assets/nobody2.gif "nobody2")
+    ![Small example image](/assets/nobody2.gif "nobody2")
 
 
 
@@ -30,7 +30,7 @@ After spending 18 years of my life idolizing rich investment bankers on Wall Str
 
 - **Unpredictable in the short term, predictable in the long term: The only certain way to make money in the stock market is over time.**
 
-  ![Small example image](http://awealthofcommonsense.com/wp-content/uploads/2015/11/SPX-Time-Frames.png "investing chart")
+  ![Small example image](/assets/SPX-Time-Frames.png "investing chart")
 
 
   ^if you invest in an S&P 500 index, you can basically flip a coin to see whether you will make money tommorow. In a decade though, you have a much higher chance of profit.
