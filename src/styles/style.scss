@@ -56,6 +56,7 @@ ol {
 }
 
 .textBody {
+  line-height: 1.5;
   font-family: 'Roboto';
   margin-bottom: 3rem;
   color: #297373;
@@ -85,7 +86,6 @@ ol {
 
 .textBody p {
   font-family: 'Roboto';
-  line-height: 1.5;
   margin-bottom: 20px;
 }
 
@@ -181,11 +181,11 @@ input::placeholder {
 }
 
 
-.about img {
+.profile {
   width: 23vh;
   float: right;
   margin-right: 0px;
-  margin-left: 10px;
+  margin-left: 50px;
 }
 
 blockquote {
@@ -197,7 +197,7 @@ blockquote {
 
 
 @media screen and (max-width: 565px) {
-  .about img {
+  .profile {
     display: block;
     float: none;
     margin-left: auto;

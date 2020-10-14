@@ -15,10 +15,17 @@ function BlogAbout(props: AboutProps) {
     <Layout location={location} title={title}>
       <SEO title="about" />
       <h1 className="mt0">{title}</h1>
-      <div
-        className="textBody about"
-        dangerouslySetInnerHTML={{ __html: kramed(rawMarkdownBody) }}
-      />
+      <div>
+        <img
+          className="profile"
+          src="/assets/profile.jpg"
+          alt="Headshot Photo"
+        ></img>
+        <div
+          className="textBody"
+          dangerouslySetInnerHTML={{ __html: kramed(rawMarkdownBody) }}
+        />
+      </div>
     </Layout>
   )
 }
