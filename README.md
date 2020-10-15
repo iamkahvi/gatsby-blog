@@ -2,7 +2,7 @@
 1.  **Install packages.**
 
     ```sh
-    yarn install
+    npm install
     ```
 1.  **Start developing.**
 
