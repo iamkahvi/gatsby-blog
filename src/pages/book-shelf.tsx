@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -9,6 +9,15 @@ function BookList(props: BookListProps) {
   const { data, location } = props
   const { html, title } = data.allGhostPage?.nodes[0]
 
+  const [nodes, setNodes] = useState<ChildNode[]>([])
+
+  useEffect(() => {
+    let parser = new DOMParser()
+    const doc = parser.parseFromString(html, "text/html")
+    const arr = Array.from(doc.body.childNodes.values())
+    setNodes(arr)
+  }, [])
+
   return (
     <Layout
       location={location}
@@ -17,7 +26,12 @@ function BookList(props: BookListProps) {
     >
       <SEO title="book shelf" />
       <h1 className="mt0">{title}</h1>
-      <div className="textBody" dangerouslySetInnerHTML={{ __html: html }} />
+      <div className="textBody">
+        {nodes.map(node => (
+          <div dangerouslySetInnerHTML={{ __html: node.innerHTML }} />
+        ))}
+      </div>
+      {/* <div className="textBody" dangerouslySetInnerHTML={{ __html: html }} /> */}
     </Layout>
   )
 }
