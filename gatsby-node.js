@@ -1,4 +1,6 @@
 const path = require(`path`);
+const fs = require(`fs`);
+const { parser } = require(`./utils/parser`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = async function({ graphql, actions }) {
@@ -55,9 +57,12 @@ exports.createPages = async function({ graphql, actions }) {
     `
   );
 
-  const bookShelfText = result.data.bookShelf.nodes[0];
+  const bookShelfText = result.data.bookShelf.nodes[0].plaintext;
 
-  console.log(bookShelfText);
+  const parsedText = JSON.stringify(parser(bookShelfText));
+  fs.writeFile("out4.json", parsedText, "utf-8", err => {
+    if (err) return console.log(err);
+  });
 
   // Create blog posts pages.
   const posts = result.data.blogPosts.edges;

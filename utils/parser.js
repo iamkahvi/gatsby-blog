@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parser = void 0;
-var data_js_1 = require("./data.js");
 function parser(text) {
     var bList = [];
     var lines = text.split("\n").filter(Boolean);
@@ -35,5 +34,3 @@ function parser(text) {
     return bList;
 }
 exports.parser = parser;
-parser(data_js_1.text);
-console.log(JSON.stringify(parser(data_js_1.text)));

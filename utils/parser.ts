@@ -44,6 +44,3 @@ export function parser(text: string): BookList {
   }
   return bList;
 }
-
-parser(text);
-console.log(JSON.stringify(parser(text)));
