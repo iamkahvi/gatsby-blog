@@ -70,6 +70,13 @@ export interface BookListProps {
         }
       ]
     }
+    markdownRemark: {
+      html: string
+      rawMarkdownBody: string
+      frontmatter: {
+        title: string
+      }
+    }
   }
   location: Location
 }
