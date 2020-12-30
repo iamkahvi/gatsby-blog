@@ -1,5 +1,6 @@
 import { text } from "./data.js";
 const contentful = require("contentful-management");
+require("dotenv").config();
 
 interface BookListItem {
   title: string;
@@ -64,9 +65,8 @@ export function parser(text: string): BookList {
 }
 
 export async function addEntries(bl: BookList) {
-  const contentDeliveryAPI = "tMNTyF_06H4c98VNebh_yox4fCSwsM7nZ7NumKA0b_4";
   const client = contentful.createClient({
-    accessToken: "CFPAT-_T81OchPsVv4bm2wCsVScOzsIAfPEgYQ1dntNcIT5uI",
+    accessToken: process.env.CONT_MANAGEMENT_TOKEN,
   });
 
   // Create entry

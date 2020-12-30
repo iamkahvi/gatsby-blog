@@ -39,6 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.addEntries = exports.parser = void 0;
 var data_js_1 = require("./data.js");
 var contentful = require("contentful-management");
+require("dotenv").config();
 function parser(text) {
     var bList = [];
     var lines = text.split("\n").filter(Boolean);
@@ -89,13 +90,12 @@ function parser(text) {
 exports.parser = parser;
 function addEntries(bl) {
     return __awaiter(this, void 0, void 0, function () {
-        var contentDeliveryAPI, client, space, env, entry;
+        var client, space, env, entry;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    contentDeliveryAPI = "tMNTyF_06H4c98VNebh_yox4fCSwsM7nZ7NumKA0b_4";
                     client = contentful.createClient({
-                        accessToken: "CFPAT-_T81OchPsVv4bm2wCsVScOzsIAfPEgYQ1dntNcIT5uI",
+                        accessToken: process.env.CONT_MANAGEMENT_TOKEN,
                     });
                     return [4 /*yield*/, client.getSpace("rbthbhshshw9")];
                 case 1:
