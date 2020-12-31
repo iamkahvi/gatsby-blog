@@ -1,5 +1,5 @@
-import { text } from "./data.js";
 const contentful = require("contentful-management");
+const fs = require("fs");
 require("dotenv").config();
 
 interface BookListItem {
@@ -12,6 +12,7 @@ interface BookListItem {
 type BookList = BookListItem[];
 
 export function parser(text: string): BookList {
+  console.log(`Parsing Text: ${text.slice(0, 50)}...`);
   let bList: BookList = [];
 
   const lines = text.split("\n").filter(Boolean);
@@ -65,6 +66,7 @@ export function parser(text: string): BookList {
 }
 
 export async function addEntries(bl: BookList) {
+  console.log("Opening Connection...");
   const client = contentful.createClient({
     accessToken: process.env.CONT_MANAGEMENT_TOKEN,
   });
@@ -72,42 +74,58 @@ export async function addEntries(bl: BookList) {
   // Create entry
   const space = await client.getSpace("rbthbhshshw9");
   const env = await space.getEnvironment("master");
-  const entry = await env.createEntry("bookListItem", {
-    fields: {
-      bookTitle: {
-        "en-US": "Entry title 3",
-      },
-      bookAuthor: {
-        "en-US": "Someone",
-      },
-      dateFinished: {
-        "en-US": "2020-12-11",
-      },
-      bookDescription: {
-        "en-US": {
-          nodeType: "document",
-          data: {},
-          content: [
-            {
-              nodeType: "paragraph",
-              content: [
-                {
-                  nodeType: "text",
-                  marks: [],
-                  value: "I am an odd paragraph.",
-                  data: {},
-                },
-              ],
-              data: {},
-            },
-          ],
+
+  console.log("Starting Uploads");
+  for (const book of bl) {
+    let blItem = {
+      fields: {
+        bookTitle: {
+          "en-US": book.title,
+        },
+        bookAuthor: {
+          "en-US": book.author,
+        },
+        bookDescription: {
+          "en-US": {
+            nodeType: "document",
+            data: {},
+            content: [
+              {
+                nodeType: "paragraph",
+                content: [
+                  {
+                    nodeType: "text",
+                    marks: [],
+                    value: book.description,
+                    data: {},
+                  },
+                ],
+                data: {},
+              },
+            ],
+          },
         },
       },
-    },
-  });
+    };
 
-  console.log(entry);
+    if (book.date) {
+      // @ts-ignore
+      blItem.fields["dateFinished"] = { "en-US": book.date };
+    }
+
+    await env.createEntry("bookListItem", blItem);
+    console.log(`Uploaded ${book.title}`);
+  }
+
+  console.log("Finished Uploads");
 }
 
+function readData(path: string): string {
+  const data = fs.readFileSync(path, "utf8");
+  return data;
+}
+
+const text = readData("in.json");
 const bl = parser(text);
-console.log(JSON.stringify(bl));
+// console.log(JSON.stringify(bl));
+addEntries(bl);

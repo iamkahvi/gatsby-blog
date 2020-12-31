@@ -37,10 +37,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.addEntries = exports.parser = void 0;
-var data_js_1 = require("./data.js");
 var contentful = require("contentful-management");
+var fs = require("fs");
 require("dotenv").config();
 function parser(text) {
+    console.log("Parsing Text: " + text.slice(0, 50) + "...");
     var bList = [];
     var lines = text.split("\n").filter(Boolean);
     var titleLineRegex = /\*\ (.*)\ by\ (.*)/m;
@@ -90,10 +91,11 @@ function parser(text) {
 exports.parser = parser;
 function addEntries(bl) {
     return __awaiter(this, void 0, void 0, function () {
-        var client, space, env, entry;
+        var client, space, env, _i, bl_1, book, blItem;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    console.log("Opening Connection...");
                     client = contentful.createClient({
                         accessToken: process.env.CONT_MANAGEMENT_TOKEN,
                     });
@@ -103,47 +105,67 @@ function addEntries(bl) {
                     return [4 /*yield*/, space.getEnvironment("master")];
                 case 2:
                     env = _a.sent();
-                    return [4 /*yield*/, env.createEntry("bookListItem", {
-                            fields: {
-                                bookTitle: {
-                                    "en-US": "Entry title 3",
-                                },
-                                bookAuthor: {
-                                    "en-US": "Someone",
-                                },
-                                dateFinished: {
-                                    "en-US": "2020-12-11",
-                                },
-                                bookDescription: {
-                                    "en-US": {
-                                        nodeType: "document",
-                                        data: {},
-                                        content: [
-                                            {
-                                                nodeType: "paragraph",
-                                                content: [
-                                                    {
-                                                        nodeType: "text",
-                                                        marks: [],
-                                                        value: "I am an odd paragraph.",
-                                                        data: {},
-                                                    },
-                                                ],
-                                                data: {},
-                                            },
-                                        ],
-                                    },
+                    console.log("Starting Uploads");
+                    _i = 0, bl_1 = bl;
+                    _a.label = 3;
+                case 3:
+                    if (!(_i < bl_1.length)) return [3 /*break*/, 6];
+                    book = bl_1[_i];
+                    blItem = {
+                        fields: {
+                            bookTitle: {
+                                "en-US": book.title,
+                            },
+                            bookAuthor: {
+                                "en-US": book.author,
+                            },
+                            bookDescription: {
+                                "en-US": {
+                                    nodeType: "document",
+                                    data: {},
+                                    content: [
+                                        {
+                                            nodeType: "paragraph",
+                                            content: [
+                                                {
+                                                    nodeType: "text",
+                                                    marks: [],
+                                                    value: book.description,
+                                                    data: {},
+                                                },
+                                            ],
+                                            data: {},
+                                        },
+                                    ],
                                 },
                             },
-                        })];
-                case 3:
-                    entry = _a.sent();
-                    console.log(entry);
+                        },
+                    };
+                    if (book.date) {
+                        // @ts-ignore
+                        blItem.fields["dateFinished"] = { "en-US": book.date };
+                    }
+                    return [4 /*yield*/, env.createEntry("bookListItem", blItem)];
+                case 4:
+                    _a.sent();
+                    console.log("Uploaded " + book.title);
+                    _a.label = 5;
+                case 5:
+                    _i++;
+                    return [3 /*break*/, 3];
+                case 6:
+                    console.log("Finished Uploads");
                     return [2 /*return*/];
             }
         });
     });
 }
 exports.addEntries = addEntries;
-var bl = parser(data_js_1.text);
-console.log(JSON.stringify(bl));
+function readData(path) {
+    var data = fs.readFileSync(path, "utf8");
+    return data;
+}
+var text = readData("in.json");
+var bl = parser(text);
+// console.log(JSON.stringify(bl));
+addEntries(bl);
