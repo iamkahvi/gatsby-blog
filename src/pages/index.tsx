@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react"
-import { Link, graphql, navigate } from "gatsby"
+import React, { useState, useEffect } from "react";
+import { Link, graphql, navigate } from "gatsby";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { IndexProps } from "../types/types"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { IndexProps } from "../types/types";
 
 const BlogIndex = ({ data, location }: IndexProps) => {
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState("");
 
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
-  const description = data.site.siteMetadata.description
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allMarkdownRemark.edges;
+  const description = data.site.siteMetadata.description;
 
   const handleSearch = e => {
-    setSearch(e.target.value)
+    setSearch(e.target.value);
     if (e.target.value.toLowerCase() === "mama") {
-      navigate("/mothersday", { state: { isAuth: true } })
+      navigate("/mothersday", { state: { isAuth: true } });
     }
-  }
+  };
 
   return (
     <Layout location={location} title={siteTitle} description={description}>
@@ -42,23 +42,21 @@ const BlogIndex = ({ data, location }: IndexProps) => {
               .includes(search.toLowerCase()) || search === ""
         )
         .map((edge, i) => {
-          const { node, previous } = edge
-          const title = node.frontmatter.title || node.fields.slug
+          const { node, previous } = edge;
+          const title = node.frontmatter.title || node.fields.slug;
 
-          const previousPost = previous ? previous : node
-          const currYear = node.frontmatter.date.split(" ").pop()
-          const previousYear = previousPost.frontmatter.date.split(" ").pop()
-          const yearHeader = i == 0 || currYear !== previousYear ? true : false
+          const { year } = node.frontmatter;
+          const prevYear = previous ? previous.frontmatter.year : null;
 
           const slug = node.frontmatter.title
             .replace(/[!'’.()*]/g, "")
             .replace(/\s+/g, "-")
-            .toLowerCase()
+            .toLowerCase();
 
           return (
             <>
-              {yearHeader && (
-                <h1 className="roboto f4 fw4 tc faded-blue mb4">{currYear}</h1>
+              {prevYear !== year && (
+                <h1 className="roboto f4 fw4 tc faded-blue mb4">{year}</h1>
               )}
               <div
                 className="pv3 bt b--light-gray flex items-center justify-between"
@@ -87,13 +85,13 @@ const BlogIndex = ({ data, location }: IndexProps) => {
                 </small>
               </div>
             </>
-          )
+          );
         })}
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -112,7 +110,7 @@ export const pageQuery = graphql`
       edges {
         previous {
           frontmatter {
-            date(formatString: "MMM DD, YYYY")
+            year: date(formatString: "YYYY")
           }
         }
         node {
@@ -121,7 +119,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMM D, YYYY")
+            year: date(formatString: "YYYY")
             displayDate: date(formatString: "MMMM Do")
             displayDateSmall: date(formatString: "MMM D")
             title
@@ -131,4 +129,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

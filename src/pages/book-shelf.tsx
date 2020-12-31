@@ -6,6 +6,14 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { BookShelfProps, BookEdge } from "../types/types";
 
+const yearKey = {
+  2020: "this year",
+  2019: "2019",
+  2018: "probably in 2018",
+  2017: "possibly in 2017",
+  2016: "before 2017",
+};
+
 function BookList(props: BookShelfProps) {
   const [search, setSearch] = useState("");
 
@@ -18,12 +26,11 @@ function BookList(props: BookShelfProps) {
   };
 
   const renderBook = ({ node, previous }: BookEdge) => {
+    const prevYear = previous ? previous.year : null;
     return (
       <>
-        {previous === null ? (
-          <h2>this year</h2>
-        ) : (
-          previous.year !== node.year && <h2>{node.year}</h2>
+        {prevYear !== node.year && (
+          <h2 className="underline">{yearKey[node.year]}</h2>
         )}
         <li>
           <strong>{node.bookTitle}</strong> by {node.bookAuthor}
@@ -60,8 +67,7 @@ function BookList(props: BookShelfProps) {
           placeholder="search..."
           value={search}
           data-default=""
-          id="home"
-          className="roboto mb4"
+          className="roboto mb4 f3 normal"
         />
         {books
           .filter(

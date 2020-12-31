@@ -13,7 +13,7 @@ export interface IndexProps {
         {
           previous: {
             frontmatter: {
-              date: string;
+              year: string;
             };
           };
           node: {
@@ -22,7 +22,7 @@ export interface IndexProps {
               slug: string;
             };
             frontmatter: {
-              date: string;
+              year: string;
               displayDate: string;
               displayDateSmall: string;
               title: string;
