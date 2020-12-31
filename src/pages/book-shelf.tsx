@@ -1,14 +1,45 @@
 /* eslint-disable react/jsx-filename-extension */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { BookListProps } from "../types/types";
+import { BookShelfProps, BookEdge } from "../types/types";
 
-function BookList(props: BookListProps) {
+function BookList(props: BookShelfProps) {
+  const [search, setSearch] = useState("");
+
   const { data, location } = props;
-  const { html, title } = data.allGhostPage?.nodes[0];
-  const { html: introHtml } = data.markdownRemark;
+  const books = data.books.edges;
+  const { intro, title } = data.bookShelf?.nodes[0];
+
+  const handleSearch = e => {
+    setSearch(e.target.value);
+  };
+
+  const renderBook = ({ node, previous }: BookEdge) => {
+    return (
+      <>
+        {previous === null ? (
+          <h2>this year</h2>
+        ) : (
+          previous.year !== node.year && <h2>{node.year}</h2>
+        )}
+        <li>
+          <strong>{node.bookTitle}</strong> by {node.bookAuthor}
+          {parseInt(node.year) > 2018 && <em> - {node.dateFinished}</em>}
+          <br></br>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: documentToHtmlString(
+                JSON.parse(node.bookDescription.raw)
+              ),
+            }}
+          />
+        </li>
+      </>
+    );
+  };
 
   return (
     <Layout
@@ -19,8 +50,27 @@ function BookList(props: BookListProps) {
       <SEO title="book shelf" />
       <h1 className="mt0">{title}</h1>
       <div className="textBody">
-        <div dangerouslySetInnerHTML={{ __html: introHtml }} />
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: documentToHtmlString(JSON.parse(intro.raw)),
+          }}
+        />
+        <input
+          onChange={handleSearch}
+          placeholder="search..."
+          value={search}
+          data-default=""
+          id="home"
+          className="roboto mb4"
+        />
+        {books
+          .filter(
+            edge =>
+              `${edge.node.bookTitle} by ${edge.node.bookAuthor} - ${edge.node.dateFinished}`
+                .toLowerCase()
+                .includes(search.toLowerCase()) || search === ""
+          )
+          .map(renderBook)}
       </div>
     </Layout>
   );
@@ -30,16 +80,32 @@ export default BookList;
 
 export const pageQuery = graphql`
   query {
-    allGhostPage(filter: { title: { eq: "A Test Shelf" } }) {
-      nodes {
-        html
-        title
+    books: allContentfulBookListItem(
+      sort: { fields: dateFinished, order: DESC }
+      filter: { book_shelf: { elemMatch: { title: { eq: "My Book Shelf" } } } }
+    ) {
+      edges {
+        node {
+          bookTitle
+          bookAuthor
+          bookDescription {
+            raw
+          }
+          dateFinished(formatString: "DD/MM/YYYY")
+          year: dateFinished(formatString: "YYYY")
+        }
+        previous {
+          year: dateFinished(formatString: "YYYY")
+        }
       }
     }
-    markdownRemark(frontmatter: { title: { eq: "Book Shelf Intro" } }) {
-      html
-      rawMarkdownBody
-      frontmatter {
+    bookShelf: allContentfulBookShelf(
+      filter: { title: { eq: "My Book Shelf" } }
+    ) {
+      nodes {
+        intro {
+          raw
+        }
         title
       }
     }
