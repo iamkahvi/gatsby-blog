@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, graphql, navigate } from "gatsby";
 
 import Layout from "../components/layout";
