@@ -1,15 +1,15 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import kramed from "kramed";
-import { AboutProps } from "../types/types";
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import kramed from "kramed"
+import { AboutProps } from "../types/types"
 
 function BlogAbout(props: AboutProps) {
-  const { data, location } = props;
-  const { rawMarkdownBody } = data.markdownRemark;
-  const { title } = data.markdownRemark.frontmatter;
+  const { data, location } = props
+  const { rawMarkdownBody } = data.markdownRemark
+  const { title } = data.markdownRemark.frontmatter
 
   return (
     <Layout location={location} title={title}>
@@ -18,7 +18,7 @@ function BlogAbout(props: AboutProps) {
       <div>
         <img
           className="profile"
-          src="./assets/profile.jpg"
+          src="/assets/profile.jpg"
           alt="Headshot Photo"
         ></img>
         <div
@@ -27,10 +27,10 @@ function BlogAbout(props: AboutProps) {
         />
       </div>
     </Layout>
-  );
+  )
 }
 
-export default BlogAbout;
+export default BlogAbout
 
 export const pageQuery = graphql`
   query {
@@ -42,4 +42,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

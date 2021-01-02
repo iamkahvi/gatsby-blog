@@ -1,21 +1,21 @@
-import React from "react";
-import { graphql, navigate } from "gatsby";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import { BlogProps } from "../types/types";
+import React from "react"
+import { graphql, navigate } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import { BlogProps } from "../types/types"
 
 class BlogPostTemplate extends React.Component<BlogProps> {
   componentDidMount() {
-    const post = this.props.data.markdownRemark;
+    const post = this.props.data.markdownRemark
 
     if (post.frontmatter.title === "covid-19 blog") {
-      navigate("/covid/");
+      navigate("/covid/")
     }
   }
 
   render() {
-    const post = this.props.data.markdownRemark;
-    const siteTitle = this.props.data.site.siteMetadata.title;
+    const post = this.props.data.markdownRemark
+    const siteTitle = this.props.data.site.siteMetadata.title
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -39,11 +39,11 @@ class BlogPostTemplate extends React.Component<BlogProps> {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </Layout>
-    );
+    )
   }
 }
 
-export default BlogPostTemplate;
+export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -66,4 +66,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

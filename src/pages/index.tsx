@@ -13,7 +13,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
   const posts = data.allMarkdownRemark.edges;
   const description = data.site.siteMetadata.description;
 
-  const handleSearch = (e) => {
+  const handleSearch = e => {
     setSearch(e.target.value);
     if (e.target.value.toLowerCase() === "mama") {
       navigate("/mothersday", { state: { isAuth: true } });
@@ -84,7 +84,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
 
       {posts
         .filter(
-          (edge) =>
+          edge =>
             edge.node.frontmatter.title
               .toLowerCase()
               .includes(search.toLowerCase()) || search === ""

@@ -1,13 +1,13 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import { BlogProps } from "../types/types";
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import { BlogProps } from "../types/types"
 
 class Highlights extends React.Component<BlogProps, {}> {
   render() {
-    const siteTitle = this.props.data.site.siteMetadata.title;
-    const post = this.props.data.markdownRemark;
+    const siteTitle = this.props.data.site.siteMetadata.title
+    const post = this.props.data.markdownRemark
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -28,11 +28,11 @@ class Highlights extends React.Component<BlogProps, {}> {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </Layout>
-    );
+    )
   }
 }
 
-export default Highlights;
+export default Highlights
 
 export const pageQuery = graphql`
   query highlights($slug: String!) {
@@ -54,4 +54,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

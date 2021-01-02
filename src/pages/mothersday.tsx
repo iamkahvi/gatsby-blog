@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { navigate } from "gatsby";
-import SEO from "../components/seo";
-import { Location } from "../types/types";
+import React, { useEffect, useState } from "react"
+import { navigate } from "gatsby"
+import SEO from "../components/seo"
+import { Location } from "../types/types"
 
 export default function MDPage(props: { location: Location }) {
-  const { location } = props;
-  const [isAuth, setAuth] = useState(false);
+  const { location } = props
+  const [isAuth, setAuth] = useState(false)
 
   useEffect(() => {
     if (location?.state?.isAuth) {
-      setAuth(true);
+      setAuth(true)
     } else {
-      navigate("/");
+      navigate("/")
     }
-  }, []);
+  }, [])
 
   return (
     <>
@@ -43,5 +43,5 @@ export default function MDPage(props: { location: Location }) {
         </>
       )}
     </>
-  );
+  )
 }
