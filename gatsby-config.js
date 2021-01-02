@@ -1,4 +1,4 @@
-require("dotenv").config()
+require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
@@ -18,6 +18,14 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-90569204-1",
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `rbthbhshshw9`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        environment: `master`,
       },
     },
     {
@@ -68,4 +76,4 @@ module.exports = {
       },
     },
   ],
-}
+};

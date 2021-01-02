@@ -7,8 +7,10 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^14.1.2",
     "@types/react": "^16.9.35",
     "@types/react-helmet": "^6.0.0",
+    "contentful-management": "^7.5.1",
     "dotenv": "^8.2.0",
     "gatsby": "^2.18.14",
     "gatsby-plugin-catch-links": "^2.1.19",
@@ -17,6 +19,7 @@
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-remark-autolink-headers": "^2.1.19",
     "gatsby-remark-prismjs": "^3.3.25",
+    "gatsby-source-contentful": "^4.3.1",
     "gatsby-source-filesystem": "^2.0.43",
     "gatsby-source-ghost": "^4.0.3",
     "gatsby-transformer-remark": "^2.6.39",

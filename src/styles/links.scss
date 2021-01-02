@@ -17,8 +17,13 @@ $bp__sm: 45rem; // 450px
 // Misc
 $m-border: 1px solid $c-base__2;
 
+.book .anchor {
+  float: left;
+  padding-right: 4px;
+  margin-left: -40px;
+}
+
 a.booklist {
-  margin-bottom: 1.5rem;
   transition: none;
 
   &::after {
