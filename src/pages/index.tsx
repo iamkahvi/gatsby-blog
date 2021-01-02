@@ -85,7 +85,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       {posts
         .filter(
           edge =>
-            edge.node.frontmatter.title
+            (edge.node.frontmatter.title + edge.node.frontmatter.displayDate)
               .toLowerCase()
               .includes(search.toLowerCase()) || search === ""
         )

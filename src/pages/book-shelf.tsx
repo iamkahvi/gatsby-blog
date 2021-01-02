@@ -56,9 +56,10 @@ function BookList(props: BookShelfProps) {
           {/* <a className="book anchor faded-blue b" href={`#${idLink}`}>
             {anchorIcon}
           </a> */}
-          {node.bookTitle} by {node.bookAuthor}
-          {parseInt(node.year) > 2018 && <em> - {node.dateFinished} </em>}
-          <br></br>
+          <div className="mb2">
+            <span className="fw5">{node.bookTitle}</span> by {node.bookAuthor}
+            {parseInt(node.year) > 2018 && <em> - {node.dateFinished} </em>}
+          </div>
           <div
             dangerouslySetInnerHTML={{
               __html: documentToHtmlString(
@@ -91,14 +92,16 @@ function BookList(props: BookShelfProps) {
           searchVal={search}
           isSticky={false}
         />
-        {books
-          .filter(
-            edge =>
-              `${edge.node.bookTitle} by ${edge.node.bookAuthor} - ${edge.node.dateFinished}`
-                .toLowerCase()
-                .includes(search.toLowerCase()) || search === ""
-          )
-          .map(renderBook)}
+        <ul className="ml0">
+          {books
+            .filter(
+              edge =>
+                `${edge.node.bookTitle} by ${edge.node.bookAuthor} - ${edge.node.dateFinished}`
+                  .toLowerCase()
+                  .includes(search.toLowerCase()) || search === ""
+            )
+            .map(renderBook)}
+        </ul>
       </div>
     </Layout>
   );

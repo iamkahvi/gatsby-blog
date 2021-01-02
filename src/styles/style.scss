@@ -23,9 +23,12 @@ $m-border: 1px solid $c-base__2;
   width: 10px;
 }
 
+.book {
+  list-style-position: outside;
+}
+
 .book::before {
   margin-top: -35px;
-  content: " ";
   display: block;
   padding-top: 35px;
 }
@@ -77,8 +80,7 @@ $m-border: 1px solid $c-base__2;
   margin-bottom: 25px;
 }
 
-.textBody ul,
-li {
+.textBody li {
   margin-left: 1.2rem;
   line-height: 1.5;
 }
