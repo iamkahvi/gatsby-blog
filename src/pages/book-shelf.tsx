@@ -37,7 +37,7 @@ function BookList(props: BookShelfProps) {
   const books = data.books.edges;
   const { intro, title } = data.bookShelf?.nodes[0];
 
-  const handleSearch = e => {
+  const handleSearch = (e) => {
     setSearch(e.target.value);
   };
 
@@ -93,7 +93,7 @@ function BookList(props: BookShelfProps) {
         />
         {books
           .filter(
-            edge =>
+            (edge) =>
               `${edge.node.bookTitle} by ${edge.node.bookAuthor} - ${edge.node.dateFinished}`
                 .toLowerCase()
                 .includes(search.toLowerCase()) || search === ""

@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from "react"
-import { Link } from "gatsby"
-import { LayoutProps } from "../types/types"
+import React from "react";
+import { Link } from "gatsby";
+import { LayoutProps } from "../types/types";
 
 function Layout(props: LayoutProps) {
-  const { location, title, children, description } = props
+  const { location, title, children, description } = props;
 
-  const navStyle = "roboto faded-orange"
-  const descriptionStyle = "f6 roboto pt1 mt2 faded-blue"
+  const navStyle = "roboto faded-orange";
+  const descriptionStyle = "f6 roboto pt1 mt2 faded-blue";
 
   const nav = (
     <p>
@@ -23,16 +23,16 @@ function Layout(props: LayoutProps) {
         About
       </Link>
     </p>
-  )
+  );
 
   const bigTitle = (
     <div>
       <h1 className="mt4 mb0 b helvetica underline f1">{title}</h1>
       <p className={descriptionStyle}>{description}</p>
     </div>
-  )
+  );
 
-  let header
+  let header;
 
   if (location.pathname === "/") {
     header = (
@@ -40,9 +40,9 @@ function Layout(props: LayoutProps) {
         {nav}
         {bigTitle}
       </div>
-    )
+    );
   } else {
-    header = <div>{nav}</div>
+    header = <div>{nav}</div>;
   }
 
   return (
@@ -50,7 +50,7 @@ function Layout(props: LayoutProps) {
       <header className="pa2 mt4">{header}</header>
       <main className="mt3 pa2">{children}</main>
     </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
