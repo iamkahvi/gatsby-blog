@@ -178,7 +178,6 @@ input {
   transition: font-size 0.05s;
   font-family: Helvetica, sans-serif;
   font-weight: bold;
-  border: none;
   border-radius: 0;
   color: $c-base__02;
   border-color: $c-accent__blue;
@@ -187,6 +186,9 @@ input {
   background: white;
   z-index: 100;
   box-sizing: border-box;
+  &:focus {
+    box-shadow: 0 0 0 1px $c-accent__blue;
+  }
 }
 
 input.sticky {
