@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Link, graphql, navigate } from "gatsby";
 
 import Layout from "../components/layout";
+import SearchBar from "../components/searchBar";
 import SEO from "../components/seo";
-import { IndexProps } from "../types/types";
+import { IndexProps, PostEdge } from "../types/types";
 
 const BlogIndex = ({ data, location }: IndexProps) => {
   const [search, setSearch] = useState("");
@@ -19,18 +20,65 @@ const BlogIndex = ({ data, location }: IndexProps) => {
     }
   };
 
+  const renderPost = ({ node, previous }: PostEdge) => {
+    const title = node.frontmatter.title || node.fields.slug;
+
+    const { year } = node.frontmatter;
+    const prevYear = previous ? previous.frontmatter.year : null;
+
+    const slug = node.frontmatter.title
+      .replace(/[!'’.()*]/g, "")
+      .replace(/\s+/g, "-")
+      .toLowerCase();
+
+    return (
+      <>
+        {prevYear !== year && (
+          <h1 className="roboto f4 fw4 tc faded-blue mb4">{year}</h1>
+        )}
+        <div
+          className="pv3 bt b--light-gray flex items-center justify-between"
+          key={`/${slug}`}
+        >
+          <h3 className="mv0 w-two-thirds">
+            <Link
+              style={{ boxShadow: `none` }}
+              className="mb2 roboto faded-orange"
+              to={`/${slug}`}
+            >
+              {title}
+            </Link>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: node.frontmatter.description || node.excerpt,
+              }}
+              className="f6 fw4 roboto faded-blue"
+            />
+          </h3>
+          <small className="post-date f5 roboto faded-blue fr tr w-third">
+            {node.frontmatter.displayDate}
+          </small>
+          <small className="post-date-small f5 roboto faded-blue fr tr w-third">
+            {node.frontmatter.displayDateSmall}
+          </small>
+        </div>
+      </>
+    );
+  };
+
   return (
     <Layout location={location} title={siteTitle} description={description}>
-      <Link to="/book-shelf/" className="booklist baskerville tc faded-blue tm">
-        My Book Shelf
+      <Link
+        to="/book-shelf/"
+        className="booklist f2 baskerville tc faded-blue tm mb4"
+      >
+        My Book Shelf →
       </Link>
-      <input
-        onChange={handleSearch}
-        placeholder="search..."
-        value={search}
-        data-default=""
-        id="home"
-        className="roboto mb3"
+      <SearchBar
+        handleSearch={handleSearch}
+        placeholderText="search posts..."
+        searchVal={search}
+        isSticky={false}
       />
       <SEO title={siteTitle} />
 
@@ -41,52 +89,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
               .toLowerCase()
               .includes(search.toLowerCase()) || search === ""
         )
-        .map((edge, i) => {
-          const { node, previous } = edge;
-          const title = node.frontmatter.title || node.fields.slug;
-
-          const { year } = node.frontmatter;
-          const prevYear = previous ? previous.frontmatter.year : null;
-
-          const slug = node.frontmatter.title
-            .replace(/[!'’.()*]/g, "")
-            .replace(/\s+/g, "-")
-            .toLowerCase();
-
-          return (
-            <>
-              {prevYear !== year && (
-                <h1 className="roboto f4 fw4 tc faded-blue mb4">{year}</h1>
-              )}
-              <div
-                className="pv3 bt b--light-gray flex items-center justify-between"
-                key={`/${slug}`}
-              >
-                <h3 className="mv0 w-two-thirds">
-                  <Link
-                    style={{ boxShadow: `none` }}
-                    className="mb2 roboto faded-orange"
-                    to={`/${slug}`}
-                  >
-                    {title}
-                  </Link>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || node.excerpt,
-                    }}
-                    className="f6 fw4 roboto faded-blue"
-                  />
-                </h3>
-                <small className="post-date f5 roboto faded-blue fr tr w-third">
-                  {node.frontmatter.displayDate}
-                </small>
-                <small className="post-date-small f5 roboto faded-blue fr tr w-third">
-                  {node.frontmatter.displayDateSmall}
-                </small>
-              </div>
-            </>
-          );
-        })}
+        .map(renderPost)}
     </Layout>
   );
 };

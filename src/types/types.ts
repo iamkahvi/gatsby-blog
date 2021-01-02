@@ -1,5 +1,26 @@
 import React from "react";
 
+export interface PostEdge {
+  previous: {
+    frontmatter: {
+      year: string;
+    };
+  };
+  node: {
+    excerpt: string;
+    fields: {
+      slug: string;
+    };
+    frontmatter: {
+      year: string;
+      displayDate: string;
+      displayDateSmall: string;
+      title: string;
+      description: string;
+    };
+  };
+}
+
 export interface IndexProps {
   data: {
     site: {
@@ -9,28 +30,7 @@ export interface IndexProps {
       };
     };
     allMarkdownRemark: {
-      edges: [
-        {
-          previous: {
-            frontmatter: {
-              year: string;
-            };
-          };
-          node: {
-            excerpt: string;
-            fields: {
-              slug: string;
-            };
-            frontmatter: {
-              year: string;
-              displayDate: string;
-              displayDateSmall: string;
-              title: string;
-              description: string;
-            };
-          };
-        }
-      ];
+      edges: PostEdge[];
     };
   };
   location: Location;
