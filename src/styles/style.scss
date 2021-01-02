@@ -19,6 +19,39 @@ $bp__sm: 45rem; // 450px
 // Misc
 $m-border: 1px solid $c-base__2;
 
+.booklist img {
+  width: 10px;
+}
+
+.book::before {
+  margin-top: -35px;
+  content: " ";
+  display: block;
+  padding-top: 35px;
+}
+
+.anchor {
+  float: left;
+  padding-right: 4px;
+  margin-left: -25px;
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+    display: block;
+    color: $c-accent__darkblue;
+    text-decoration: underline;
+
+    &::after {
+      height: 0;
+    }
+  }
+
+}
+
+.anchor svg {
+  fill: $c-accent__blue;
+}
+
 ::selection {
   background-color: rgb(255, 134, 82);
 }
@@ -147,37 +180,24 @@ input {
   font-weight: bold;
   border: none;
   border-radius: 0;
-  font-size: 2em;
-  border-bottom: 1px solid $c-base__02;
-  color: $c-accent__blue;
-
-  &#home {
-    background: rgba(76, 175, 80, 0);
-    font-size: 2em;
-  }
-
-  &#book-list {
-    background: rgba(76, 175, 80, 0);
-    font-size: 1em;
-  }
-
-  margin-bottom: 15px;
+  color: $c-base__02;
+  border-color: $c-accent__blue;
   width: 100%;
   outline: none;
+  background: white;
+  z-index: 100;
+  box-sizing: border-box;
 }
 
-input:focus {
-  &#home {
-    font-size: 2em;
-  }
-
-  &#book-list {
-    font-size: 2em;
-  }
+input.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 15px;
 }
 
 input::placeholder {
-  color: lightgrey;
+  color: $c-base__02;
+  opacity: 0.7;
 }
 
 
