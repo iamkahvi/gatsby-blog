@@ -72,7 +72,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
         to="/book-shelf/"
         className="booklist f2 baskerville tc faded-blue tm mb4"
       >
-        My Book Shelf →
+        📚 →
       </Link>
       <SearchBar
         handleSearch={handleSearch}
