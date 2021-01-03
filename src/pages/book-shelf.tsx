@@ -8,7 +8,8 @@ import SearchBar from "../components/searchBar";
 import { BookShelfProps, BookEdge } from "../types/types";
 
 const yearKey = {
-  2020: "this year",
+  2021: "this year",
+  2020: "2020",
   2019: "2019",
   2018: "2018",
   2017: "possibly in 2017",
