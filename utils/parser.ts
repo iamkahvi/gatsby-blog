@@ -11,6 +11,64 @@ interface BookListItem {
 
 type BookList = BookListItem[];
 
+interface PostItem {
+  frontmatter: {
+    title: string;
+    date: string;
+  };
+  rawMarkdownBody: string;
+}
+
+type PostList = PostItem[];
+
+export async function addPostEntries(pl: PostList) {
+  console.log("Opening Connection...");
+  const client = contentful.createClient({
+    accessToken: process.env.CONT_MANAGEMENT_TOKEN,
+  });
+
+  // Create entry
+  const space = await client.getSpace("rbthbhshshw9");
+  const env = await space.getEnvironment("master");
+
+  console.log("Starting Uploads");
+  for (const post of pl) {
+    let bPost = {
+      fields: {
+        postTitle: {
+          "en-US": post.frontmatter.title,
+        },
+        dateWritten: {
+          "en-US": post.frontmatter.date,
+        },
+        postBody: {
+          "en-US": {
+            nodeType: "document",
+            data: {},
+            content: [
+              {
+                nodeType: "paragraph",
+                content: [
+                  {
+                    nodeType: "text",
+                    marks: [],
+                    value: post.rawMarkdownBody,
+                    data: {},
+                  },
+                ],
+                data: {},
+              },
+            ],
+          },
+        },
+      },
+    };
+    await env.createEntry("blogPost", bPost);
+    console.log(`Uploaded ${post.frontmatter.title}`);
+  }
+  console.log("Finished Uploads");
+}
+
 export function parser(text: string): BookList {
   console.log(`Parsing Text: ${text.slice(0, 50)}...`);
   let bList: BookList = [];
@@ -125,7 +183,7 @@ function readData(path: string): string {
   return data;
 }
 
-const text = readData("in.json");
-const bl = parser(text);
-// console.log(JSON.stringify(bl));
-addEntries(bl);
+const text = readData("in_posts.json");
+const pl = JSON.parse(text)["nodes"];
+// console.log(pl);
+// addPostEntries(pl);

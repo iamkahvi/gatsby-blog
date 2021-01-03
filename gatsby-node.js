@@ -11,12 +11,6 @@ exports.createPages = async function({ graphql, actions }) {
   const result = await graphql(
     `
       {
-        bookShelf: allGhostPage(filter: { title: { eq: "A Test Shelf" } }) {
-          nodes {
-            title
-            plaintext
-          }
-        }
         blogPosts: allMarkdownRemark(
           filter: {
             frontmatter: { layout: { eq: "post" }, published: { ne: false } }
@@ -56,9 +50,11 @@ exports.createPages = async function({ graphql, actions }) {
     `
   );
 
-  const bookShelfText = result.data.bookShelf.nodes[0].plaintext;
-
-  fs.writeFileSync("./utils/in.json", bookShelfText, "utf-8");
+  // fs.writeFileSync("./utils/in.json", bookShelfText, "utf-8");
+  // fs.writeFileSync(
+  //   "./utils/in_posts.json",
+  //   JSON.stringify(result.data.blogPostsContent)
+  // );
 
   // Create blog posts pages.
   const posts = result.data.blogPosts.edges;

@@ -36,10 +36,78 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addEntries = exports.parser = void 0;
+exports.addEntries = exports.parser = exports.addPostEntries = void 0;
 var contentful = require("contentful-management");
 var fs = require("fs");
 require("dotenv").config();
+function addPostEntries(pl) {
+    return __awaiter(this, void 0, void 0, function () {
+        var client, space, env, _i, pl_1, post, bPost;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    console.log("Opening Connection...");
+                    client = contentful.createClient({
+                        accessToken: process.env.CONT_MANAGEMENT_TOKEN,
+                    });
+                    return [4 /*yield*/, client.getSpace("rbthbhshshw9")];
+                case 1:
+                    space = _a.sent();
+                    return [4 /*yield*/, space.getEnvironment("master")];
+                case 2:
+                    env = _a.sent();
+                    console.log("Starting Uploads");
+                    _i = 0, pl_1 = pl;
+                    _a.label = 3;
+                case 3:
+                    if (!(_i < pl_1.length)) return [3 /*break*/, 6];
+                    post = pl_1[_i];
+                    bPost = {
+                        fields: {
+                            postTitle: {
+                                "en-US": post.frontmatter.title,
+                            },
+                            dateWritten: {
+                                "en-US": post.frontmatter.date,
+                            },
+                            postBody: {
+                                "en-US": {
+                                    nodeType: "document",
+                                    data: {},
+                                    content: [
+                                        {
+                                            nodeType: "paragraph",
+                                            content: [
+                                                {
+                                                    nodeType: "text",
+                                                    marks: [],
+                                                    value: post.rawMarkdownBody,
+                                                    data: {},
+                                                },
+                                            ],
+                                            data: {},
+                                        },
+                                    ],
+                                },
+                            },
+                        },
+                    };
+                    return [4 /*yield*/, env.createEntry("blogPost", bPost)];
+                case 4:
+                    _a.sent();
+                    console.log("Uploaded " + post.frontmatter.title);
+                    _a.label = 5;
+                case 5:
+                    _i++;
+                    return [3 /*break*/, 3];
+                case 6:
+                    console.log("Finished Uploads");
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.addPostEntries = addPostEntries;
 function parser(text) {
     console.log("Parsing Text: " + text.slice(0, 50) + "...");
     var bList = [];
@@ -165,7 +233,7 @@ function readData(path) {
     var data = fs.readFileSync(path, "utf8");
     return data;
 }
-var text = readData("in.json");
-var bl = parser(text);
-// console.log(JSON.stringify(bl));
-addEntries(bl);
+var text = readData("in_posts.json");
+var pl = JSON.parse(text)["nodes"];
+// console.log(pl);
+// addPostEntries(pl);
