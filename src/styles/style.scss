@@ -56,8 +56,19 @@ $m-border: 1px solid $c-base__2;
 }
 
 ::selection {
-  background-color: rgb(255, 134, 82);
+  background-color: rgba(255, 134, 82, 0.5);
 }
+
+svg {
+  height: 20px;
+  width: 20px;
+  transition: fill 0.2s;
+  fill: lightgrey;
+  &:hover {
+    fill: #FF8552;
+  }
+}
+
 
 .roboto {
   font-family: 'Roboto', sans-serif
@@ -188,6 +199,8 @@ input {
   background: white;
   z-index: 100;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  box-shadow: none;
   &:focus {
     box-shadow: 0 0 0 1px $c-accent__blue;
   }
