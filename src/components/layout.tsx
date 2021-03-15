@@ -1,18 +1,27 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import { LayoutProps } from "../types/types";
 
 function Layout(props: LayoutProps) {
   const { location, title, children, description } = props;
 
+  const [state, setState] = useState({
+    audioPlayer: {},
+  });
+
+  useEffect(() => {
+    setState({
+      audioPlayer: new Audio("/assets/pronounce4.m4a"),
+    });
+  }, []);
+
   const navStyle = "roboto faded-orange";
   const descriptionStyle = "f6 roboto pt1 mt2 faded-blue";
-  const kahviPronounce = new Audio("/assets/pronounce4.m4a");
 
   const audioIcon = (
     <svg
-      onClick={() => kahviPronounce.play()}
+      onClick={() => state.audioPlayer?.play()}
       className="ml3"
       width="660"
       height="660"
