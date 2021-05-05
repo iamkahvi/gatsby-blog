@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import { LayoutProps } from "../types/types";

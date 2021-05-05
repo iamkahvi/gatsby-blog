@@ -1,12 +1,12 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { BookListProps } from "../types/types"
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { PageProps } from "gatsby";
 
-export default function Covid(props: BookListProps) {
-  const { data, location } = props
-  const { html, title } = data.allGhostPage.nodes[0]
+export default function Covid(props: PageProps) {
+  const { data, location } = props;
+  const { html, title } = data.allGhostPage.nodes[0];
 
   return (
     <Layout
@@ -18,7 +18,7 @@ export default function Covid(props: BookListProps) {
       <h1 className="mt0">{title}</h1>
       <div className="textBody" dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -30,4 +30,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
