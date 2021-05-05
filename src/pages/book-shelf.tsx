@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import SearchBar from "../components/searchBar";
 import { BookShelfProps, BookEdge } from "../types/types";
+import InputEmail from "../components/emailInput";
 
 const yearKey = {
   2021: "this year",
@@ -39,6 +40,34 @@ function BookList(props: BookShelfProps) {
 
   const handleSearch = e => {
     setSearch(e.target.value);
+  };
+
+  const addEmail = async (value, setLoading) => {
+    setLoading(true);
+
+    const emailAPIURL = "http://localhost:3000/email";
+    const emailAPIBody = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        email: value,
+      }),
+    };
+
+    const res = await fetch(emailAPIURL, emailAPIBody);
+    const data = await res.json();
+
+    setLoading(false);
+
+    if (res.status === 200) {
+      // Assuming two people don't subscribing on the same device
+      localStorage.setItem("isSubscribed", "true");
+    }
+    alert(data.title);
+    console.log(data);
   };
 
   const renderBook = ({ node, previous }: BookEdge) => {
@@ -86,6 +115,12 @@ function BookList(props: BookShelfProps) {
             __html: documentToHtmlString(JSON.parse(intro.raw)),
           }}
         />
+        {/* {!localStorage.getItem("isSubscribed") && ( */}
+        <div className="ba-ns pa3-ns mb3 mw6 br3">
+          <h3 className="mb2">subscribe to booklist updates here:</h3>
+          <InputEmail handleInput={addEmail} />
+        </div>
+        {/* )} */}
         <SearchBar
           handleSearch={handleSearch}
           placeholderText="search books..."

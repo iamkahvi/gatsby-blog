@@ -1,22 +1,17 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
 
-$c-base__03: #0d2b35;
+$c-base__03: #0D2B35;
 $c-base__02: #297373; //body color
-$c-base__01: #5c6e74;
-$c-base__00: #697b82;
+$c-base__01: #5C6E74;
+$c-base__00: #697B82;
 $c-base__0: #869395;
-$c-base__1: #96a0a0;
-$c-base__2: #ede7d6;
-$c-base__3: #fcf5e4;
+$c-base__1: #96A0A0;
+$c-base__2: #EDE7D6;
+$c-base__3: #FCF5E4;
 
-$c-accent__blue: #ff8552; //important stuff
+$c-accent__blue: #FF8552; //important stuff
 $c-accent__darkblue: #297373;
-$c-accent__green: #dad2bc;
-
-:export {
-  orangeColor: $c-accent__blue;
-  blueColor: $c-accent__darkblue;
-}
+$c-accent__green: #DAD2BC;
 
 // Breakpoints
 $bp__sm: 45rem; // 450px
@@ -24,16 +19,79 @@ $bp__sm: 45rem; // 450px
 // Misc
 $m-border: 1px solid $c-base__2;
 
-::selection {
-  background-color: rgb(255, 134, 82);
+.booklist img {
+  width: 10px;
 }
+
+.book {
+  list-style-position: outside;
+}
+
+.book::before {
+  margin-top: -35px;
+  display: block;
+  padding-top: 35px;
+}
+
+.anchor {
+  float: left;
+  padding-right: 4px;
+  margin-left: -25px;
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+    display: block;
+    color: $c-accent__darkblue;
+    text-decoration: underline;
+
+    &::after {
+      height: 0;
+    }
+  }
+
+}
+
+.anchor svg {
+  fill: $c-accent__blue;
+}
+
+::selection {
+  background-color: rgba(255, 134, 82, 0.5);
+}
+
+svg {
+  height: 20px;
+  width: 20px;
+  transition: fill 0.2s;
+  fill: lightgrey;
+  &:hover {
+    fill: #FF8552;
+  }
+}
+
+
+.roboto {
+  font-family: 'Roboto', sans-serif
+}
+/* Custom Colors */
+.faded-orange {
+  color: #FF8552;
+}
+
+.faded-blue {
+  color: #297373;
+}
+
+.faded-brown {
+  color: #DAD2BC;
+}
+
 
 .textBody hr {
   margin-bottom: 25px;
 }
 
-.textBody ul,
-li {
+.textBody li {
   margin-left: 1.2rem;
   line-height: 1.5;
 }
@@ -44,7 +102,8 @@ ol {
 }
 
 .textBody {
-  font-family: "Roboto";
+  line-height: 1.5;
+  font-family: 'Roboto';
   margin-bottom: 3rem;
   color: #297373;
   font-size: 1.125rem;
@@ -72,16 +131,14 @@ ol {
 }
 
 .textBody p {
-  font-family: "Roboto";
-  line-height: 1.5;
-  font-size: 18px;
+  font-family: 'Roboto';
   margin-bottom: 20px;
 }
 
 .textBody h1,
 h2,
 h3 {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   margin-bottom: 20px;
 }
 
@@ -90,7 +147,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   color: #297373;
   font-weight: 400;
 }
@@ -125,13 +182,8 @@ h2,
 h4,
 h5,
 h6 {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-weight: 400;
-}
-
-.bold-input {
-  font-weight: bold;
-  font-size: 2em;
 }
 
 input {
@@ -142,20 +194,6 @@ input {
   border-radius: 0;
   color: $c-base__02;
   border-color: $c-accent__blue;
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid $c-base__02;
-  color: $c-accent__blue;
-  line-height: normal;
-
-  &#home {
-    background: rgba(76, 175, 80, 0);
-    font-size: 2em;
-  }
-  &#book-list {
-    background: rgba(76, 175, 80, 0);
-    font-size: 1em;
-  }
   width: 100%;
   outline: none;
   background: white;
@@ -163,15 +201,15 @@ input {
   box-sizing: border-box;
   -webkit-appearance: none;
   box-shadow: none;
+  line-height: normal;
   &:focus {
     box-shadow: 0 0 0 1px $c-accent__blue;
   }
 }
 
-input.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 15px;
+.bold-input {
+  font-weight: bold;
+  font-size: 2em;
 }
 
 button {
@@ -181,10 +219,12 @@ button {
   background: none;
   border: 1px solid $c-base__02;
   outline: none;
+
   &:hover {
     color: $c-accent__blue;
     border: 1px solid $c-accent__blue;
   }
+
   &:active {
     border: 1px solid transparent;
     background: $c-accent__blue;
@@ -213,13 +253,10 @@ input::placeholder {
   color: $c-accent__blue;
 }
 
-input:focus {
-  &#home {
-    font-size: 3em;
-  }
-  &#book-list {
-    font-size: 2em;
-  }
+input.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 15px;
 }
 
 input::placeholder {
@@ -227,11 +264,12 @@ input::placeholder {
   opacity: 0.7;
 }
 
-.about img {
+
+.profile {
   width: 23vh;
   float: right;
   margin-right: 0px;
-  margin-left: 10px;
+  margin-left: 50px;
 }
 
 blockquote {
@@ -241,8 +279,9 @@ blockquote {
   border-left: 5px solid #ccc;
 }
 
+
 @media screen and (max-width: 565px) {
-  .about img {
+  .profile {
     display: block;
     float: none;
     margin-left: auto;
@@ -267,6 +306,7 @@ blockquote {
   .post-date-small {
     display: none;
   }
+
 }
 
 hr {
