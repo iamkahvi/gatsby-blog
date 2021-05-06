@@ -17,3 +17,4 @@ Rebuild of my [Jekyll blog](https://github.com/iamkahvi/iamkahvi.github.io) with
 * [Gatsby](https://www.gatsbyjs.com/)
 * [Tachyons](https://tachyons.io/)
 * [Ghost CMS](https://ghost.org/)
+* [Contentful](https://www.contentful.com/)
