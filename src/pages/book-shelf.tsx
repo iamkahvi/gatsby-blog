@@ -45,7 +45,7 @@ function BookList(props: BookShelfProps) {
   const addEmail = async (value, setLoading) => {
     setLoading(true);
 
-    const emailAPIURL = "http://localhost:3000/email";
+    const emailAPIURL = process.env.GATSBY_EMAIL_SERVICE_URL;
     const emailAPIBody = {
       method: "POST",
       headers: {
