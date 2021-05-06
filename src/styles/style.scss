@@ -219,16 +219,38 @@ button {
   background: none;
   border: 1px solid $c-base__02;
   outline: none;
-
-  &:hover {
-    color: $c-accent__blue;
-    border: 1px solid $c-accent__blue;
-  }
-
+  border-color: $c-accent__blue;
+  box-shadow: none;
+  transition: background 0.2s;
+  
   &:active {
-    border: 1px solid transparent;
-    background: $c-accent__blue;
-    color: white;
+    box-shadow: 0 0 0 1px $c-accent__blue;
+  }
+  &:hover {
+    background-color: rgba(255, 134, 82, 0.25);
+  }
+}
+
+#loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid $c-accent__darkblue;
+  border-radius: 50%;
+  border-top-color: rgba(255, 255, 255, 0);
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
   }
 }
 

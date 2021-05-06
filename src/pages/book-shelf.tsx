@@ -63,7 +63,7 @@ function BookList(props: BookShelfProps) {
     setLoading(false);
 
     if (res.status === 200) {
-      // Assuming two people don't subscribing on the same device
+      // Assuming two people don't subscribe on the same device
       localStorage.setItem("isSubscribed", "true");
     }
     alert(data.title);
@@ -115,12 +115,12 @@ function BookList(props: BookShelfProps) {
             __html: documentToHtmlString(JSON.parse(intro.raw)),
           }}
         />
-        {/* {!localStorage.getItem("isSubscribed") && ( */}
-        <div className="ba-ns pa3-ns mb3 mw6 br3">
-          <h3 className="mb2">subscribe to booklist updates here:</h3>
-          <InputEmail handleInput={addEmail} />
-        </div>
-        {/* )} */}
+        {!localStorage.getItem("isSubscribed") && (
+          <div className="ba-ns pa3-ns mb3 mw6 br3">
+            <h3 className="mb2">subscribe to book shelf updates here:</h3>
+            <InputEmail handleInput={addEmail} />
+          </div>
+        )}
         <SearchBar
           handleSearch={handleSearch}
           placeholderText="search books..."
