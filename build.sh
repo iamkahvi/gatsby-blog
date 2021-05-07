@@ -3,4 +3,4 @@
 echo webhook received!
 
 gatsby build
-cp -Tr public /var/www/kahvipatel.com/site-build
+cp -Tr public /var/www/kahvipatel.com/prod-build
