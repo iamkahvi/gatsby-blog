@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
@@ -46,28 +47,22 @@ function BookList(props: BookShelfProps) {
     setLoading(true);
 
     const emailAPIURL = process.env.GATSBY_EMAIL_SERVICE_URL;
-    const emailAPIBody = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        email: value,
-      }),
-    };
+    const body = { email: value };
+    const config = { timeout: 2500 };
 
-    const res = await fetch(emailAPIURL, emailAPIBody);
-    const data = await res.json();
+    try {
+      const res = await axios.post(emailAPIURL, body, config);
+      setLoading(false);
 
-    setLoading(false);
-
-    if (res.status === 200) {
       // Assuming two people don't subscribe on the same device
       localStorage.setItem("isSubscribed", "true");
+
+      alert(res.data.title);
+    } catch (error) {
+      setLoading(false);
+
+      alert(error?.response?.data?.title);
     }
-    alert(data.title);
-    console.log(data);
   };
 
   const renderBook = ({ node, previous }: BookEdge) => {

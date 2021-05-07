@@ -207,11 +207,6 @@ input {
   }
 }
 
-.bold-input {
-  font-weight: bold;
-  font-size: 2em;
-}
-
 button {
   font-family: Helvetica, sans-serif;
   color: $c-base__02;
@@ -256,19 +251,6 @@ button {
 
 input:hover {
   border-color: $c-accent__blue;
-}
-
-// I don't think this is working
-input::-webkit-input-placeholder {
-  color: $c-accent__blue;
-}
-
-input::-moz-placeholder {
-  color: $c-accent__blue;
-}
-
-input::-ms-placeholder {
-  color: $c-accent__blue;
 }
 
 input::placeholder {
