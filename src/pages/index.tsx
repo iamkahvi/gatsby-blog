@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, graphql, navigate } from "gatsby";
 import axios from "axios";
 
@@ -7,10 +7,20 @@ import { IndexProps, PostEdge } from "../types/types";
 
 const BlogIndex = ({ data, location }: IndexProps) => {
   const [search, setSearch] = useState("");
+  const [showEmail, setShowEmail] = useState(true);
 
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
   const description = data.site.siteMetadata.description;
+
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.localStorage.getItem("isSubscribed") === "true"
+    ) {
+      setShowEmail(false);
+    }
+  }, []);
 
   const addEmail = async (value, setLoading) => {
     setLoading(true);
@@ -30,6 +40,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       typeof window !== "undefined" &&
         window.localStorage.setItem("isSubscribed", "true");
       alert(res.data.title);
+      setShowEmail(false);
     } catch (error) {
       setLoading(false);
       alert(error?.response?.data?.title);
@@ -97,13 +108,12 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       >
         📚 →
       </Link>
-      {typeof window !== "undefined" &&
-        !window.localStorage.getItem("isSubscribed") && (
-          <div className="ba-ns pa3-ns mb4 mw6 br3">
-            <h3 className="mb2">subscribe to blog updates here:</h3>
-            <EmailInput handleInput={addEmail} />
-          </div>
-        )}
+      {showEmail && (
+        <div className="ba-ns pa3-ns mb4 mw6 br3">
+          <h3 className="mb2">subscribe to blog updates here:</h3>
+          <EmailInput handleInput={addEmail} />
+        </div>
+      )}
       <SearchBar
         handleSearch={handleSearch}
         placeholderText="search posts..."
