@@ -121,7 +121,15 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       </Link>
       {showEmail && (
         <div className="ba-ns pa3-ns mb4 mw6 br3">
-          <h3 className="mb2">subscribe to blog updates here:</h3>
+          <div className="flex justify-between mb3">
+            <h3 className="mb2 ">subscribe to blog updates here:</h3>
+            <button
+              className="roboto ba br3 f5 normal flex items-center justify-center"
+              type="submit"
+            >
+              ❌
+            </button>
+          </div>
           <EmailInput
             handleInput={addEmail}
             show={showEmail}

@@ -44,13 +44,6 @@ export default function EmailInput({ handleInput, show, setShow }: Props) {
             >
               {isLoading ? <div id="loading"></div> : "subscribe"}
             </button>
-            <button
-              className="roboto w-25 f7 ml3 normal ba br3 pa2 flex items-center justify-center"
-              type="submit"
-              onClick={() => setShow(false)}
-            >
-              don't show this again
-            </button>
           </div>
         </form>
       )}
