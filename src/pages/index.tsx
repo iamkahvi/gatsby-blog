@@ -7,7 +7,7 @@ import { IndexProps, PostEdge } from "../types/types";
 
 const BlogIndex = ({ data, location }: IndexProps) => {
   const [search, setSearch] = useState("");
-  const [showEmail, setShowEmail] = useState(true);
+  const [showEmail, setShowEmail] = useState(false);
 
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
@@ -16,9 +16,9 @@ const BlogIndex = ({ data, location }: IndexProps) => {
   useEffect(() => {
     if (
       typeof window !== "undefined" &&
-      window.localStorage.getItem("isSubscribed")
+      !window.localStorage.getItem("isSubscribed")
     ) {
-      setShowEmail(false);
+      setShowEmail(true);
     }
   }, []);
 
