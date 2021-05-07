@@ -10,6 +10,7 @@
     "@contentful/rich-text-html-renderer": "^14.1.2",
     "@types/react": "^16.9.35",
     "@types/react-helmet": "^6.0.0",
+    "axios": "^0.21.1",
     "contentful-management": "^7.5.1",
     "dotenv": "^8.2.0",
     "gatsby": "^3.4.1",
@@ -35,12 +36,12 @@
     "typeface-montserrat": "0.0.54"
   },
   "devDependencies": {
+    "property-expr": ">=2.0.3",
     "@babel/core": "^7.13.8",
     "@babel/eslint-parser": "^7.13.8",
     "@babel/eslint-plugin": "^7.13.0",
     "@typescript-eslint/eslint-plugin": "^4.14.2",
     "@typescript-eslint/parser": "^4.22.0",
-    "axios": ">=0.21.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.25.0",
     "eslint-config-google": "^0.14.0",

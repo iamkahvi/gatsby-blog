@@ -201,9 +201,60 @@ input {
   box-sizing: border-box;
   -webkit-appearance: none;
   box-shadow: none;
+  line-height: normal;
   &:focus {
     box-shadow: 0 0 0 1px $c-accent__blue;
   }
+}
+
+button {
+  font-family: Helvetica, sans-serif;
+  color: $c-base__02;
+  padding: 5px;
+  background: none;
+  border: 1px solid $c-base__02;
+  outline: none;
+  border-color: $c-accent__blue;
+  box-shadow: none;
+  transition: background 0.2s;
+  
+  &:active {
+    box-shadow: 0 0 0 1px $c-accent__blue;
+  }
+  &:hover {
+    background-color: rgba(255, 134, 82, 0.25);
+  }
+}
+
+#loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid $c-accent__darkblue;
+  border-radius: 50%;
+  border-top-color: rgba(255, 255, 255, 0);
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+input:hover {
+  border-color: $c-accent__blue;
+}
+
+input::placeholder {
+  color: $c-accent__blue;
 }
 
 input.sticky {

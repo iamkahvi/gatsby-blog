@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link, graphql, navigate } from "gatsby";
+import axios from "axios";
 
-import Layout from "../components/layout";
-import SearchBar from "../components/searchBar";
-import SEO from "../components/seo";
+import { Layout, SearchBar, SEO, EmailInput } from "../components";
 import { IndexProps, PostEdge } from "../types/types";
 
 const BlogIndex = ({ data, location }: IndexProps) => {
@@ -12,6 +11,26 @@ const BlogIndex = ({ data, location }: IndexProps) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
   const description = data.site.siteMetadata.description;
+
+  const addEmail = async (value, setLoading) => {
+    setLoading(true);
+
+    const emailAPIURL = process.env.GATSBY_EMAIL_SERVICE_URL;
+    const body = { email: value };
+    const config = { timeout: 2500 };
+
+    try {
+      const res = await axios.post(emailAPIURL, body, config);
+      setLoading(false);
+
+      // Assuming two people don't subscribe on the same device
+      localStorage.setItem("isSubscribed", "true");
+      alert(res.data.title);
+    } catch (error) {
+      setLoading(false);
+      alert(error?.response?.data?.title);
+    }
+  };
 
   const handleSearch = e => {
     setSearch(e.target.value);
@@ -74,6 +93,12 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       >
         📚 →
       </Link>
+      {!localStorage.getItem("isSubscribed") && (
+        <div className="ba-ns pa3-ns mb4 mw6 br3">
+          <h3 className="mb2">subscribe to blog updates here:</h3>
+          <EmailInput handleInput={addEmail} />
+        </div>
+      )}
       <SearchBar
         handleSearch={handleSearch}
         placeholderText="search posts..."

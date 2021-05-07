@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import SearchBar from "../components/searchBar";
+import { Layout, SEO, SearchBar } from "../components";
 import { BookShelfProps, BookEdge } from "../types/types";
 
 const yearKey = {
