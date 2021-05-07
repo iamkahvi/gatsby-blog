@@ -43,7 +43,9 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       setShowEmail(false);
     } catch (error) {
       setLoading(false);
-      alert(error?.response?.data?.title);
+      alert(
+        `${error?.response?.data?.title}\n${error?.response?.data?.detail}`
+      );
     }
   };
 
