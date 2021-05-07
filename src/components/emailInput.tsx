@@ -35,11 +35,11 @@ export default function EmailInput({ handleInput, show, setShow }: Props) {
               placeholder="email"
               value={value}
               onChange={handleChange}
-              className="roboto w-100 f4 normal mr3 ba br3 pa2"
+              className="roboto f4 normal mr3 ba br3 pa2"
               id="email-input"
             ></input>
             <button
-              className="roboto w-25 f5 normal ba br3 pa2 flex items-center justify-center"
+              className="roboto w4 f4 normal ba br3 pa2 flex items-center justify-center"
               type="submit"
             >
               {isLoading ? <div id="loading"></div> : "subscribe"}

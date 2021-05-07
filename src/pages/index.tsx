@@ -126,6 +126,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
             <button
               className="roboto ba br3 f5 normal flex items-center justify-center"
               type="submit"
+              onClick={hideEmail}
             >
               ❌
             </button>
