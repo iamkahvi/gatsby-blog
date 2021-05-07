@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
-export default function EmailInput(props) {
+interface Props {
+  handleInput: (value: any, setLoading: any) => Promise<void>;
+}
+
+export default function EmailInput({ handleInput }: Props) {
   const [value, updateValue] = useState("");
   const [isLoading, setLoading] = useState(false);
 
@@ -11,7 +15,7 @@ export default function EmailInput(props) {
       alert("You can't submit a blank email");
       return;
     }
-    props.handleInput(value, setLoading);
+    handleInput(value, setLoading);
     updateValue("");
   };
 

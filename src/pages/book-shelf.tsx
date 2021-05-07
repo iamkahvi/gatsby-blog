@@ -1,12 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import SearchBar from "../components/searchBar";
+import { Layout, SEO, SearchBar } from "../components";
 import { BookShelfProps, BookEdge } from "../types/types";
-import InputEmail from "../components/emailInput";
 
 const yearKey = {
   2021: "this year",
@@ -41,28 +37,6 @@ function BookList(props: BookShelfProps) {
 
   const handleSearch = e => {
     setSearch(e.target.value);
-  };
-
-  const addEmail = async (value, setLoading) => {
-    setLoading(true);
-
-    const emailAPIURL = process.env.GATSBY_EMAIL_SERVICE_URL;
-    const body = { email: value };
-    const config = { timeout: 2500 };
-
-    try {
-      const res = await axios.post(emailAPIURL, body, config);
-      setLoading(false);
-
-      // Assuming two people don't subscribe on the same device
-      localStorage.setItem("isSubscribed", "true");
-
-      alert(res.data.title);
-    } catch (error) {
-      setLoading(false);
-
-      alert(error?.response?.data?.title);
-    }
   };
 
   const renderBook = ({ node, previous }: BookEdge) => {
@@ -110,12 +84,6 @@ function BookList(props: BookShelfProps) {
             __html: documentToHtmlString(JSON.parse(intro.raw)),
           }}
         />
-        {!localStorage.getItem("isSubscribed") && (
-          <div className="ba-ns pa3-ns mb3 mw6 br3">
-            <h3 className="mb2">subscribe to book shelf updates here:</h3>
-            <InputEmail handleInput={addEmail} />
-          </div>
-        )}
         <SearchBar
           handleSearch={handleSearch}
           placeholderText="search books..."
