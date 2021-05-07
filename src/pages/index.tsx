@@ -17,14 +17,18 @@ const BlogIndex = ({ data, location }: IndexProps) => {
 
     const emailAPIURL = process.env.GATSBY_EMAIL_SERVICE_URL;
     const body = { email: value };
-    const config = { timeout: 2500 };
+    const config = {
+      timeout: 2500,
+      headers: { "Access-Control-Allow-Origin": "*" },
+    };
 
     try {
       const res = await axios.post(emailAPIURL, body, config);
       setLoading(false);
 
       // Assuming two people don't subscribe on the same device
-      localStorage.setItem("isSubscribed", "true");
+      typeof window !== "undefined" &&
+        window.localStorage.setItem("isSubscribed", "true");
       alert(res.data.title);
     } catch (error) {
       setLoading(false);
@@ -93,12 +97,13 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       >
         📚 →
       </Link>
-      {!localStorage.getItem("isSubscribed") && (
-        <div className="ba-ns pa3-ns mb4 mw6 br3">
-          <h3 className="mb2">subscribe to blog updates here:</h3>
-          <EmailInput handleInput={addEmail} />
-        </div>
-      )}
+      {typeof window !== "undefined" &&
+        !window.localStorage.getItem("isSubscribed") && (
+          <div className="ba-ns pa3-ns mb4 mw6 br3">
+            <h3 className="mb2">subscribe to blog updates here:</h3>
+            <EmailInput handleInput={addEmail} />
+          </div>
+        )}
       <SearchBar
         handleSearch={handleSearch}
         placeholderText="search posts..."
