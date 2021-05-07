@@ -16,7 +16,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
   useEffect(() => {
     if (
       typeof window !== "undefined" &&
-      window.localStorage.getItem("isSubscribed") === "true"
+      window.localStorage.getItem("isSubscribed")
     ) {
       setShowEmail(false);
     }
@@ -39,13 +39,16 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       // Assuming two people don't subscribe on the same device
       typeof window !== "undefined" &&
         window.localStorage.setItem("isSubscribed", "true");
-      alert(res.data.title);
       setShowEmail(false);
+      alert(res.data.title);
     } catch (error) {
       setLoading(false);
-      alert(
-        `${error?.response?.data?.title}\n${error?.response?.data?.detail}`
-      );
+      const { title = null, detail = null } = error?.response?.data;
+      if (detail) {
+        alert(`${title}\n${detail}`);
+      } else {
+        alert(`${title}`);
+      }
     }
   };
 
@@ -102,6 +105,12 @@ const BlogIndex = ({ data, location }: IndexProps) => {
     );
   };
 
+  const hideEmail = () => {
+    setShowEmail(false);
+    typeof window !== "undefined" &&
+      window.localStorage.setItem("isSubscribed", "false");
+  };
+
   return (
     <Layout location={location} title={siteTitle} description={description}>
       <Link
@@ -113,7 +122,11 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       {showEmail && (
         <div className="ba-ns pa3-ns mb4 mw6 br3">
           <h3 className="mb2">subscribe to blog updates here:</h3>
-          <EmailInput handleInput={addEmail} />
+          <EmailInput
+            handleInput={addEmail}
+            show={showEmail}
+            setShow={hideEmail}
+          />
         </div>
       )}
       <SearchBar

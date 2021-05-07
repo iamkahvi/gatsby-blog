@@ -2,9 +2,11 @@ import React, { useState } from "react";
 
 interface Props {
   handleInput: (value: any, setLoading: any) => Promise<void>;
+  show: boolean;
+  setShow: (boolean) => void;
 }
 
-export default function EmailInput({ handleInput }: Props) {
+export default function EmailInput({ handleInput, show, setShow }: Props) {
   const [value, updateValue] = useState("");
   const [isLoading, setLoading] = useState(false);
 
@@ -25,24 +27,33 @@ export default function EmailInput({ handleInput }: Props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <div className="flex">
-          <input
-            type="email"
-            placeholder="email"
-            value={value}
-            onChange={handleChange}
-            className="roboto f4 normal mr3 ba br3 pa2"
-            id="email-input"
-          ></input>
-          <button
-            className="roboto w4 f4 normal ba br3 pa2 flex items-center justify-center"
-            type="submit"
-          >
-            {isLoading ? <div id="loading"></div> : "subscribe"}
-          </button>
-        </div>
-      </form>
+      {show && (
+        <form onSubmit={handleSubmit}>
+          <div className="flex">
+            <input
+              type="email"
+              placeholder="email"
+              value={value}
+              onChange={handleChange}
+              className="roboto w-100 f4 normal mr3 ba br3 pa2"
+              id="email-input"
+            ></input>
+            <button
+              className="roboto w-25 f5 normal ba br3 pa2 flex items-center justify-center"
+              type="submit"
+            >
+              {isLoading ? <div id="loading"></div> : "subscribe"}
+            </button>
+            <button
+              className="roboto w-25 f7 ml3 normal ba br3 pa2 flex items-center justify-center"
+              type="submit"
+              onClick={() => setShow(false)}
+            >
+              don't show this again
+            </button>
+          </div>
+        </form>
+      )}
     </>
   );
 }
