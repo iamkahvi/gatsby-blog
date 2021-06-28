@@ -4,19 +4,12 @@ title: The Grapes of Wrath Highlights
 slug: The Grapes of Wrath
 date: 2020-06-26
 ---
-by John Steinbeck
-
 
 After a while the faces of the watching men lost their bemused perplexity and became hard and angry and resistant. Then the women knew that they were safe and that there was no break.
 
 John Steinbeck, The Grapes of Wrath, loc. 57-59
 <hr>
 
-
-cutting the earth with blades-not plowing but surgery,
-
-John Steinbeck, The Grapes of Wrath, pg. 11, loc. 728-728
-<hr>
 
 
 And when that crop grew, and was harvested, no man had crumbled a hot clod in his fingers and let the earth sift past his fingertips. No man had touched the seed, or lusted for the growth. Men ate what they had not raised, had no connection with the bread. The land bore under iron, and under iron gradually died; for it was not loved or hated, it had no prayers or curses.
@@ -36,11 +29,6 @@ John Steinbeck, The Grapes of Wrath, pg. 12, loc. 756-764
 John Steinbeck, The Grapes of Wrath, pg. 13, loc. 781-781
 <hr>
 
-
-If on'y they didn't tell me I got to get off, why, I'd prob'y be in California right now a-eatin' grapes an' a-pickin' an orange when I wanted.
-
-John Steinbeck, The Grapes of Wrath, pg. 18, loc. 971-972
-<hr>
 
 
 If on'y they didn't tell me I got to get off, why, I'd prob'y be in California right now a-eatin' grapes an' a-pickin' an orange when I wanted. But them sons-a-bitches says I got to get off-an', Jesus Christ, a man can't, when he's tol' to!"
@@ -73,19 +61,14 @@ John Steinbeck, The Grapes of Wrath, pg. 66, loc. 2524-2527
 <hr>
 
 
-reassure themselves that business is noble and not the curious ritualized thievery they know it is; that business men are intelligent in spite of the records of their stupidity; that they are kind and charitable in spite of the principles of sound business;
 
-John Steinbeck, The Grapes of Wrath, pg. 91, loc. 3411-3412
-<hr>
-
-
-reassure themselves that business is noble and not the curious ritualized thievery they know it is; that business men are intelligent in spite of the records of their stupidity; that they are kind and charitable in spite of the principles of sound business; that their lives are rich instead of the thin tiresome routines they know; and that a time is coming when they will not be afraid any more.
+[They] reassure themselves that business is noble and not the curious ritualized thievery they know it is; that business men are intelligent in spite of the records of their stupidity; that they are kind and charitable in spite of the principles of sound business; that their lives are rich instead of the thin tiresome routines they know; and that a time is coming when they will not be afraid any more.
 
 John Steinbeck, The Grapes of Wrath, pg. 91, loc. 3411-3414
 <hr>
 
 
-The nickel, which has caused all this mechanism to work, has caused Crosby to sing and an orchestra to play-this nickel drops from between the contact points into the box where the profits go. The nickel, unlike most money, has actually done a job of work, has been physically responsible for a reaction.
+The nickel, which has caused all this mechanism to work, has caused Crosby to sing and an orchestra to play - this nickel drops from between the contact points into the box where the profits go. The nickel, unlike most money, has actually done a job of work, has been **physically responsible** for a reaction.
 
 John Steinbeck, The Grapes of Wrath, pg. 93, loc. 3469-3472
 <hr>
@@ -96,11 +79,6 @@ John Steinbeck, The Grapes of Wrath, pg. 93, loc. 3469-3472
 John Steinbeck, The Grapes of Wrath, pg. 114, loc. 4235-4237
 <hr>
 
-
-and only means to destroy revolt were considered, while the causes of revolt went on.
-
-John Steinbeck, The Grapes of Wrath, pg. 150, loc. 5504-5505
-<hr>
 
 
 "Look," the young man said. "S'pose you got a job a work, an' there's jus' one fella wants the job. You got to pay 'im what he asts. But s'pose they's a hunderd men." He put down his tool. His eyes hardened and his voice sharpened. "S'pose they's a hunderd men wants that job. S'pose them men got kids, an' them kids is hungry. S'pose a lousy dime'll buy a box a mush for them kids. S'pose a nickel'll buy at leas' somepin for them kids. An' you got a hunderd men. Jus' offer 'em a nickel-why, they'll kill each other fightin' for that nickel. Know what they was payin' las' job I had? Fifteen cents an hour. Ten hours for a dollar an' a half, an' ya can't stay on the place. Got to burn gasoline gettin' there." He was panting with anger, and his eyes blazed with hate. "That's why them han'bills was out. You can print a hell of a lot of han'bills with what ya save payin' fifteen cents an hour for fiel' work."
@@ -139,7 +117,7 @@ John Steinbeck, The Grapes of Wrath, pg. 282, loc. 10341-10343
 <hr>
 
 
-ain't, Pa. An' that's one more thing a woman knows. I noticed that. Man, he lives in jerks-baby born an' a man dies, an' that's a jerk-gets a farm an' loses his farm, an' that's a jerk. Woman, it's all one flow, like a stream, little eddies, little waterfalls, but the river, it goes right on. Woman looks at it like that.
+I noticed that. Man, he lives in jerks - baby born an' a man dies, an' that's a jerk - gets a farm an' loses his farm, an' that's a jerk. Woman, it's all one flow, like a stream, little eddies, little waterfalls, but the river, it goes right on. Woman looks at it like that.
 
 John Steinbeck, The Grapes of Wrath, pg. 283, loc. 10347-10349
 <hr>
