@@ -77,7 +77,7 @@ function Layout(props: LayoutProps) {
   }
 
   return (
-    <div className="w-90 mw7 center">
+    <div className="w-90-ns mw7 center">
       <header className="pa2 mt4">{header}</header>
       <main className="mt3 pa2">{children}</main>
     </div>
