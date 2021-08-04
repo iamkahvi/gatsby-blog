@@ -23,6 +23,23 @@ $m-border: 1px solid $c-base__2;
   width: 10px;
 }
 
+.gradient {
+  color: #d853d2;
+  font-size: 6rem;
+  
+  background-image: linear-gradient(344deg,
+      #476fde 13%,
+      rgba(255, 255, 255, 0) 71%),
+    radial-gradient(ellipse at -120% 6%,
+      #6284f6 35%,
+      rgba(255, 255, 255, 0) 66%),
+    linear-gradient(107deg, #d853d2 40%, rgba(255, 255, 255, 0) 87%),
+    radial-gradient(ellipse at 161% -167%,
+      #ff909e 61%,
+      rgba(255, 255, 255, 0) 100%),
+    linear-gradient(69deg, #32864b 57%, rgba(255, 255, 255, 0) 71%);
+}
+
 .book {
   list-style-position: outside;
 }
@@ -300,6 +317,10 @@ blockquote {
   .post-date-small {
     display: block;
   }
+  
+  .gradient {
+    font-size: 4rem;
+  }
 }
 
 @media screen and (min-width: 565px) {
@@ -310,7 +331,6 @@ blockquote {
   .post-date-small {
     display: none;
   }
-
 }
 
 hr {

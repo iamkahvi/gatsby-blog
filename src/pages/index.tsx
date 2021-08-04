@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link, graphql, navigate } from "gatsby";
 import axios from "axios";
 
-import { Layout, SearchBar, SEO, EmailInput } from "../components";
+import {
+  Layout,
+  SearchBar,
+  SEO,
+  EmailInput,
+  BookListLogo,
+} from "../components";
 import { IndexProps, PostEdge } from "../types/types";
 
 const BlogIndex = ({ data, location }: IndexProps) => {
@@ -52,7 +58,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
     }
   };
 
-  const handleSearch = e => {
+  const handleSearch = (e) => {
     setSearch(e.target.value);
     if (e.target.value.toLowerCase() === "mama") {
       navigate("/mothersday", { state: { isAuth: true } });
@@ -113,12 +119,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
 
   return (
     <Layout location={location} title={siteTitle} description={description}>
-      <Link
-        to="/book-shelf/"
-        className="booklist f2 baskerville tc faded-blue tm mb4"
-      >
-        📚 →
-      </Link>
+      <BookListLogo />
       {showEmail && (
         <div className="ba-ns pa3-ns mb4 mw6 br3">
           <div className="flex justify-between mb3">
@@ -145,10 +146,9 @@ const BlogIndex = ({ data, location }: IndexProps) => {
         isSticky={false}
       />
       <SEO title={siteTitle} />
-
       {posts
         .filter(
-          edge =>
+          (edge) =>
             (edge.node.frontmatter.title + edge.node.frontmatter.displayDate)
               .toLowerCase()
               .includes(search.toLowerCase()) || search === ""

@@ -23,6 +23,18 @@ $m-border: 1px solid $c-base__2;
   margin-left: -40px;
 }
 
+a.gradient {
+  &:hover {
+    transition: none;
+    color: $c-accent__blue;
+    border: 5px solid $c-accent__blue;
+
+    &::after {
+      height: 0;
+    }
+  }
+}
+
 a.booklist {
   transition: none;
 
