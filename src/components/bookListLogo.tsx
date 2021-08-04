@@ -17,7 +17,7 @@ export default function BookListLogo() {
         className="mb4 w-100 h4 br3 gradient flex items-center justify-center"
         to="/book-shelf/"
       >
-        <p className="b helvetica tc">Book List</p>
+        <p className="b helvetica tc">Book Shelf</p>
       </Link>
     </div>
   );
