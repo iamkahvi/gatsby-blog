@@ -1,23 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
-
-$c-base__03: #0D2B35;
-$c-base__02: #297373; //body color
-$c-base__01: #5C6E74;
-$c-base__00: #697B82;
-$c-base__0: #869395;
-$c-base__1: #96A0A0;
-$c-base__2: #EDE7D6;
-$c-base__3: #FCF5E4;
-
-$c-accent__blue: #FF8552; //important stuff
-$c-accent__darkblue: #297373;
-$c-accent__green: #DAD2BC;
+@import "colors.scss";
 
 // Breakpoints
 $bp__sm: 45rem; // 450px
 
 // Misc
-$m-border: 1px solid $c-base__2;
+$m-border: 1px solid $c-third;
 
 .booklist img {
   width: 10px;
@@ -59,7 +47,7 @@ $m-border: 1px solid $c-base__2;
   &:hover {
     opacity: 1;
     display: block;
-    color: $c-accent__darkblue;
+    color: $c-second;
     text-decoration: underline;
 
     &::after {
@@ -70,7 +58,7 @@ $m-border: 1px solid $c-base__2;
 }
 
 .anchor svg {
-  fill: $c-accent__blue;
+  fill: $c-main;
 }
 
 ::selection {
@@ -83,7 +71,7 @@ svg {
   transition: fill 0.2s;
   fill: lightgrey;
   &:hover {
-    fill: #FF8552;
+    fill: $c-main;
   }
 }
 
@@ -92,18 +80,21 @@ svg {
   font-family: 'Roboto', sans-serif
 }
 /* Custom Colors */
-.faded-orange {
-  color: #FF8552;
+.c-main {
+  color: $c-main;
 }
 
-.faded-blue {
-  color: #297373;
+.c-second {
+  color: $c-second;
 }
 
-.faded-brown {
-  color: #DAD2BC;
+.c-third {
+  color: $c-third;
 }
 
+body {
+  background-color: $c-background;
+}
 
 .textBody hr {
   margin-bottom: 25px;
@@ -123,7 +114,7 @@ ol {
   line-height: 1.5;
   font-family: 'Roboto';
   margin-bottom: 3rem;
-  color: #297373;
+  color: $c-second;
   font-size: 1.125rem;
 }
 
@@ -166,7 +157,7 @@ h4,
 h5,
 h6 {
   font-family: 'Roboto';
-  color: #297373;
+  color: $c-second;
   font-weight: 400;
 }
 
@@ -183,7 +174,7 @@ html {
 
 h1 {
   font-weight: 400;
-  color: $c-accent__blue;
+  color: $c-main;
 }
 
 h3 {
@@ -210,8 +201,8 @@ input {
   font-family: Helvetica, sans-serif;
   font-weight: bold;
   border-radius: 0;
-  color: $c-base__02;
-  border-color: $c-accent__blue;
+  color: $c-second;
+  border-color: $c-main;
   width: 100%;
   outline: none;
   background: white;
@@ -221,23 +212,23 @@ input {
   box-shadow: none;
   line-height: normal;
   &:focus {
-    box-shadow: 0 0 0 1px $c-accent__blue;
+    box-shadow: 0 0 0 1px $c-main;
   }
 }
 
 button {
   font-family: Helvetica, sans-serif;
-  color: $c-base__02;
+  color: $c-second;
   padding: 5px;
   background: none;
-  border: 1px solid $c-base__02;
+  border: 1px solid $c-second;
   outline: none;
-  border-color: $c-accent__blue;
+  border-color: $c-main;
   box-shadow: none;
   transition: background 0.2s;
   
   &:active {
-    box-shadow: 0 0 0 1px $c-accent__blue;
+    box-shadow: 0 0 0 1px $c-main;
   }
   &:hover {
     background-color: rgba(255, 134, 82, 0.25);
@@ -248,7 +239,7 @@ button {
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 1.5px solid $c-accent__darkblue;
+  border: 1.5px solid $c-second;
   border-radius: 50%;
   border-top-color: rgba(255, 255, 255, 0);
   animation: spin 1s ease-in-out infinite;
@@ -268,11 +259,11 @@ button {
 }
 
 input:hover {
-  border-color: $c-accent__blue;
+  border-color: $c-main;
 }
 
 input::placeholder {
-  color: $c-accent__blue;
+  color: $c-main;
 }
 
 input.sticky {
@@ -282,7 +273,7 @@ input.sticky {
 }
 
 input::placeholder {
-  color: $c-base__02;
+  color: $c-second;
   opacity: 0.7;
 }
 

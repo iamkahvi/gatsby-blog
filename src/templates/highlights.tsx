@@ -12,14 +12,14 @@ class Highlights extends React.Component<BlogProps, {}> {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} />
-        <header className="flex justify-between items-center pb3 mb4 bb b--faded-faded-blue">
-          <h1 className="f3 faded-blue ma0 pb0 fw4 roboto w-70">
+        <header className="flex justify-between items-center pb3 mb4 bb b--faded-c-second">
+          <h1 className="f3 c-second ma0 pb0 fw4 roboto w-70">
             {post.frontmatter.title}
           </h1>
-          <p className="post-date-small f5 fw4 roboto pa0 ma0 faded-blue w-30 tr">
+          <p className="post-date-small f5 fw4 roboto pa0 ma0 c-second w-30 tr">
             {post.frontmatter.displayDateSmall}
           </p>
-          <p className="post-date f5 fw4 roboto pa0 ma0 faded-blue w-30 tr">
+          <p className="post-date f5 fw4 roboto pa0 ma0 c-second w-30 tr">
             {post.frontmatter.displayDate}
           </p>
         </header>

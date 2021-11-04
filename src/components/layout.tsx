@@ -15,8 +15,8 @@ function Layout(props: LayoutProps) {
     });
   }, []);
 
-  const navStyle = "roboto faded-orange";
-  const descriptionStyle = "f6 roboto pt1 mt2 faded-blue";
+  const navStyle = "roboto c-main";
+  const descriptionStyle = "f6 roboto pt1 mt2 c-second";
 
   const audioIcon = (
     <svg
@@ -77,7 +77,7 @@ function Layout(props: LayoutProps) {
   }
 
   return (
-    <div className="w-90-ns mw7 center">
+    <div className="w-90-ns mw7 center c-background">
       <header className="pa2 mt4">{header}</header>
       <main className="mt3 pa2">{children}</main>
     </div>

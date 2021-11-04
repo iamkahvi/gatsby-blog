@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 const otherLink = (
   <Link
     to="/book-shelf/"
-    className="booklist f2 baskerville tc faded-blue tm mb4"
+    className="booklist f2 baskerville tc c-second tm mb4"
   >
     📚 →
   </Link>

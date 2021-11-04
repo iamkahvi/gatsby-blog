@@ -35,7 +35,7 @@ function BookList(props: BookShelfProps) {
   const books = data.books.edges;
   const { intro, title } = data.bookShelf?.nodes[0];
 
-  const handleSearch = e => {
+  const handleSearch = (e) => {
     setSearch(e.target.value);
   };
 
@@ -51,7 +51,7 @@ function BookList(props: BookShelfProps) {
           <h2 className="underline">{yearKey[node.year]}</h2>
         )}
         <li id={idLink} className="book mb4">
-          {/* <a className="book anchor faded-blue b" href={`#${idLink}`}>
+          {/* <a className="book anchor c-second b" href={`#${idLink}`}>
             {anchorIcon}
           </a> */}
           <div className="mb2">
@@ -93,7 +93,7 @@ function BookList(props: BookShelfProps) {
         <ul className="ml0">
           {books
             .filter(
-              edge =>
+              (edge) =>
                 `${edge.node.bookTitle} by ${edge.node.bookAuthor} - ${edge.node.dateFinished}`
                   .toLowerCase()
                   .includes(search.toLowerCase()) || search === ""

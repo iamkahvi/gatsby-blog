@@ -79,7 +79,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
     return (
       <>
         {prevYear !== year && (
-          <h1 className="roboto f4 fw4 tc faded-blue mb4">{year}</h1>
+          <h1 className="roboto f4 fw4 tc c-second mb4">{year}</h1>
         )}
         <div
           className="pv3 bt b--light-gray flex items-center justify-between"
@@ -88,7 +88,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
           <h3 className="mv0 w-two-thirds">
             <Link
               style={{ boxShadow: `none` }}
-              className="mb2 roboto faded-orange"
+              className="mb2 roboto c-main"
               to={`/${slug}`}
             >
               {title}
@@ -97,13 +97,13 @@ const BlogIndex = ({ data, location }: IndexProps) => {
               dangerouslySetInnerHTML={{
                 __html: node.frontmatter.description || node.excerpt,
               }}
-              className="f6 fw4 roboto faded-blue"
+              className="f6 fw4 roboto c-second"
             />
           </h3>
-          <small className="post-date f5 roboto faded-blue fr tr w-third">
+          <small className="post-date f5 roboto c-second fr tr w-third">
             {node.frontmatter.displayDate}
           </small>
-          <small className="post-date-small f5 roboto faded-blue fr tr w-third">
+          <small className="post-date-small f5 roboto c-second fr tr w-third">
             {node.frontmatter.displayDateSmall}
           </small>
         </div>

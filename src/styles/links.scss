@@ -1,21 +1,10 @@
-$c-base__03: #0D2B35;
-$c-base__02: #297373; //body color
-$c-base__01: #5C6E74;
-$c-base__00: #697B82;
-$c-base__0: #869395;
-$c-base__1: #96A0A0;
-$c-base__2: #EDE7D6;
-$c-base__3: #FCF5E4;
-
-$c-accent__blue: #FF8552; //important stuff
-$c-accent__darkblue: #297373;
-$c-accent__green: #DAD2BC;
+@import "colors.scss";
 
 // Breakpoints
 $bp__sm: 45rem; // 450px
 
 // Misc
-$m-border: 1px solid $c-base__2;
+$m-border: 1px solid $c-third;
 
 .book .anchor {
   float: left;
@@ -26,8 +15,8 @@ $m-border: 1px solid $c-base__2;
 a.gradient {
   &:hover {
     transition: none;
-    color: $c-accent__blue;
-    border: 5px solid $c-accent__blue;
+    color: $c-main;
+    border: 5px solid $c-main;
 
     &::after {
       height: 0;
@@ -45,7 +34,7 @@ a.booklist {
 
 	&:hover {
     transition: none;
-    color: $c-accent__darkblue;
+    color: $c-second;
     text-decoration: underline;
     &::after {
       height: 0;
@@ -54,7 +43,7 @@ a.booklist {
 }
 a {
     box-shadow: none;
-    color: $c-accent__blue;
+    color: $c-third;
     background-color: transparent;
     text-decoration: none;
 
@@ -71,7 +60,7 @@ a {
       height: 0;
       left: 0;
       bottom: 0;
-      background-color: $c-accent__blue;
+      background-color: $c-third;
       transition: all ease 0.1s;
     }
 
@@ -91,7 +80,7 @@ a.no-hov {
 	}
 
 	&:hover {
-		color: $c-accent__darkblue
+		color: $c-third
 	}
 }
 
