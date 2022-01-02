@@ -5,7 +5,8 @@ import { Layout, SEO, SearchBar } from "../components";
 import { BookShelfProps, BookEdge } from "../types/types";
 
 const yearKey = {
-  2021: "this year",
+  2022: "this year",
+  2021: "2021",
   2020: "2020",
   2019: "2019",
   2018: "2018",
@@ -40,13 +41,15 @@ function BookList(props: BookShelfProps) {
   };
 
   const renderBook = ({ node, previous }: BookEdge) => {
-    const prevYear = previous ? previous.year : null;
+    const prevYear = previous?.year ?? null;
+
     const idLink = node.bookTitle
-      .replace(/[!'’.()*]/g, "")
+      .replace(/[!'’.()*:]/g, "")
       .replace(/\s+/g, "-")
       .toLowerCase();
+
     return (
-      <>
+      <div key={idLink}>
         {prevYear !== node.year && (
           <h2 className="underline">{yearKey[node.year]}</h2>
         )}
@@ -66,7 +69,7 @@ function BookList(props: BookShelfProps) {
             }}
           />
         </li>
-      </>
+      </div>
     );
   };
 
@@ -98,6 +101,13 @@ function BookList(props: BookShelfProps) {
                   .toLowerCase()
                   .includes(search.toLowerCase()) || search === ""
             )
+            .map(
+              (edge, ind, arr) =>
+                ({
+                  ...edge,
+                  previous: arr[ind - 1]?.node ?? null,
+                } as BookEdge)
+            )
             .map(renderBook)}
         </ul>
       </div>
@@ -121,9 +131,6 @@ export const pageQuery = graphql`
             raw
           }
           dateFinished(formatString: "DD/MM/YYYY")
-          year: dateFinished(formatString: "YYYY")
-        }
-        previous {
           year: dateFinished(formatString: "YYYY")
         }
       }

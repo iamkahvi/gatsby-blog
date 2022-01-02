@@ -66,10 +66,11 @@ const BlogIndex = ({ data, location }: IndexProps) => {
   };
 
   const renderPost = ({ node, previous }: PostEdge) => {
+    const prevYear = previous?.frontmatter?.year ?? null;
+
     const title = node.frontmatter.title || node.fields.slug;
 
     const { year } = node.frontmatter;
-    const prevYear = previous ? previous.frontmatter.year : null;
 
     const slug = node.frontmatter.title
       .replace(/[!'’.()*]/g, "")
@@ -77,7 +78,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       .toLowerCase();
 
     return (
-      <>
+      <div key={slug}>
         {prevYear !== year && (
           <h1 className="roboto f4 fw4 tc c-second mb4">{year}</h1>
         )}
@@ -107,7 +108,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
             {node.frontmatter.displayDateSmall}
           </small>
         </div>
-      </>
+      </div>
     );
   };
 
@@ -120,7 +121,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
   return (
     <Layout location={location} title={siteTitle} description={description}>
       <BookListLogo />
-      {showEmail && (
+      {/* {showEmail && (
         <div className="ba-ns pa3-ns mb4 mw6 br3">
           <div className="flex justify-between mb3">
             <h3 className="mb2 ">subscribe to blog updates here:</h3>
@@ -138,7 +139,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
             setShow={hideEmail}
           />
         </div>
-      )}
+      )} */}
       <SearchBar
         handleSearch={handleSearch}
         placeholderText="search posts..."
@@ -149,9 +150,20 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       {posts
         .filter(
           (edge) =>
-            (edge.node.frontmatter.title + edge.node.frontmatter.displayDate)
+            (
+              edge.node.frontmatter.title +
+              edge.node.frontmatter.displayDate +
+              edge.node.frontmatter.description
+            )
               .toLowerCase()
               .includes(search.toLowerCase()) || search === ""
+        )
+        .map(
+          (edge, ind, arr) =>
+            ({
+              ...edge,
+              previous: arr[ind - 1]?.node ?? null,
+            } as PostEdge)
         )
         .map(renderPost)}
     </Layout>

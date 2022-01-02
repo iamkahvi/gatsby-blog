@@ -1,24 +1,22 @@
 import React from "react";
 
+export interface PostNode {
+  excerpt: string;
+  fields: {
+    slug: string;
+  };
+  frontmatter: {
+    year: string;
+    displayDate: string;
+    displayDateSmall: string;
+    title: string;
+    description: string;
+  };
+}
+
 export interface PostEdge {
-  previous: {
-    frontmatter: {
-      year: string;
-    };
-  };
-  node: {
-    excerpt: string;
-    fields: {
-      slug: string;
-    };
-    frontmatter: {
-      year: string;
-      displayDate: string;
-      displayDateSmall: string;
-      title: string;
-      description: string;
-    };
-  };
+  node: PostNode;
+  previous: PostNode;
 }
 
 export interface IndexProps {
@@ -60,19 +58,18 @@ export interface BlogProps {
   location: Location;
 }
 
+export interface BookNode {
+  bookTitle: string;
+  bookAuthor: string;
+  bookDescription: {
+    raw: string;
+  };
+  dateFinished: string;
+  year: string;
+}
 export interface BookEdge {
-  node: {
-    bookTitle: string;
-    bookAuthor: string;
-    bookDescription: {
-      raw: string;
-    };
-    dateFinished: string;
-    year: string;
-  };
-  previous: {
-    year: string;
-  };
+  node: BookNode;
+  previous?: BookNode | undefined;
 }
 
 export interface BookShelfProps {
