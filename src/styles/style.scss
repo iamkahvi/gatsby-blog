@@ -11,8 +11,9 @@ $m-border: 1px solid $c-third;
   width: 10px;
 }
 
-$c-gradient-main: #d853d2;
-$c-gradient-second: #476fde;
+$c-gradient-main: #1BE7FF;
+$c-gradient-second: #6EEB83;
+$c-gradient-third: #E4FF1A;
 
 .gradient {
   color: $c-gradient-main;
@@ -23,13 +24,9 @@ $c-gradient-second: #476fde;
       $c-gradient-second 13%,
       rgba(255, 255, 255, 0) 71%),
     radial-gradient(ellipse at -120% 6%,
-      #6284f6 35%,
+      $c-gradient-third 35%,
       rgba(255, 255, 255, 0) 66%),
     linear-gradient(107deg, $c-gradient-main 40%, rgba(255, 255, 255, 0) 87%),
-    radial-gradient(ellipse at 161% -167%,
-      #ff909e 61%,
-      rgba(255, 255, 255, 0) 100%),
-    linear-gradient(69deg, #32864b 57%, rgba(255, 255, 255, 0) 71%);
 }
 
 .book {
@@ -65,7 +62,7 @@ $c-gradient-second: #476fde;
 }
 
 ::selection {
-  background-color: rgba(255, 134, 82, 0.5);
+  background-color: rgba($c-main, 0.5);
 }
 
 svg {
