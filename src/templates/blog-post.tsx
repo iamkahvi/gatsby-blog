@@ -23,7 +23,7 @@ class BlogPostTemplate extends React.Component<BlogProps> {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <header className="flex justify-between items-center pb3 mb4 bb b--faded-c-second">
+        <header className="flex justify-between items-center pb3 mb4 bb b--c-main">
           <h1 className="f3 c-second ma0 pb0 fw4 roboto w-70">
             {post.frontmatter.title}
           </h1>

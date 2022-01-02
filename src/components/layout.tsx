@@ -37,7 +37,7 @@ function Layout(props: LayoutProps) {
   );
 
   const nav = (
-    <p>
+    <p className="c-third">
       <Link to="/" className={navStyle.concat(" mr2")}>
         Home
       </Link>

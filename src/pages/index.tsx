@@ -82,7 +82,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
           <h1 className="roboto f4 fw4 tc c-second mb4">{year}</h1>
         )}
         <div
-          className="pv3 bt b--light-gray flex items-center justify-between"
+          className="pv3 bt b--c-third flex items-center justify-between"
           key={`/${slug}`}
         >
           <h3 className="mv0 w-two-thirds">

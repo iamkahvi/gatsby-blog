@@ -11,18 +11,21 @@ $m-border: 1px solid $c-third;
   width: 10px;
 }
 
+$c-gradient-main: #d853d2;
+$c-gradient-second: #476fde;
+
 .gradient {
-  color: #d853d2;
+  color: $c-gradient-main;
   font-size: 6rem;
   height: 8rem;
   
   background-image: linear-gradient(344deg,
-      #476fde 13%,
+      $c-gradient-second 13%,
       rgba(255, 255, 255, 0) 71%),
     radial-gradient(ellipse at -120% 6%,
       #6284f6 35%,
       rgba(255, 255, 255, 0) 66%),
-    linear-gradient(107deg, #d853d2 40%, rgba(255, 255, 255, 0) 87%),
+    linear-gradient(107deg, $c-gradient-main 40%, rgba(255, 255, 255, 0) 87%),
     radial-gradient(ellipse at 161% -167%,
       #ff909e 61%,
       rgba(255, 255, 255, 0) 100%),
@@ -75,6 +78,17 @@ svg {
   }
 }
 
+.b--c-main {
+  border-color: $c-main;
+}
+
+.b--c-second {
+  border-color: $c-second;
+}
+
+.b--c-third {
+  border-color: $c-third;
+}
 
 .roboto {
   font-family: 'Roboto', sans-serif
@@ -206,6 +220,7 @@ input {
   width: 100%;
   outline: none;
   background: white;
+  background-color: $c-background;
   z-index: 100;
   box-sizing: border-box;
   -webkit-appearance: none;

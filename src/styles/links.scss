@@ -43,7 +43,7 @@ a.booklist {
 }
 a {
     box-shadow: none;
-    color: $c-third;
+    color: $c-main;
     background-color: transparent;
     text-decoration: none;
 
@@ -60,7 +60,7 @@ a {
       height: 0;
       left: 0;
       bottom: 0;
-      background-color: $c-third;
+      background-color: $c-main;
       transition: all ease 0.1s;
     }
 
