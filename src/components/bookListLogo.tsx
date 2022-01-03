@@ -12,9 +12,9 @@ const otherLink = (
 
 export default function BookListLogo() {
   return (
-    <div>
+    <div className="logo-container">
       <Link
-        className="mb4 w-100 br3 gradient flex items-center justify-center"
+        className="mb4 w-100 book-shelf-logo flex items-center justify-center"
         to="/book-shelf/"
       >
         <p className="b helvetica tc">Book Shelf</p>

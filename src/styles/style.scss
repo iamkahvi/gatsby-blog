@@ -18,11 +18,12 @@ $c-gradient-third: $c-third;
 // $c-gradient-second: #8DB580;
 // $c-gradient-third: #568EA3;
 
-.gradient {
+.book-shelf-logo {
   color: $c-gradient-main;
   font-size: 6rem;
   height: 8rem;
-  
+  border-radius: 0.5rem;
+
   background-image: linear-gradient(344deg,
       $c-gradient-second 13%,
       rgba(255, 255, 255, 0) 71%),
@@ -47,6 +48,7 @@ $c-gradient-third: $c-third;
   padding-right: 4px;
   margin-left: -25px;
   opacity: 0;
+
   &:hover {
     opacity: 1;
     display: block;
@@ -73,6 +75,7 @@ svg {
   width: 20px;
   transition: fill 0.2s;
   fill: lightgrey;
+
   &:hover {
     fill: $c-main;
   }
@@ -93,6 +96,7 @@ svg {
 .roboto {
   font-family: 'Roboto', sans-serif
 }
+
 /* Custom Colors */
 .c-main {
   color: $c-main;
@@ -140,6 +144,7 @@ ol {
   .textBody {
     font-size: 1rem;
   }
+
   .booklist {
     font-size: 4em;
   }
@@ -226,6 +231,7 @@ input {
   -webkit-appearance: none;
   box-shadow: none;
   line-height: normal;
+
   &:focus {
     box-shadow: 0 0 0 1px $c-main;
   }
@@ -241,10 +247,11 @@ button {
   border-color: $c-main;
   box-shadow: none;
   transition: background 0.2s;
-  
+
   &:active {
     box-shadow: 0 0 0 1px $c-main;
   }
+
   &:hover {
     background-color: rgba(255, 134, 82, 0.25);
   }
@@ -308,7 +315,7 @@ blockquote {
 }
 
 
-@media screen and (max-width: 565px) {
+@media screen and (max-width: 40em) {
   .profile {
     display: block;
     float: none;
@@ -324,14 +331,21 @@ blockquote {
   .post-date-small {
     display: block;
   }
-  
-  .gradient {
-    font-size: 3.5rem;
-	height: 5rem;
+
+  .book-shelf-logo {
+    font-size: 4rem;
+    height: 5rem;
+    border-radius: 0;
+  }
+
+  .logo-container {
+    width: 100vw;
+    position: relative;
+    left: calc(-50vw + 50%);
   }
 }
 
-@media screen and (min-width: 565px) {
+@media screen and (min-width: 40em) {
   .post-date {
     display: block;
   }
@@ -379,14 +393,15 @@ $color-8: #5d71e2;
 }
 
 .full {
-  z-index:10;
-    animation: fadein 3s;
-    -moz-animation: fadein 3s;
-    /* Firefox */
-    -webkit-animation: fadein 3s;
-    /* Safari and Chrome */
-    -o-animation: fadein 3s;
-    /* Opera */
+  z-index: 10;
+  animation: fadein 3s;
+  -moz-animation: fadein 3s;
+  /* Firefox */
+  -webkit-animation: fadein 3s;
+  /* Safari and Chrome */
+  -o-animation: fadein 3s;
+
+  /* Opera */
   img {
     width: 23vw;
     min-width: 250px;
@@ -427,6 +442,7 @@ $color-8: #5d71e2;
   color: #FFF3F0;
   background: #E086D3;
 }
+
 .paragraph {
   box-sizing: content-box;
   font-weight: 400;
@@ -434,8 +450,8 @@ $color-8: #5d71e2;
   font-stretch: semi-condensed;
   font-style: oblique;
   font-family: "futura next",
-  futura,
-  sans-serif;
+    futura,
+    sans-serif;
   text-align: left;
   writing-mode: initial;
   text-shadow: #1bc7db 0px 3px 2px;
