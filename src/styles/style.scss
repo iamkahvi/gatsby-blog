@@ -11,9 +11,12 @@ $m-border: 1px solid $c-third;
   width: 10px;
 }
 
-$c-gradient-main: #DDD1C7;
-$c-gradient-second: #8DB580;
-$c-gradient-third: #568EA3;
+$c-gradient-main: $c-main;
+$c-gradient-second: $c-second;
+$c-gradient-third: $c-third;
+// $c-gradient-main: #DDD1C7;
+// $c-gradient-second: #8DB580;
+// $c-gradient-third: #568EA3;
 
 .gradient {
   color: $c-gradient-main;

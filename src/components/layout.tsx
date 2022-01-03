@@ -78,8 +78,8 @@ function Layout(props: LayoutProps) {
 
   return (
     <div className="w-90-ns mw7 center c-background">
-      <header className="pa2 mt4">{header}</header>
-      <main className="mt3 pa2">{children}</main>
+      <header className="pa3 mt4">{header}</header>
+      <main className="pa3">{children}</main>
     </div>
   );
 }

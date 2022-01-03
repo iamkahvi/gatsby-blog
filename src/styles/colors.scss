@@ -9,8 +9,29 @@
 // $c-third: #eeee;
 
 // Pastel
-$c-main: #FFA9A3;
-$c-second:#7D938A;
-$c-third: #eee;
+// $c-main: #FFA9A3;
+// $c-second:#7D938A;
+
+// Artic
+$c-main: #7CDEDC;
+$c-second:#6C698D;
+$c-third: #E8C1C5;
+
+// Forest
+// $c-main: #B5DFCA;
+// $c-second:#627264;
+// $c-third: #A1CDA8;
+
+// Purple
+// $c-main: #40C9A2;
+// $c-second:#B88C9E;
+// $c-third: #8EB8E5;
+
+:root { 
+    --c-main: #{$c-main};
+    --c-second: #{$c-second};
+    --c-third: #{$c-third};
+}
+
 
 $c-background: white;
