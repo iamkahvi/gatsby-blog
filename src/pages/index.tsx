@@ -77,10 +77,12 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       .replace(/\s+/g, "-")
       .toLowerCase();
 
+    const striked = year !== "2022" && "strike";
+
     return (
       <div key={slug}>
         {prevYear !== year && (
-          <h1 className="roboto f4 fw4 tc c-second mb4">{year}</h1>
+          <h1 className={`roboto f5 ${striked} tc c-second mb3`}>{year}</h1>
         )}
         <div
           className="pv3 bt b--c-third flex items-center justify-between"
@@ -89,7 +91,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
           <h3 className="mv0 w-two-thirds">
             <Link
               style={{ boxShadow: `none` }}
-              className="mb2 roboto c-main"
+              className="f4 mb2 roboto c-main"
               to={`/${slug}`}
             >
               {title}
@@ -121,7 +123,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
   return (
     <Layout location={location} title={siteTitle} description={description}>
       <BookListLogo />
-      {/* {showEmail && (
+      {showEmail && (
         <div className="ba-ns pa3-ns mb4 mw6 br3">
           <div className="flex justify-between mb3">
             <h3 className="mb2 ">subscribe to blog updates here:</h3>
@@ -139,7 +141,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
             setShow={hideEmail}
           />
         </div>
-      )} */}
+      )}
       <SearchBar
         handleSearch={handleSearch}
         placeholderText="search posts..."

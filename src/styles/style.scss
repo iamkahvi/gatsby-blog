@@ -20,7 +20,7 @@ $c-gradient-third: var(--c-third);
 
 .book-shelf-logo {
   color: $c-gradient-main;
-  font-size: 6rem;
+  font-size: min(6rem, calc(14vw));
   height: 8rem;
   border-radius: 0.5rem;
 
@@ -315,7 +315,7 @@ blockquote {
 }
 
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 30em) {
   .profile {
     display: block;
     float: none;
@@ -334,7 +334,7 @@ blockquote {
 
   .book-shelf-logo {
     font-size: 4rem;
-    height: 5rem;
+    height: 6rem;
     border-radius: 0;
   }
 
@@ -345,7 +345,7 @@ blockquote {
   }
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 30em) {
   .post-date {
     display: block;
   }

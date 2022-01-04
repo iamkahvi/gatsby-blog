@@ -19,7 +19,9 @@ export default function SearchBar({
       placeholder={placeholderText}
       value={searchVal}
       data-default=""
-      className={`roboto mb3 f4 normal ba br3 pa2 ${isSticky && "sticky"}`}
+      className={`roboto mb3 f5 f4-ns normal ba br3 pa2  ${
+        isSticky && "sticky"
+      }`}
     />
   );
 }
