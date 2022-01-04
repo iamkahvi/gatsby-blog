@@ -3,16 +3,7 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { graphql } from "gatsby";
 import { Layout, SEO, SearchBar } from "../components";
 import { BookShelfProps, BookEdge } from "../types/types";
-
-const yearKey = {
-  2022: "this year",
-  2021: "2021",
-  2020: "2020",
-  2019: "2019",
-  2018: "2018",
-  2017: "possibly in 2017",
-  2016: "probably before 2017",
-};
+import { yearMap } from "../utilities";
 
 const anchorIcon = (
   <svg
@@ -51,7 +42,7 @@ function BookList(props: BookShelfProps) {
     return (
       <div key={idLink}>
         {prevYear !== node.year && (
-          <h2 className="f4 underline">{yearKey[node.year]}</h2>
+          <h2 className="f4 underline">{yearMap(node.year)}</h2>
         )}
         <li id={idLink} className="book mb4">
           {/* <a className="book anchor c-second b" href={`#${idLink}`}>

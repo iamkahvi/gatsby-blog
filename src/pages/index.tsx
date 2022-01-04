@@ -10,6 +10,7 @@ import {
   BookListLogo,
 } from "../components";
 import { IndexProps, PostEdge } from "../types/types";
+import { CURR_YEAR_STRING } from "../utilities";
 
 const BlogIndex = ({ data, location }: IndexProps) => {
   const [search, setSearch] = useState("");
@@ -77,12 +78,12 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       .replace(/\s+/g, "-")
       .toLowerCase();
 
-    const striked = year !== "2022" && "strike";
+    const color = year === CURR_YEAR_STRING ? "c-main" : "c-second";
 
     return (
       <div key={slug}>
         {prevYear !== year && (
-          <h1 className={`roboto f5 ${striked} tc c-second mb3`}>{year}</h1>
+          <h1 className={`roboto f5 ${color} tc mb3`}>{year}</h1>
         )}
         <div
           className="pv3 bt b--c-third flex items-center justify-between"
