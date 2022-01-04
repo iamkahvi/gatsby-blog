@@ -12,30 +12,22 @@ export enum Themes {
 
 interface Return {
   currTheme: Themes;
-  setTheme: (t?: Themes) => boolean;
+  setTheme: (t?: Themes) => void;
 }
 
 export const useTheme = (): Return => {
-  const [currTheme, setCurrTheme] = useState(Themes.Classic);
+  const colorPref = window.localStorage.getItem("color-theme") as Themes;
+  const hasPref = typeof colorPref === "string";
 
-  const randTheme = (): Themes => {
-    const theme = Object.entries(themeMap)[
-      Math.floor(Math.random() * Object.values(themeMap).length)
-    ][0] as Themes;
+  const [currTheme, setCurrTheme] = useState(() =>
+    hasPref ? colorPref : Themes.Classic
+  );
 
-    return theme !== currTheme ? theme : randTheme();
-  };
-
-  const setTheme = (theme?: Themes): boolean => {
-    if (!theme) {
-      const t = randTheme();
-      setCurrTheme(t);
-      setRootStyles(t);
-      return;
-    }
-    setCurrTheme(theme);
-    setRootStyles(theme);
-    return true;
+  const setTheme = (theme?: Themes) => {
+    const t = theme ?? randTheme(currTheme);
+    window.localStorage.setItem("color-theme", t);
+    setCurrTheme(t);
+    setRootStyles(t);
   };
 
   return { currTheme, setTheme };
@@ -52,4 +44,12 @@ const setRootStyles = (theme: Themes) => {
       root.style.setProperty("--c-main-selection", v + "50");
     }
   });
+};
+
+const randTheme = (currTheme: Themes): Themes => {
+  const theme = Object.entries(themeMap)[
+    Math.floor(Math.random() * Object.values(themeMap).length)
+  ][0] as Themes;
+
+  return theme !== currTheme ? theme : randTheme(currTheme);
 };

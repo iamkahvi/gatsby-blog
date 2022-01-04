@@ -6,7 +6,12 @@ import { useTheme } from "../components/hooks/themeHook";
 function Layout(props: LayoutProps) {
   const { location, title, children, description } = props;
 
-  const { setTheme } = useTheme();
+  const { currTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setTheme(currTheme);
+  }, []);
+
   const [state, setState] = useState({
     audioPlayer: {},
   });
