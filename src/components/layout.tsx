@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import { LayoutProps } from "../types/types";
+import { useTheme } from "../components/hooks/themeHook";
 
 function Layout(props: LayoutProps) {
   const { location, title, children, description } = props;
 
+  const { setTheme } = useTheme();
   const [state, setState] = useState({
     audioPlayer: {},
   });
@@ -53,8 +55,8 @@ function Layout(props: LayoutProps) {
   );
 
   const bigTitle = (
-    <div>
-      <h1 className="mt4 mb0 b helvetica underline f1">
+    <div className="mt4">
+      <h1 className="mb0 b helvetica underline f1">
         {title}
         {audioIcon}
       </h1>
@@ -63,22 +65,21 @@ function Layout(props: LayoutProps) {
     </div>
   );
 
-  let header;
-
-  if (location.pathname === "/") {
-    header = (
-      <div>
-        {nav}
-        {bigTitle}
-      </div>
-    );
-  } else {
-    header = <div>{nav}</div>;
-  }
+  const themeToggle = (
+    <button onClick={() => setTheme()} className="bn br3 f4">
+      🌚
+    </button>
+  );
 
   return (
-    <div className="w-90-ns mw7 center c-background">
-      <header className="pa3 mt4">{header}</header>
+    <div className="w-90-ns mw7 mv4 center c-background">
+      <header className="pa3">
+        <div className="flex items-center justify-between">
+          {nav}
+          {themeToggle}
+        </div>
+        {location.pathname === "/" && bigTitle}
+      </header>
       <main className="pa3">{children}</main>
     </div>
   );
