@@ -67,7 +67,8 @@ $c-gradient-third: var(--c-third);
 }
 
 ::selection {
-  background-color: rgba(var(--c-main), 0.5);
+  // Need to use sass variable here
+  background-color: rgba($c-main, 0.5);
 }
 
 svg {

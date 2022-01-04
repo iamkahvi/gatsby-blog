@@ -51,7 +51,7 @@ function BookList(props: BookShelfProps) {
     return (
       <div key={idLink}>
         {prevYear !== node.year && (
-          <h2 className="underline">{yearKey[node.year]}</h2>
+          <h2 className="f4 underline">{yearKey[node.year]}</h2>
         )}
         <li id={idLink} className="book mb4">
           {/* <a className="book anchor c-second b" href={`#${idLink}`}>
