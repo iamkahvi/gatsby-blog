@@ -62,12 +62,7 @@ function SEO({ description, lang, meta, title }: SEOProps) {
           content: metaDescription,
         },
       ].concat(meta)}
-    >
-      <link
-        rel="stylesheet"
-        href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
-      />
-    </Helmet>
+    ></Helmet>
   );
 }
 
