@@ -5,15 +5,15 @@
 $bp__sm: 45rem; // 450px
 
 // Misc
-$m-border: 1px solid $c-third;
+$m-border: 1px solid var(--c-third);
 
 .booklist img {
   width: 10px;
 }
 
-$c-gradient-main: $c-main;
-$c-gradient-second: $c-second;
-$c-gradient-third: $c-third;
+$c-gradient-main: var(--c-main);
+$c-gradient-second: var(--c-second);
+$c-gradient-third: var(--c-third);
 // $c-gradient-main: #DDD1C7;
 // $c-gradient-second: #8DB580;
 // $c-gradient-third: #568EA3;
@@ -52,7 +52,7 @@ $c-gradient-third: $c-third;
   &:hover {
     opacity: 1;
     display: block;
-    color: $c-second;
+    color: var(--c-second);
     text-decoration: underline;
 
     &::after {
@@ -63,11 +63,11 @@ $c-gradient-third: $c-third;
 }
 
 .anchor svg {
-  fill: $c-main;
+  fill: var(--c-main);
 }
 
 ::selection {
-  background-color: rgba($c-main, 0.5);
+  background-color: rgba(var(--c-main), 0.5);
 }
 
 svg {
@@ -77,20 +77,20 @@ svg {
   fill: lightgrey;
 
   &:hover {
-    fill: $c-main;
+    fill: var(--c-main);
   }
 }
 
 .b--c-main {
-  border-color: $c-main;
+  border-color: var(--c-main);
 }
 
 .b--c-second {
-  border-color: $c-second;
+  border-color: var(--c-second);
 }
 
 .b--c-third {
-  border-color: $c-third;
+  border-color: var(--c-third);
 }
 
 .roboto {
@@ -99,19 +99,19 @@ svg {
 
 /* Custom Colors */
 .c-main {
-  color: $c-main;
+  color: var(--c-main);
 }
 
 .c-second {
-  color: $c-second;
+  color: var(--c-second);
 }
 
 .c-third {
-  color: $c-third;
+  color: var(--c-third);
 }
 
 body {
-  background-color: $c-background;
+  background-color: var(--c-background);
 }
 
 .textBody hr {
@@ -132,7 +132,7 @@ ol {
   line-height: 1.5;
   font-family: 'Roboto';
   margin-bottom: 3rem;
-  color: $c-second;
+  color: var(--c-second);
   font-size: 1.125rem;
 }
 
@@ -176,7 +176,7 @@ h4,
 h5,
 h6 {
   font-family: 'Roboto';
-  color: $c-second;
+  color: var(--c-second);
   font-weight: 400;
 }
 
@@ -193,7 +193,7 @@ html {
 
 h1 {
   font-weight: 400;
-  color: $c-main;
+  color: var(--c-main);
 }
 
 h3 {
@@ -220,12 +220,12 @@ input {
   font-family: Helvetica, sans-serif;
   font-weight: bold;
   border-radius: 0;
-  color: $c-second;
-  border-color: $c-main;
+  color: var(--c-second);
+  border-color: var(--c-main);
   width: 100%;
   outline: none;
   background: white;
-  background-color: $c-background;
+  background-color: var(--c-background);
   z-index: 100;
   box-sizing: border-box;
   -webkit-appearance: none;
@@ -233,23 +233,23 @@ input {
   line-height: normal;
 
   &:focus {
-    box-shadow: 0 0 0 1px $c-main;
+    box-shadow: 0 0 0 1px var(--c-main);
   }
 }
 
 button {
   font-family: Helvetica, sans-serif;
-  color: $c-second;
+  color: var(--c-second);
   padding: 5px;
   background: none;
-  border: 1px solid $c-second;
+  border: 1px solid var(--c-second);
   outline: none;
-  border-color: $c-main;
+  border-color: var(--c-main);
   box-shadow: none;
   transition: background 0.2s;
 
   &:active {
-    box-shadow: 0 0 0 1px $c-main;
+    box-shadow: 0 0 0 1px var(--c-main);
   }
 
   &:hover {
@@ -261,7 +261,7 @@ button {
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 1.5px solid $c-second;
+  border: 1.5px solid var(--c-second);
   border-radius: 50%;
   border-top-color: rgba(255, 255, 255, 0);
   animation: spin 1s ease-in-out infinite;
@@ -281,11 +281,11 @@ button {
 }
 
 input:hover {
-  border-color: $c-main;
+  border-color: var(--c-main);
 }
 
 input::placeholder {
-  color: $c-main;
+  color: var(--c-main);
 }
 
 input.sticky {
@@ -295,7 +295,7 @@ input.sticky {
 }
 
 input::placeholder {
-  color: $c-second;
+  color: var(--c-second);
   opacity: 0.7;
 }
 

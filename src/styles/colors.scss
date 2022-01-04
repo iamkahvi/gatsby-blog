@@ -9,13 +9,14 @@
 // $c-third: #eeee;
 
 // Pastel
-// $c-main: #FFA9A3;
-// $c-second:#7D938A;
+$c-main: #FFA9A3;
+$c-second:#7D938A;
+$c-third: #c9dfe6;
 
 // Artic
-$c-main: #7CDEDC;
-$c-second:#6C698D;
-$c-third: #E8C1C5;
+// $c-main: #7CDEDC;
+// $c-second:#6C698D;
+// $c-third: #E8C1C5;
 
 // Forest
 // $c-main: #B5DFCA;
@@ -27,11 +28,11 @@ $c-third: #E8C1C5;
 // $c-second:#B88C9E;
 // $c-third: #8EB8E5;
 
+$c-background: white;
+
 :root { 
     --c-main: #{$c-main};
     --c-second: #{$c-second};
     --c-third: #{$c-third};
+    --cc-background: #{c-background};
 }
-
-
-$c-background: white;

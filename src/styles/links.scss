@@ -4,7 +4,7 @@
 $bp__sm: 45rem; // 450px
 
 // Misc
-$m-border: 1px solid $c-third;
+$m-border: 1px solid var(--c-third);
 
 .book .anchor {
   float: left;
@@ -15,8 +15,8 @@ $m-border: 1px solid $c-third;
 a.book-shelf-logo {
   &:hover {
     transition: none;
-    color: $c-main;
-    border: 5px solid $c-main;
+    color: var(--c-main);
+    border: 5px solid var(--c-main);
 
     &::after {
       height: 0;
@@ -34,7 +34,7 @@ a.booklist {
 
 	&:hover {
     transition: none;
-    color: $c-second;
+    color: var(--c-second);
     text-decoration: underline;
     &::after {
       height: 0;
@@ -43,7 +43,7 @@ a.booklist {
 }
 a {
     box-shadow: none;
-    color: $c-main;
+    color: var(--c-main);
     background-color: transparent;
     text-decoration: none;
 
@@ -60,7 +60,7 @@ a {
       height: 0;
       left: 0;
       bottom: 0;
-      background-color: $c-main;
+      background-color: var(--c-main);
       transition: all ease 0.1s;
     }
 
@@ -80,7 +80,7 @@ a.no-hov {
 	}
 
 	&:hover {
-		color: $c-third
+		color: var(--c-third)
 	}
 }
 
