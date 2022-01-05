@@ -41,9 +41,7 @@ I feel like I’ve built up momentum in university. My discovering computer scie
 
 For me, this next phase of my life contains nothing especially new. I’ve already worked the same job for 4 months during my internship. Obviously, I’ll be able to dive deeper into every aspect of the job. But in general, I have a pretty good idea of what to expect.
 
-I want to work a job that I like. And I want to see how that feels. Or if that even matters?
-
-I never thought I would continue doing school immediately after my undergrad. I have always been anxious to start living outside the educational setting.
+I never thought I'd continue doing school immediately after my undergrad. I have always been anxious to start living outside the educational setting.
 
 I would like to go to law school. But later on. Once I’ve learned how to work hard like Obama did.
 
