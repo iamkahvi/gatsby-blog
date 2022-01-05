@@ -8,6 +8,8 @@ export enum Themes {
   Artic = "artic",
   Forest = "forest",
   Purple = "purple",
+  Blue = "blue",
+  Dark = "dark",
 }
 
 interface Return {
@@ -16,7 +18,9 @@ interface Return {
 }
 
 export const useTheme = (): Return => {
-  const colorPref = window.localStorage.getItem("color-theme") as Themes;
+  const colorPref =
+    typeof window !== "undefined" &&
+    (window.localStorage.getItem("color-theme") as Themes);
   const hasPref = typeof colorPref === "string";
 
   const [currTheme, setCurrTheme] = useState(() =>
