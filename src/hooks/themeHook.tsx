@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { themeMap } from "./colorThemes.mjs";
+import { themeMap } from "../colorThemes.mjs";
 
 export enum Themes {
   Classic = "classic",

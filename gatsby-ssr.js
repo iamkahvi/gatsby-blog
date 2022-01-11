@@ -1,4 +1,4 @@
-import { themeMap } from "./src/hooks/colorThemes.mjs";
+import { themeMap } from "./src/colorThemes.mjs";
 import React from "react";
 
 const MagicScriptTag = () => {
