@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import { LayoutProps } from "../types/types";
-import { useTheme } from "../components/hooks/themeHook";
+import { useTheme } from "../hooks/themeHook";
 
 function Layout(props: LayoutProps) {
   const { location, title, children, description } = props;
