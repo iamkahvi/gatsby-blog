@@ -18,7 +18,7 @@ const MagicScriptTag = () => {
         const mql = window.matchMedia("(prefers-color-scheme: dark)");
         const hasMediaQueryPreference = typeof mql.matches === "boolean";
         if (hasMediaQueryPreference && mql.matches) {
-        return "dark";
+            return "dark";
         }
         // If they are using a browser/OS that doesn't support
         // color themes, let's default to 'light'.
