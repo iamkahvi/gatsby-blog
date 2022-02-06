@@ -9,6 +9,7 @@ import {
   EmailInput,
   BookListLogo,
 } from "../components";
+
 import { IndexProps, PostEdge } from "../types/types";
 import { CURR_YEAR_STRING } from "../utilities";
 

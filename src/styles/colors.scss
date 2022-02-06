@@ -4,7 +4,7 @@
 // $c-third: #eee;
 
 // Bubblegum
-// $c-main: #FFA9A3; //important stuff
+// $c-main: #FFA9A3;
 // $c-second:#5C95FF;
 // $c-third: #eeee;
 
@@ -29,10 +29,12 @@ $c-third: #c9dfe6;
 // $c-third: #8EB8E5;
 
 $c-background: white;
+$c-main-selection: #FFA9A350;
 
 :root { 
     --c-main: #{$c-main};
     --c-second: #{$c-second};
     --c-third: #{$c-third};
-    --cc-background: #{c-background};
+    --cc-background: #{$c-background};
+    --c-main-selection: #{$c-main-selection};
 }
