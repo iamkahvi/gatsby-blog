@@ -1,7 +1,7 @@
 [
   {
-	"id": "build-deploy-webhook",
-	"execute-command": "/home/kahvi/dev/gatsby-blog/build.sh",
-	"command-working-directory": "/home/kahvi/dev/gatsby-blog"
+    "id": "build-deploy-webhook",
+    "execute-command": "/home/kahvi/dev/gatsby-blog/scripts/build.sh",
+    "command-working-directory": "/home/kahvi/dev/gatsby-blog"
   }
 ]
