@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "gatsby";
+import React, { useRef, useEffect } from "react";
 import { LayoutProps } from "../types/types";
 import { useTheme } from "../hooks/themeHook";
 
@@ -12,22 +11,14 @@ function Layout(props: LayoutProps) {
     setTheme(currTheme);
   }, []);
 
-  const [state, setState] = useState({
-    audioPlayer: {},
-  });
-
-  useEffect(() => {
-    setState({
-      audioPlayer: new Audio("/assets/pronounce4.m4a"),
-    });
-  }, []);
+  const audio = useRef(new Audio("/assets/pronounce4.m4a"));
 
   const navStyle = "roboto c-main";
   const descriptionStyle = "f6 roboto pt1 mt2 c-second";
 
   const audioIcon = (
     <svg
-      onClick={() => state.audioPlayer?.play()}
+      onClick={() => audio.current.play()}
       className="ml3"
       width="660"
       height="660"
@@ -45,17 +36,17 @@ function Layout(props: LayoutProps) {
 
   const nav = (
     <p className="c-third">
-      <Link to="/" className={navStyle.concat(" mr2")}>
+      <a href="/" className={navStyle.concat(" mr2")}>
         Home
-      </Link>
+      </a>
       /
-      <Link to="/book-shelf" className={navStyle.concat(" mh2")}>
+      <a href="/book-shelf" className={navStyle.concat(" mh2")}>
         Book Shelf
-      </Link>
+      </a>
       /
-      <Link to="/about" className={navStyle.concat(" ml2")}>
+      <a href="/about" className={navStyle.concat(" ml2")}>
         About
-      </Link>
+      </a>
     </p>
   );
 
