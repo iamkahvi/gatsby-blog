@@ -302,10 +302,11 @@ input::placeholder {
 
 
 .profile {
-  width: 15rem;
+  width: Min(12rem, 30vw);
   float: right;
   margin-right: 0px;
   margin-left: 50px;
+  margin-bottom: 10px;
 }
 
 blockquote {
