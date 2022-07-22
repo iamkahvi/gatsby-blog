@@ -11,7 +11,7 @@ function Layout(props: LayoutProps) {
     setTheme(currTheme);
   }, []);
 
-  const audio = useRef(new Audio("/assets/pronounce4.m4a"));
+  const audio = useRef(null);
 
   const navStyle = "roboto c-main";
   const descriptionStyle = "f6 roboto pt1 mt2 c-second";
@@ -74,7 +74,12 @@ function Layout(props: LayoutProps) {
           {nav}
           {themeToggle}
         </div>
-        {location.pathname === "/" && bigTitle}
+        {location.pathname === "/" && (
+          <>
+            {bigTitle}
+            <audio ref={audio} src="/assets/pronounce4.m4a" />
+          </>
+        )}
       </header>
       <main className="pa3">{children}</main>
     </div>
