@@ -15,7 +15,7 @@ i admire that quality. at this point in my life, i loathe routine even though i 
 
 certainly, living the way audrey’s character does has a undeniable romantic appeal. those few people i encounter who drift into my life and astonish me only to vanish just as quickly are impossible not to admire.
 
-the way connections are made which seem deep on one side, but superficial on another is frightening. i think its every persons fear that a friendship isn’t reciprocated with the same enthusiasm on the other end. in Aubrey’s case, it seems like that fear always comes to fruition.
+the way connections are made which seem deep on one side, but superficial on another is frightening. i think its every persons fear that a friendship isn’t reciprocated with the same enthusiasm on the other end. in Audrey’s case, it seems like that fear always comes to fruition.
 
 i guess it isn’t really her fault. the fact that her life is spent quickly building relationships then moving upwards from them may not be her fault. i think the movie makes it out to be her personality and not malicious intent. 
 
@@ -29,7 +29,7 @@ presumably, a deep relationship comes from length and not intensity.
 
 maybe that is the crux of the movie.
 
-for her whole life, aubrey’s character lived intense and short relationships which is a admirable lifestyle as perceived from the outside. admirable because passion is more easily noticed than depth. by the end of the movie though, she decides to do the opposite and develop a long and perhaps less intense relationship.  
+for her whole life, audrey’s character lived intense and short relationships which is a admirable lifestyle as perceived from the outside. admirable because passion is more easily noticed than depth. by the end of the movie though, she decides to do the opposite and develop a long and perhaps less intense relationship.  
 
 although, i am implying a trade-off here. passionate/exciting relationships are short and “deep” ones are long.
 
