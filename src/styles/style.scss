@@ -302,7 +302,7 @@ input::placeholder {
 
 
 .profile {
-  width: 26vh;
+  width: 15rem;
   float: right;
   margin-right: 0px;
   margin-left: 50px;
@@ -320,7 +320,8 @@ blockquote {
   .profile {
     display: block;
     float: none;
-    margin-left: auto;
+    width: 10rem;
+    margin-left: 0;
     margin-right: auto;
     margin-bottom: 20px;
   }
