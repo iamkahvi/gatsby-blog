@@ -125,6 +125,14 @@ const BlogIndex = ({ data, location }: IndexProps) => {
   return (
     <Layout location={location} title={siteTitle} description={description}>
       <BookListLogo />
+      <iframe
+        src="https://kahvi.substack.com/embed"
+        width="480"
+        height="320"
+        style={{ border: "1px solid #EEE", background: "transparent" }}
+        frameBorder="0"
+        scrolling="no"
+      ></iframe>
       {showEmail && (
         <div className="ba-ns pa3-ns mb4 mw6 br3">
           <div className="flex justify-between mb3">
