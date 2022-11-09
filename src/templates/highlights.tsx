@@ -48,7 +48,7 @@ export const pageQuery = graphql`
       rawMarkdownBody
       frontmatter {
         title
-        displayDate: date(formatString: "MMMM Do, 2019")
+        displayDate: date(formatString: "MMMM Do, YYYY")
         displayDateSmall: date(formatString: "MMM D")
         description
       }

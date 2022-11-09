@@ -41,7 +41,7 @@ const BlogIndex = ({ data, location }: IndexProps) => {
     };
 
     try {
-      const res = await axios.post(emailAPIURL, body, config);
+      const res = await axios.post(emailAPIURL as string, body, config);
       setLoading(false);
 
       // Assuming two people don't subscribe on the same device
