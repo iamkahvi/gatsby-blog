@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+body {
+  background-color: #fda141;
+  margin: 2rem 0;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  background-color: rgba(131, 58, 180, 0.4);
+}
+
+::selection {
+  background-color: rgba(131, 58, 180, 0.4);
+}
+
+.newnew {
+  * {
+    all: initial;
+  }
+
+  h1 {
+    background: -webkit-linear-gradient(
+      9deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 100%;
+    filter: drop-shadow(-6px 6px 0px #d56cf5);
+  }
+
+  h1:hover {
+    // text-shadow: -1px 6px 15px #ff0000b3;
+    filter: drop-shadow(-6px 6px 0px #833ab4);
+    text-decoration: underline;
+  }
+
+  h1,
+  h2 {
+    font-family: "Helvetica", sans-serif;
+    font-weight: 900;
+    transition: text-shadow 0.1s ease-in-out, drop-shadow 0.1s ease-in-out,
+      filter 0.08s ease-in-out;
+  }
+
+  h1 {
+    display: inline;
+    font-size: 10em;
+  }
+
+  h2 {
+    display: block;
+
+    font-size: 5em;
+    color: #fda141;
+    background-color: #ff8400;
+  }
+
+  p {
+    display: block;
+  }
+
+  p:hover {
+    text-decoration: underline;
+  }
+}
