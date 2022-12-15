@@ -1,22 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 
-body {
+body:has(.newnew) {
   background-color: #fda141;
-  margin: 2rem 0;
-}
-
-::-moz-selection {
-  /* Code for Firefox */
-  background-color: rgba(131, 58, 180, 0.4);
-}
-
-::selection {
-  background-color: rgba(131, 58, 180, 0.4);
 }
 
 .newnew {
+  background-color: #ff8200;
   * {
     all: initial;
+  }
+
+  margin: 1rem 1rem 3rem 1rem;
+  max-width: 65rem;
+
+  ::-moz-selection {
+    /* Code for Firefox */
+    background-color: rgba(131, 58, 180, 0.4);
+  }
+
+  ::selection {
+    background-color: rgba(131, 58, 180, 0.4);
   }
 
   h1 {
@@ -31,12 +34,13 @@ body {
     -webkit-text-fill-color: transparent;
     width: 100%;
     filter: drop-shadow(-6px 6px 0px #d56cf5);
+    // cursor: pointer;
   }
 
   h1:hover {
     // text-shadow: -1px 6px 15px #ff0000b3;
-    filter: drop-shadow(-6px 6px 0px #833ab4);
-    text-decoration: underline;
+    // filter: drop-shadow(-6px 6px 10px #833ab4);
+    // filter: drop-shadow(-6px 6px 5px rgba(131, 58, 180, 0.4));
   }
 
   h1,
@@ -58,13 +62,24 @@ body {
     font-size: 5em;
     color: #fda141;
     background-color: #ff8400;
+    text-decoration: underline;
   }
 
   p {
     display: block;
+    margin-top: 1rem;
   }
 
-  p:hover {
+  a {
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  a::after {
+    all: unset;
+  }
+
+  a:hover {
     text-decoration: underline;
   }
 }
