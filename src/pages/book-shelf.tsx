@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { INLINES, MARKS } from "@contentful/rich-text-types";
 import { graphql } from "gatsby";
 import { Layout, SEO, SearchBar } from "../components";
 import { BookShelfProps, BookEdge } from "../types/types";
@@ -19,6 +20,19 @@ const anchorIcon = (
     ></path>
   </svg>
 );
+
+const attributeValue = (value: string) => `"${value.replace(/"/g, "&quot;")}"`;
+
+const options = {
+  renderNode: {
+    [INLINES.HYPERLINK]: (node, next) => {
+      const href = typeof node.data.uri === "string" ? node.data.uri : "";
+      return `<a href=${attributeValue(href)} target="_blank">${next(
+        node.content
+      )}</a>`;
+    },
+  },
+};
 
 function BookList(props: BookShelfProps) {
   const [search, setSearch] = useState("");
@@ -55,7 +69,8 @@ function BookList(props: BookShelfProps) {
           <div
             dangerouslySetInnerHTML={{
               __html: documentToHtmlString(
-                JSON.parse(node.bookDescription.raw)
+                JSON.parse(node.bookDescription.raw),
+                options
               ),
             }}
           />
