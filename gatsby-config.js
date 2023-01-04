@@ -45,8 +45,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/highlights`,
-        name: `highlights`,
+        path: `${__dirname}/content/highlights/json`,
+        name: `json-highlights`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/highlights/markdown`,
+        name: `markdown-highlights`,
       },
     },
     {
