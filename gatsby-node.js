@@ -106,10 +106,12 @@ exports.createPages = async function ({ graphql, actions }) {
   // Create highlight pages
   const highlights = result.data.highlights.edges;
 
-  highlights.forEach((post, index) => {
+  highlights.forEach((post) => {
     const slug = `highlights/${post.node.frontmatter.slug
       .replace(/\s+/g, "-")
       .toLowerCase()}`;
+
+    console.log("SLUG: ", slug);
 
     createPage({
       path: slug,
@@ -124,10 +126,16 @@ exports.createPages = async function ({ graphql, actions }) {
   const highlightsJson = result.data.highlightsJson.nodes;
 
   highlightsJson.forEach((node) => {
+    const slug = `highlights/${node.name
+      .replace(/[\s_]+/g, "-")
+      .toLowerCase()}`;
+
     const data = fs.readFileSync(node.absolutePath);
 
+    console.log("SLUG: ", slug);
+
     createPage({
-      path: node.name,
+      path: slug,
       component: highlightsJsonTemplate,
       context: {
         highlightData: JSON.parse(data),
