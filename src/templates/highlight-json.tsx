@@ -2,14 +2,7 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { format } from "date-fns";
-
-export interface HighlightJsonProps {
-  pageContext: {
-    highlightData: any;
-    siteInfo: any;
-  };
-  location: any;
-}
+import { HighlightJsonProps } from "../types/types";
 
 class HighlightJson extends React.Component<HighlightJsonProps, {}> {
   render() {

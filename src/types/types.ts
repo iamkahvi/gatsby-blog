@@ -19,7 +19,12 @@ export interface PostEdge {
   previous: PostNode;
 }
 
-export interface IndexProps {
+interface PageProps {
+  location: Location;
+  pageContext: any;
+}
+
+export interface IndexProps extends PageProps {
   data: {
     site: {
       siteMetadata: {
@@ -31,10 +36,9 @@ export interface IndexProps {
       edges: PostEdge[];
     };
   };
-  location: Location;
 }
 
-export interface BlogProps {
+export interface BlogProps extends PageProps {
   data: {
     site: {
       siteMetadata: {
@@ -55,7 +59,25 @@ export interface BlogProps {
       };
     };
   };
-  location: Location;
+}
+
+type Highlight = {
+  book: string;
+  author: string;
+  quote: string;
+  page: number | null;
+  location: {
+    start: number;
+    end: number;
+  };
+  dateAdded: number;
+};
+
+export interface HighlightJsonProps extends PageProps {
+  pageContext: {
+    highlightData: Highlight[];
+    siteInfo: any;
+  };
 }
 
 export interface BookNode {
