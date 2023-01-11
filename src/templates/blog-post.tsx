@@ -15,7 +15,7 @@ class BlogPostTemplate extends React.Component<BlogProps> {
 
   render() {
     const post = this.props.data.markdownRemark;
-    const siteTitle = this.props.data.site.siteMetadata.title;
+    const siteTitle = this.props.pageContext.siteInfo.siteMetadata.title;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -47,12 +47,6 @@ export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)

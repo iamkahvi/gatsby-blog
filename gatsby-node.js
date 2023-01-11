@@ -2,15 +2,24 @@ const path = require(`path`);
 const fs = require(`fs`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-exports.createPages = async function({ graphql, actions }) {
+exports.createPages = async function ({ graphql, actions }) {
   const { createPage } = actions;
 
   const blogPost = path.resolve(`./src/templates/blog-post.tsx`);
   const highlightsTemplate = path.resolve(`./src/templates/highlights.tsx`);
+  const highlightsJsonTemplate = path.resolve(
+    `./src/templates/highlight-json.tsx`
+  );
 
   const result = await graphql(
     `
       {
+        siteInfo: site {
+          siteMetadata {
+            title
+            author
+          }
+        }
         blogPosts: allMarkdownRemark(
           filter: {
             frontmatter: { layout: { eq: "post" }, published: { ne: false } }
@@ -46,6 +55,17 @@ exports.createPages = async function({ graphql, actions }) {
             }
           }
         }
+        highlightsJson: allFile(
+          filter: {
+            sourceInstanceName: { eq: "json-highlights" }
+            extension: { eq: "json" }
+          }
+        ) {
+          nodes {
+            absolutePath
+            name
+          }
+        }
       }
     `
   );
@@ -55,6 +75,8 @@ exports.createPages = async function({ graphql, actions }) {
   //   "./utils/in_posts.json",
   //   JSON.stringify(result.data.blogPostsContent)
   // );
+
+  const siteInfo = result.data.siteInfo;
 
   // Create blog posts pages.
   const posts = result.data.blogPosts.edges;
@@ -74,6 +96,7 @@ exports.createPages = async function({ graphql, actions }) {
       component: blogPost,
       context: {
         slug: post.node.fields.slug,
+        siteInfo,
         previous,
         next,
       },
@@ -83,16 +106,40 @@ exports.createPages = async function({ graphql, actions }) {
   // Create highlight pages
   const highlights = result.data.highlights.edges;
 
-  highlights.forEach((post, index) => {
+  highlights.forEach((post) => {
     const slug = `highlights/${post.node.frontmatter.slug
       .replace(/\s+/g, "-")
       .toLowerCase()}`;
+
+    console.log("SLUG: ", slug);
 
     createPage({
       path: slug,
       component: highlightsTemplate,
       context: {
         slug: post.node.fields.slug,
+        siteInfo,
+      },
+    });
+  });
+
+  const highlightsJson = result.data.highlightsJson.nodes;
+
+  highlightsJson.forEach((node) => {
+    const slug = `highlights/${node.name
+      .replace(/[\s_]+/g, "-")
+      .toLowerCase()}`;
+
+    const data = fs.readFileSync(node.absolutePath);
+
+    console.log("SLUG: ", slug);
+
+    createPage({
+      path: slug,
+      component: highlightsJsonTemplate,
+      context: {
+        highlightData: JSON.parse(data),
+        siteInfo,
       },
     });
   });

@@ -32,4 +32,4 @@ yarn-error.log
 
 # content files
 content/**/*.txt
-*.json
+content*.json

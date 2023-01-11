@@ -47,28 +47,6 @@ $c-gradient-third: var(--c-third);
   padding-top: 35px;
 }
 
-.anchor {
-  float: left;
-  padding-right: 4px;
-  margin-left: -25px;
-  opacity: 0;
-
-  &:hover {
-    opacity: 1;
-    display: block;
-    color: var(--c-second);
-    text-decoration: underline;
-
-    &::after {
-      height: 0;
-    }
-  }
-}
-
-.anchor svg {
-  fill: var(--c-main);
-}
-
 ::selection {
   // Need to use sass variable here
   background-color: var(--c-main-selection);
