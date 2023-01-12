@@ -145,6 +145,18 @@ ol {
   margin-bottom: 20px;
 }
 
+li > p {
+  margin-bottom: 5px !important;
+}
+
+blockquote > p {
+  margin-bottom: 5px !important;
+}
+
+blockquote {
+  margin-bottom: 20px;
+}
+
 .textBody h1,
 h2,
 h3 {
@@ -211,6 +223,7 @@ input {
   z-index: 100;
   box-sizing: border-box;
   -webkit-appearance: none;
+  appearance: none;
   box-shadow: none;
   line-height: normal;
 
