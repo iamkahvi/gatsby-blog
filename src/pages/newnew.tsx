@@ -11,7 +11,7 @@ export default function thatNewNewShit({ data, location }: IndexProps) {
       <SEO title="newnew" />
       <div className="newnew">
         <div className="container">
-          <h1 id="hello">new blog YEAH BABY</h1>
+          <h1 id="hello">kahvi's newsletter!</h1>
           <h2>i'm gonna write all my shit like this from now on</h2>
           {data.allMarkdownRemark.edges.map(({ node }) => {
             const slug = node.frontmatter.title
@@ -19,7 +19,7 @@ export default function thatNewNewShit({ data, location }: IndexProps) {
               .replace(/\s+/g, "-")
               .toLowerCase();
             const title = node.frontmatter.title || node.fields.slug;
-            
+
             return (
               <p>
                 <a href={slug}>{title}</a>
