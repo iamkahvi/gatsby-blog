@@ -75,10 +75,14 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-autolink-headers`,
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: "markdown-anchor",
+            },
           },
+          `gatsby-md-link-new-tab`,
+          `gatsby-remark-prismjs`,
         ],
       },
     },

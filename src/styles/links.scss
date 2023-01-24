@@ -92,6 +92,16 @@ a.no-hov {
   }
 }
 
+a.markdown-anchor {
+  &:after {
+    content: none;
+  }
+
+  &:hover {
+    color: var(--c-third);
+  }
+}
+
 a.nav {
   padding: 10px 35px;
   overflow: hidden;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { INLINES, MARKS } from "@contentful/rich-text-types";
+import { INLINES } from "@contentful/rich-text-types";
 import { graphql } from "gatsby";
 import { Layout, SEO, SearchBar } from "../components";
 import { BookShelfProps, BookEdge } from "../types/types";
