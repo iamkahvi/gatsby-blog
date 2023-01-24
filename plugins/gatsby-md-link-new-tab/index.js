@@ -1,5 +1,8 @@
 const visit = require("unist-util-visit");
 
+// Thank you Surinder for this tutorial!
+// https://www.surinderbhomra.com/Blog/2020/05/19/GatsbyJS-Markdown-Plugin-Open-External-Links-New-Tab
+
 module.exports = ({ markdownAST }, pluginOptions) => {
   visit(markdownAST, "link", (node) => {
     // Check if link is external by checking if the "url" attribute starts with http.
