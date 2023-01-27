@@ -8,11 +8,18 @@ import { yearMap } from "../utilities";
 
 const attributeValue = (value: string) => `"${value.replace(/"/g, "&quot;")}"`;
 
+const HOSTNAME = "kahvipatel.com";
+
 const options = {
   renderNode: {
     [INLINES.HYPERLINK]: (node, next) => {
       const href = typeof node.data.uri === "string" ? node.data.uri : "";
-      return `<a href=${attributeValue(href)} target="_blank">${next(
+      const url = new URL(href);
+
+      if (url.hostname === HOSTNAME) {
+        return `<a href=${attributeValue(url.href)}>${next(node.content)}</a>`;
+      }
+      return `<a href=${attributeValue(url.href)} target="_blank">${next(
         node.content
       )}</a>`;
     },
