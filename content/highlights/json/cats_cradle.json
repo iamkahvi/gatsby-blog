@@ -1,0 +1,98 @@
+[
+  {
+    "book": "Cat's Cradle",
+    "author": "Kurt Vonnegut",
+    "quote": "“Have you ever read the speech he made when he accepted the Nobel Prize? This is the whole speech: ‘Ladies and Gentlemen. I stand before you now because I never stopped dawdling like an eight-year-old on a spring morning on his way to school. Anything can make me stop and look and wonder, and sometimes learn. I am a very happy man. Thank you.'",
+    "page": 11,
+    "location": { "start": 226, "end": 229 },
+    "dateAdded": 1679357521
+  },
+  {
+    "book": "Cat's Cradle",
+    "author": "Kurt Vonnegut",
+    "quote": "There is love enough in this world for everybody, if people will just look. I am proof of that.”",
+    "page": 18,
+    "location": { "start": 304, "end": 305 },
+    "dateAdded": 1679357971
+  },
+  {
+    "book": "Cat's Cradle",
+    "author": "Kurt Vonnegut",
+    "quote": "“Maybe he really did have a very rich secret life,” I suggested. “Nah.” “Nah,” sneered the bartender. “He was just one of those kids who made model airplanes and jerked off all the time.”",
+    "page": 23,
+    "location": { "start": 352, "end": 354 },
+    "dateAdded": 1679358183
+  },
+  {
+    "book": "Cat's Cradle",
+    "author": "Kurt Vonnegut",
+    "quote": "As Bokonon says: “Peculiar travel suggestions are dancing lessons from God.”",
+    "page": 63,
+    "location": { "start": 750, "end": 751 },
+    "dateAdded": 1679958097
+  },
+  {
+    "book": "Cat's Cradle",
+    "author": "Kurt Vonnegut",
+    "quote": "Busy, busy, busy, is what we Bokononists whisper whenever we think of how complicated and unpredictable the machinery of life really is.",
+    "page": 65,
+    "location": { "start": 775, "end": 776 },
+    "dateAdded": 1679958392
+  },
+  {
+    "book": "Cat's Cradle",
+    "author": "Kurt Vonnegut",
+    "quote": "They were, I think, a flawless example of what Bokonon calls a duprass, which is a karass composed of only two persons. “A true duprass,” Bokonon tells us, “can't be invaded, not even by children born of such a union.”",
+    "page": 86,
+    "location": { "start": 983, "end": 985 },
+    "dateAdded": 1680001367
+  },
+  {
+    "book": "Cat's Cradle",
+    "author": "Kurt Vonnegut",
+    "quote": "I was very upset about how Americans couldn't imagine what it was like to be something else, to be something else and proud of it.",
+    "page": 97,
+    "location": { "start": 1096, "end": 1098 },
+    "dateAdded": 1680001837
+  },
+  {
+    "book": "Cat's Cradle",
+    "author": "Kurt Vonnegut",
+    "quote": "“Oh,” said Castle. “Him.” He shrugged. “People have to talk about something just to keep their voice boxes in working order, so they'll have good voice boxes in case there's ever anything really meaningful to say.”",
+    "page": 169,
+    "location": { "start": 1806, "end": 1807 },
+    "dateAdded": 1680113188
+  },
+  {
+    "book": "Cat's Cradle",
+    "author": "Kurt Vonnegut",
+    "quote": "“You may quote me:” he said. “Man is vile, and man makes nothing worth making, knows nothing worth knowing.”",
+    "page": 169,
+    "location": { "start": 1809, "end": 1810 },
+    "dateAdded": 1680113199
+  },
+  {
+    "book": "Cat's Cradle",
+    "author": "Kurt Vonnegut",
+    "quote": "He asked McCabe to outlaw him and his religion, too, in order to give the religious life of the people more zest, more tang.",
+    "page": 173,
+    "location": { "start": 1845, "end": 1846 },
+    "dateAdded": 1680113350
+  },
+  {
+    "book": "Cat's Cradle",
+    "author": "Kurt Vonnegut",
+    "quote": "“Now mud lies down again and goes to sleep.” “What memories for mud to have!”",
+    "page": 222,
+    "location": { "start": 2354, "end": 2355 },
+    "dateAdded": 1680131541
+  },
+  {
+    "book": "Cat's Cradle",
+    "author": "Kurt Vonnegut",
+    "quote": "“Beware of the man who works hard to learn something, learns it, and finds himself no wiser than before,” Bokonon tells us. “He is full of murderous resentment of people who are ignorant without having come by their ignorance the hard way.”",
+    "page": 281,
+    "location": { "start": 2969, "end": 2971 },
+    "dateAdded": 1680220266
+  }
+]
