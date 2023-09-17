@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, graphql, navigate } from "gatsby";
-import axios from "axios";
 
-import {
-  Layout,
-  SearchBar,
-  SEO,
-  EmailInput,
-  BookListLogo,
-} from "../components";
+import { Layout, SearchBar, SEO, BookListLogo } from "../components";
 
 import { IndexProps, PostEdge } from "../types/types";
 import { CURR_YEAR_STRING } from "../utilities";
@@ -29,36 +22,6 @@ const BlogIndex = ({ data, location }: IndexProps) => {
       setShowEmail(true);
     }
   }, []);
-
-  const addEmail = async (value, setLoading) => {
-    setLoading(true);
-
-    const emailAPIURL = process.env.GATSBY_EMAIL_SERVICE_URL;
-    const body = { email: value };
-    const config = {
-      timeout: 2500,
-      headers: { "Access-Control-Allow-Origin": "*" },
-    };
-
-    try {
-      const res = await axios.post(emailAPIURL as string, body, config);
-      setLoading(false);
-
-      // Assuming two people don't subscribe on the same device
-      typeof window !== "undefined" &&
-        window.localStorage.setItem("isSubscribed", "true");
-      setShowEmail(false);
-      alert(res.data.title);
-    } catch (error) {
-      setLoading(false);
-      const { title = null, detail = null } = error?.response?.data;
-      if (detail) {
-        alert(`${title}\n${detail}`);
-      } else {
-        alert(`${title}`);
-      }
-    }
-  };
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -116,34 +79,19 @@ const BlogIndex = ({ data, location }: IndexProps) => {
     );
   };
 
-  const hideEmail = () => {
-    setShowEmail(false);
-    typeof window !== "undefined" &&
-      window.localStorage.setItem("isSubscribed", "false");
-  };
+  const newsletterEmbed = (
+    <div className="mb4" style={{ height: "11rem" }}>
+      <iframe
+        src="https://www.newsletter.kahvipatel.com/embed"
+        className="w-100 br3 h-100 bn"
+      ></iframe>
+    </div>
+  );
 
   return (
     <Layout location={location} title={siteTitle} description={description}>
       <BookListLogo />
-      {showEmail && (
-        <div className="ba-ns pa3-ns mb4 mw6 br3">
-          <div className="flex justify-between mb3">
-            <h3 className="mb2 ">subscribe to blog updates here:</h3>
-            <button
-              className="roboto ba br3 f5 normal flex items-center justify-center"
-              type="submit"
-              onClick={hideEmail}
-            >
-              ❌
-            </button>
-          </div>
-          <EmailInput
-            handleInput={addEmail}
-            show={showEmail}
-            setShow={hideEmail}
-          />
-        </div>
-      )}
+      {newsletterEmbed}
       <SearchBar
         handleSearch={handleSearch}
         placeholderText="search posts..."
