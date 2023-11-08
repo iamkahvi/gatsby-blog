@@ -8,20 +8,10 @@ import { CURR_YEAR_STRING } from "../utilities";
 
 const BlogIndex = ({ data, location }: IndexProps) => {
   const [search, setSearch] = useState("");
-  const [showEmail, setShowEmail] = useState(false);
 
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
   const description = data.site.siteMetadata.description;
-
-  useEffect(() => {
-    if (
-      typeof window !== "undefined" &&
-      !window.localStorage.getItem("isSubscribed")
-    ) {
-      setShowEmail(true);
-    }
-  }, []);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
