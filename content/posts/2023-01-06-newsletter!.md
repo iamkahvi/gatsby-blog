@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "my email newsletter"
+title: "my email newsletter!"
 description: new year new blog
 date: 2023-01-23
 published: true
